@@ -31,8 +31,8 @@ class TopViewController: UIViewController, TopViewProtocol {
         degreeLabel.text = "\(degree)°"
         dayLabel.text = day
         todayLabel.text = dayTime
-        maxDegreeLabel.text = "\(degree)"
-        minDegreeLabel.text = "\(degree)"
+        maxDegreeLabel.text = "\(maxDegree)"
+        minDegreeLabel.text = "\(minDegree)"
         view.isHidden = false
     }
 }

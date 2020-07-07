@@ -23,7 +23,7 @@ struct TopModel {
         self.city = weather.timezone.components(separatedBy: "/").last!
         self.weather = weather.current.weather.first!.descr.capitalized
         self.degree = Int(weather.current.temp)
-        self.dayOfWeek = DateFormatter().currentDay
+        self.dayOfWeek = DateFormatter().day()
         self.dayTime = Date().dayTime(sunrise: weather.current.sunrise,
                                       sunset: weather.current.sunset)
         self.maxDegree = Int(weather.daily.first!.temp.max)
