@@ -27,12 +27,12 @@ class TopPresenter: TopPresenterProtocol {
     //MARK: Methods
     
     func configureView(with model: TopModel) {
-        self.view.setParameters(city: model.city,
-                                weather: model.weather,
-                                degree: model.degree,
-                                day: model.dayOfWeek,
-                                dayTime: model.dayTime,
-                                maxDegree: model.maxDegree,
-                                minDegree: model.minDegree)
+        view.setParameters(city: model.city,
+                           weather: model.weather,
+                           degree: model.degree,
+                           day: model.dayOfWeek,
+                           dayTime: model.dayTime,
+                           maxDegree: model.maxDegree,
+                           minDegree: model.minDegree)
     }
 }

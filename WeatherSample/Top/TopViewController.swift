@@ -27,7 +27,7 @@ class TopViewController: UIViewController, TopViewProtocol {
     func setParameters(city: String, weather: String, degree: Int, day: String,
                        dayTime: String, maxDegree: Int, minDegree: Int) {
         cityLabel.text = city
-        weatherLabel.text = description
+        weatherLabel.text = weather
         degreeLabel.text = "\(degree)°"
         dayLabel.text = day
         todayLabel.text = dayTime
