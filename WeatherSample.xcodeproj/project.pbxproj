@@ -38,6 +38,9 @@
 		D007B63824B2239400CE27AA /* HourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63624B2239400CE27AA /* HourCell.swift */; };
 		D007B63924B2239400CE27AA /* HourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D007B63724B2239400CE27AA /* HourCell.xib */; };
 		D007B63B24B36E1700CE27AA /* Int+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63A24B36E1600CE27AA /* Int+Date.swift */; };
+		D007B63D24B474DB00CE27AA /* HourCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63C24B474DB00CE27AA /* HourCellModel.swift */; };
+		D007B63F24B4754600CE27AA /* HourCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63E24B4754600CE27AA /* HourCellPresenter.swift */; };
+		D007B64124B4755900CE27AA /* HourCellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B64024B4755900CE27AA /* HourCellProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,9 @@
 		D007B63624B2239400CE27AA /* HourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCell.swift; sourceTree = "<group>"; };
 		D007B63724B2239400CE27AA /* HourCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourCell.xib; sourceTree = "<group>"; };
 		D007B63A24B36E1600CE27AA /* Int+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Date.swift"; sourceTree = "<group>"; };
+		D007B63C24B474DB00CE27AA /* HourCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCellModel.swift; sourceTree = "<group>"; };
+		D007B63E24B4754600CE27AA /* HourCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCellPresenter.swift; sourceTree = "<group>"; };
+		D007B64024B4755900CE27AA /* HourCellProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCellProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +223,9 @@
 		D007B63524B2236300CE27AA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				D007B64024B4755900CE27AA /* HourCellProtocols.swift */,
+				D007B63C24B474DB00CE27AA /* HourCellModel.swift */,
+				D007B63E24B4754600CE27AA /* HourCellPresenter.swift */,
 				D007B63624B2239400CE27AA /* HourCell.swift */,
 				D007B63724B2239400CE27AA /* HourCell.xib */,
 			);
@@ -302,12 +311,15 @@
 				D007B5E524ADD6CD00CE27AA /* DaysViewController.swift in Sources */,
 				D007B5D224AA06A300CE27AA /* LocationService.swift in Sources */,
 				D007B62B24AF707200CE27AA /* DateFormatter+Day.swift in Sources */,
+				D007B63D24B474DB00CE27AA /* HourCellModel.swift in Sources */,
+				D007B63F24B4754600CE27AA /* HourCellPresenter.swift in Sources */,
 				D007B5EA24ADD82F00CE27AA /* InfoViewController.swift in Sources */,
 				D007B62924AF5F0600CE27AA /* Configurator.swift in Sources */,
 				D007B5E824ADD75500CE27AA /* TodayViewController.swift in Sources */,
 				D007B5FC24ADFB4F00CE27AA /* WeatherService.swift in Sources */,
 				D007B63224B218DA00CE27AA /* HoursModel.swift in Sources */,
 				D007B60324AE26D000CE27AA /* TopProtocols.swift in Sources */,
+				D007B64124B4755900CE27AA /* HourCellProtocols.swift in Sources */,
 				D007B5DF24AA094800CE27AA /* ContainerViewController.swift in Sources */,
 				D007B60124AE265800CE27AA /* TopPresenter.swift in Sources */,
 				D007B63824B2239400CE27AA /* HourCell.swift in Sources */,

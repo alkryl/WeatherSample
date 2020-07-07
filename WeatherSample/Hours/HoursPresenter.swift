@@ -32,11 +32,14 @@ class HoursPresenter: HoursPresenterProtocol {
         view.updateUI()
     }
     
-    func dataFor(row: Int) -> HoursWeather {
-        return model.hoursWeather[row]
-    }
-    
     func numberOfRows() -> Int {
         return kNumberOfRows
+    }
+    
+    func cellPresenter(for row: Int) -> HourCellPresenterProtocol {
+        let data = model.hoursWeather[row]
+        return HourCellPresenter(model: HourCellModel(hour: data.time,
+                                                      temp: data.temp,
+                                                      id: data.id))
     }
 }

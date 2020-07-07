@@ -8,13 +8,15 @@
 
 import UIKit
 
-class HourCell: UICollectionViewCell {
+class HourCell: UICollectionViewCell, HourCellProtocol {
     
     static var nib: UINib {
         return UINib(nibName: "HourCell", bundle: Bundle.main)
     }
     static let identifier = "HourCell"
     static let size = CGSize(width: 60, height: 100)
+    
+    var presenter: HourCellPresenterProtocol!
     
     //MARK: Outlets
     
@@ -35,16 +37,13 @@ class HourCell: UICollectionViewCell {
     //MARK: Methods
     
     func setParameters(hour: String, temp: String, id: Int) {
-        if hour == "Now" {
-            changeFont()
-        }
         hourLabel.text = hour   //UTC time!
         iconView.image = self.icon(code: id)
         degreeLabel.text = temp
         view.isHidden = false
     }
     
-    func changeFont() {
+    func updateUI() {
         hourLabel.font = UIFont.boldSystemFont(ofSize: 15)
         degreeLabel.font = UIFont.boldSystemFont(ofSize: 17)
     }
