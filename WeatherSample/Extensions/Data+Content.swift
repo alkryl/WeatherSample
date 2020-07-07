@@ -11,8 +11,8 @@ import Foundation
 extension Data {
     func deserialize<T: Decodable>() -> (T?, Error?) {
         do {
-            let array = try JSONDecoder().decode(T.self, from: self)
-            return (array, nil)
+            let data = try JSONDecoder().decode(T.self, from: self)
+            return (data, nil)
         } catch(let error) {
             return (nil, error)
         }
