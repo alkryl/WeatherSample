@@ -43,11 +43,15 @@ struct Hours: Decodable {
 }
 
 struct Daily: Decodable {
+    let time: Int
     let temp: DayTemp
+    let weather: [Weather]
     
     struct DayTemp: Decodable {
-        let min: Double
+        let day: Double
+        let night: Double
         let max: Double
+        let min: Double
     }
 }
 
@@ -69,6 +73,13 @@ private extension Weather {
 }
 
 private extension Hours {
+    enum CodingKeys: String, CodingKey {
+        case time = "dt"
+        case temp, weather
+    }
+}
+
+private extension Daily {
     enum CodingKeys: String, CodingKey {
         case time = "dt"
         case temp, weather
