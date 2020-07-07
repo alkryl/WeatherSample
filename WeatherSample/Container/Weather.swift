@@ -12,6 +12,7 @@ struct WeatherJSON: Decodable {
     let timezone: String
     let current: Current
     let hourly: [Hours]
+    let daily: [Daily]
 }
 
 struct Current: Decodable {
@@ -24,20 +25,30 @@ struct Current: Decodable {
     let feelsLike: Double
     let precipitation: Int?
     let pressure: Int
-    let visibility: Int
+    let visibility: Int?
     let uvi: Double
     let weather: [Weather]
 }
 
 struct Weather: Decodable {
+    let id: Int
     let main: String
-    let description: String
+    let descr: String
 }
 
 struct Hours: Decodable {
     let time: Int
     let temp: Double
     let weather: [Weather]
+}
+
+struct Daily: Decodable {
+    let temp: DayTemp
+    
+    struct DayTemp: Decodable {
+        let min: Double
+        let max: Double
+    }
 }
 
 extension Current {
@@ -50,7 +61,14 @@ extension Current {
     }
 }
 
-extension Hours {
+private extension Weather {
+    enum CodingKeys: String, CodingKey {
+        case main, id
+        case descr = "description"
+    }
+}
+
+private extension Hours {
     enum CodingKeys: String, CodingKey {
         case time = "dt"
         case temp, weather
