@@ -26,6 +26,18 @@
 		D007B5FA24ADE87200CE27AA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D007B5F924ADE87200CE27AA /* CoreLocation.framework */; };
 		D007B5FC24ADFB4F00CE27AA /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B5FB24ADFB4F00CE27AA /* WeatherService.swift */; };
 		D007B5FE24AE0C4B00CE27AA /* Data+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B5FD24AE0C4B00CE27AA /* Data+Content.swift */; };
+		D007B60124AE265800CE27AA /* TopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B60024AE265800CE27AA /* TopPresenter.swift */; };
+		D007B60324AE26D000CE27AA /* TopProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B60224AE26D000CE27AA /* TopProtocols.swift */; };
+		D007B60524AE26E200CE27AA /* TopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B60424AE26E200CE27AA /* TopModel.swift */; };
+		D007B62924AF5F0600CE27AA /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B62824AF5F0600CE27AA /* Configurator.swift */; };
+		D007B62B24AF707200CE27AA /* DateFormatter+Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B62A24AF707200CE27AA /* DateFormatter+Day.swift */; };
+		D007B62D24AF73C600CE27AA /* Date+DayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B62C24AF73C600CE27AA /* Date+DayTime.swift */; };
+		D007B63024B218AD00CE27AA /* HoursProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B62F24B218AD00CE27AA /* HoursProtocols.swift */; };
+		D007B63224B218DA00CE27AA /* HoursModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63124B218DA00CE27AA /* HoursModel.swift */; };
+		D007B63424B2193400CE27AA /* HoursPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63324B2193400CE27AA /* HoursPresenter.swift */; };
+		D007B63824B2239400CE27AA /* HourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63624B2239400CE27AA /* HourCell.swift */; };
+		D007B63924B2239400CE27AA /* HourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D007B63724B2239400CE27AA /* HourCell.xib */; };
+		D007B63B24B36E1700CE27AA /* Int+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63A24B36E1600CE27AA /* Int+Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +62,18 @@
 		D007B5F924ADE87200CE27AA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D007B5FB24ADFB4F00CE27AA /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		D007B5FD24AE0C4B00CE27AA /* Data+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Content.swift"; sourceTree = "<group>"; };
+		D007B60024AE265800CE27AA /* TopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPresenter.swift; sourceTree = "<group>"; };
+		D007B60224AE26D000CE27AA /* TopProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopProtocols.swift; sourceTree = "<group>"; };
+		D007B60424AE26E200CE27AA /* TopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopModel.swift; sourceTree = "<group>"; };
+		D007B62824AF5F0600CE27AA /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		D007B62A24AF707200CE27AA /* DateFormatter+Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Day.swift"; sourceTree = "<group>"; };
+		D007B62C24AF73C600CE27AA /* Date+DayTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DayTime.swift"; sourceTree = "<group>"; };
+		D007B62F24B218AD00CE27AA /* HoursProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursProtocols.swift; sourceTree = "<group>"; };
+		D007B63124B218DA00CE27AA /* HoursModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursModel.swift; sourceTree = "<group>"; };
+		D007B63324B2193400CE27AA /* HoursPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursPresenter.swift; sourceTree = "<group>"; };
+		D007B63624B2239400CE27AA /* HourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCell.swift; sourceTree = "<group>"; };
+		D007B63724B2239400CE27AA /* HourCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourCell.xib; sourceTree = "<group>"; };
+		D007B63A24B36E1600CE27AA /* Int+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Date.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,10 +108,12 @@
 		D007B5B924A9FFCF00CE27AA /* WeatherSample */ = {
 			isa = PBXGroup;
 			children = (
+				D007B62824AF5F0600CE27AA /* Configurator.swift */,
 				D007B5D024AA069100CE27AA /* Services */,
 				D007B5D424AA06CD00CE27AA /* Extensions */,
-				D007B5D324AA06A700CE27AA /* Models */,
 				D007B5F724ADE74100CE27AA /* Container */,
+				D007B5FF24AE263D00CE27AA /* Top */,
+				D007B62E24B2187200CE27AA /* Hours */,
 				D007B5D524AA06E600CE27AA /* Views */,
 				D007B5D824AA074B00CE27AA /* Storyboards */,
 				D007B5D724AA071500CE27AA /* Other */,
@@ -104,18 +130,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		D007B5D324AA06A700CE27AA /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				D007B5F524ADE5FE00CE27AA /* Weather.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		D007B5D424AA06CD00CE27AA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				D007B5FD24AE0C4B00CE27AA /* Data+Content.swift */,
+				D007B62A24AF707200CE27AA /* DateFormatter+Day.swift */,
+				D007B62C24AF73C600CE27AA /* Date+DayTime.swift */,
+				D007B63A24B36E1600CE27AA /* Int+Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -123,8 +144,6 @@
 		D007B5D524AA06E600CE27AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D007B5E024AA0A6100CE27AA /* TopViewController.swift */,
-				D007B5E224ADD42000CE27AA /* HoursViewController.swift */,
 				D007B5E424ADD6CD00CE27AA /* DaysViewController.swift */,
 				D007B5E724ADD75500CE27AA /* TodayViewController.swift */,
 				D007B5E924ADD82F00CE27AA /* InfoViewController.swift */,
@@ -157,8 +176,9 @@
 			isa = PBXGroup;
 			children = (
 				D007B5F324ADE4EE00CE27AA /* ContainerProtocols.swift */,
-				D007B5DE24AA094800CE27AA /* ContainerViewController.swift */,
+				D007B5F524ADE5FE00CE27AA /* Weather.swift */,
 				D007B5EF24ADE37900CE27AA /* ContainerPresenter.swift */,
+				D007B5DE24AA094800CE27AA /* ContainerViewController.swift */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -169,6 +189,38 @@
 				D007B5F924ADE87200CE27AA /* CoreLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D007B5FF24AE263D00CE27AA /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				D007B60224AE26D000CE27AA /* TopProtocols.swift */,
+				D007B60424AE26E200CE27AA /* TopModel.swift */,
+				D007B60024AE265800CE27AA /* TopPresenter.swift */,
+				D007B5E024AA0A6100CE27AA /* TopViewController.swift */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
+		D007B62E24B2187200CE27AA /* Hours */ = {
+			isa = PBXGroup;
+			children = (
+				D007B62F24B218AD00CE27AA /* HoursProtocols.swift */,
+				D007B63124B218DA00CE27AA /* HoursModel.swift */,
+				D007B63324B2193400CE27AA /* HoursPresenter.swift */,
+				D007B5E224ADD42000CE27AA /* HoursViewController.swift */,
+				D007B63524B2236300CE27AA /* Cell */,
+			);
+			path = Hours;
+			sourceTree = "<group>";
+		};
+		D007B63524B2236300CE27AA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D007B63624B2239400CE27AA /* HourCell.swift */,
+				D007B63724B2239400CE27AA /* HourCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +284,7 @@
 				D007B5C724A9FFD100CE27AA /* LaunchScreen.storyboard in Resources */,
 				D007B5C424A9FFD100CE27AA /* Assets.xcassets in Resources */,
 				D007B5C224A9FFCF00CE27AA /* Main.storyboard in Resources */,
+				D007B63924B2239400CE27AA /* HourCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,19 +295,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D007B63424B2193400CE27AA /* HoursPresenter.swift in Sources */,
 				D007B5E324ADD42000CE27AA /* HoursViewController.swift in Sources */,
+				D007B60524AE26E200CE27AA /* TopModel.swift in Sources */,
 				D007B5BB24A9FFCF00CE27AA /* AppDelegate.swift in Sources */,
 				D007B5E524ADD6CD00CE27AA /* DaysViewController.swift in Sources */,
 				D007B5D224AA06A300CE27AA /* LocationService.swift in Sources */,
+				D007B62B24AF707200CE27AA /* DateFormatter+Day.swift in Sources */,
 				D007B5EA24ADD82F00CE27AA /* InfoViewController.swift in Sources */,
+				D007B62924AF5F0600CE27AA /* Configurator.swift in Sources */,
 				D007B5E824ADD75500CE27AA /* TodayViewController.swift in Sources */,
 				D007B5FC24ADFB4F00CE27AA /* WeatherService.swift in Sources */,
+				D007B63224B218DA00CE27AA /* HoursModel.swift in Sources */,
+				D007B60324AE26D000CE27AA /* TopProtocols.swift in Sources */,
 				D007B5DF24AA094800CE27AA /* ContainerViewController.swift in Sources */,
+				D007B60124AE265800CE27AA /* TopPresenter.swift in Sources */,
+				D007B63824B2239400CE27AA /* HourCell.swift in Sources */,
+				D007B63024B218AD00CE27AA /* HoursProtocols.swift in Sources */,
 				D007B5FE24AE0C4B00CE27AA /* Data+Content.swift in Sources */,
 				D007B5F424ADE4EE00CE27AA /* ContainerProtocols.swift in Sources */,
+				D007B62D24AF73C600CE27AA /* Date+DayTime.swift in Sources */,
 				D007B5F624ADE5FE00CE27AA /* Weather.swift in Sources */,
 				D007B5EC24ADD8F600CE27AA /* BottomViewController.swift in Sources */,
 				D007B5F024ADE37900CE27AA /* ContainerPresenter.swift in Sources */,
+				D007B63B24B36E1700CE27AA /* Int+Date.swift in Sources */,
 				D007B5BD24A9FFCF00CE27AA /* SceneDelegate.swift in Sources */,
 				D007B5E124AA0A6100CE27AA /* TopViewController.swift in Sources */,
 			);
