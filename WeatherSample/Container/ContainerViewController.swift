@@ -39,6 +39,9 @@ class ContainerViewController: UITableViewController, ContainerViewProtocol {
             } else if let view = $0 as? HoursViewProtocol {
                 view.presenter = configurator.hoursPresenter
                 configurator.hoursPresenter.view = view
+            } else if let view = $0 as? DaysViewProtocol {
+                view.presenter = configurator.daysPresenter
+                configurator.daysPresenter.view = view
             }
         }        
     }

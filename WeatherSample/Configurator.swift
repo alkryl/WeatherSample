@@ -22,6 +22,7 @@ class Configurator: ConfiguratorProtocol {
     
     var topPresenter: TopPresenterProtocol!
     var hoursPresenter: HoursPresenterProtocol!
+    var daysPresenter: DaysPresenterProtocol!
     
     //MARK: Methods
         
@@ -32,6 +33,7 @@ class Configurator: ConfiguratorProtocol {
     func configureChildPresenters(with weather: WeatherJSON, completion: () -> ()) {
         topPresenter = TopPresenter(model: TopModel(weather))
         hoursPresenter = HoursPresenter(model: HoursModel(weather))
+        daysPresenter = DaysPresenter(model: DaysModel(weather))
         
         completion()
     }
