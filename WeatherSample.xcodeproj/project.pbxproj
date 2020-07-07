@@ -41,6 +41,15 @@
 		D007B63D24B474DB00CE27AA /* HourCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63C24B474DB00CE27AA /* HourCellModel.swift */; };
 		D007B63F24B4754600CE27AA /* HourCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63E24B4754600CE27AA /* HourCellPresenter.swift */; };
 		D007B64124B4755900CE27AA /* HourCellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B64024B4755900CE27AA /* HourCellProtocols.swift */; };
+		D007B64424B4814200CE27AA /* DaysProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B64324B4814200CE27AA /* DaysProtocols.swift */; };
+		D007B64624B4814F00CE27AA /* DaysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B64524B4814F00CE27AA /* DaysModel.swift */; };
+		D007B64824B4815900CE27AA /* DaysPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B64724B4815900CE27AA /* DaysPresenter.swift */; };
+		D007B64E24B49B8900CE27AA /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B64C24B49B8900CE27AA /* DayCell.swift */; };
+		D007B64F24B49B8900CE27AA /* DayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D007B64D24B49B8900CE27AA /* DayCell.xib */; };
+		D007B65124B49BA000CE27AA /* DayCellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B65024B49BA000CE27AA /* DayCellProtocols.swift */; };
+		D007B65324B49BAE00CE27AA /* DayCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B65224B49BAE00CE27AA /* DayCellModel.swift */; };
+		D007B65524B49BC100CE27AA /* DayCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B65424B49BC100CE27AA /* DayCellPresenter.swift */; };
+		D007B65724B4A83000CE27AA /* UIImage+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B65624B4A83000CE27AA /* UIImage+Icon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +89,15 @@
 		D007B63C24B474DB00CE27AA /* HourCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCellModel.swift; sourceTree = "<group>"; };
 		D007B63E24B4754600CE27AA /* HourCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCellPresenter.swift; sourceTree = "<group>"; };
 		D007B64024B4755900CE27AA /* HourCellProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCellProtocols.swift; sourceTree = "<group>"; };
+		D007B64324B4814200CE27AA /* DaysProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysProtocols.swift; sourceTree = "<group>"; };
+		D007B64524B4814F00CE27AA /* DaysModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysModel.swift; sourceTree = "<group>"; };
+		D007B64724B4815900CE27AA /* DaysPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysPresenter.swift; sourceTree = "<group>"; };
+		D007B64C24B49B8900CE27AA /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
+		D007B64D24B49B8900CE27AA /* DayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCell.xib; sourceTree = "<group>"; };
+		D007B65024B49BA000CE27AA /* DayCellProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCellProtocols.swift; sourceTree = "<group>"; };
+		D007B65224B49BAE00CE27AA /* DayCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCellModel.swift; sourceTree = "<group>"; };
+		D007B65424B49BC100CE27AA /* DayCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCellPresenter.swift; sourceTree = "<group>"; };
+		D007B65624B4A83000CE27AA /* UIImage+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Icon.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +138,7 @@
 				D007B5F724ADE74100CE27AA /* Container */,
 				D007B5FF24AE263D00CE27AA /* Top */,
 				D007B62E24B2187200CE27AA /* Hours */,
+				D007B64224B4812400CE27AA /* Days */,
 				D007B5D524AA06E600CE27AA /* Views */,
 				D007B5D824AA074B00CE27AA /* Storyboards */,
 				D007B5D724AA071500CE27AA /* Other */,
@@ -143,6 +162,7 @@
 				D007B62A24AF707200CE27AA /* DateFormatter+Day.swift */,
 				D007B62C24AF73C600CE27AA /* Date+DayTime.swift */,
 				D007B63A24B36E1600CE27AA /* Int+Date.swift */,
+				D007B65624B4A83000CE27AA /* UIImage+Icon.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -150,7 +170,6 @@
 		D007B5D524AA06E600CE27AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D007B5E424ADD6CD00CE27AA /* DaysViewController.swift */,
 				D007B5E724ADD75500CE27AA /* TodayViewController.swift */,
 				D007B5E924ADD82F00CE27AA /* InfoViewController.swift */,
 				D007B5EB24ADD8F600CE27AA /* BottomViewController.swift */,
@@ -232,6 +251,30 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		D007B64224B4812400CE27AA /* Days */ = {
+			isa = PBXGroup;
+			children = (
+				D007B64324B4814200CE27AA /* DaysProtocols.swift */,
+				D007B64524B4814F00CE27AA /* DaysModel.swift */,
+				D007B64724B4815900CE27AA /* DaysPresenter.swift */,
+				D007B5E424ADD6CD00CE27AA /* DaysViewController.swift */,
+				D007B64924B49B5B00CE27AA /* Cell */,
+			);
+			path = Days;
+			sourceTree = "<group>";
+		};
+		D007B64924B49B5B00CE27AA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D007B65024B49BA000CE27AA /* DayCellProtocols.swift */,
+				D007B65224B49BAE00CE27AA /* DayCellModel.swift */,
+				D007B65424B49BC100CE27AA /* DayCellPresenter.swift */,
+				D007B64C24B49B8900CE27AA /* DayCell.swift */,
+				D007B64D24B49B8900CE27AA /* DayCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,6 +336,7 @@
 				D007B5C724A9FFD100CE27AA /* LaunchScreen.storyboard in Resources */,
 				D007B5C424A9FFD100CE27AA /* Assets.xcassets in Resources */,
 				D007B5C224A9FFCF00CE27AA /* Main.storyboard in Resources */,
+				D007B64F24B49B8900CE27AA /* DayCell.xib in Resources */,
 				D007B63924B2239400CE27AA /* HourCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,12 +353,16 @@
 				D007B60524AE26E200CE27AA /* TopModel.swift in Sources */,
 				D007B5BB24A9FFCF00CE27AA /* AppDelegate.swift in Sources */,
 				D007B5E524ADD6CD00CE27AA /* DaysViewController.swift in Sources */,
+				D007B64624B4814F00CE27AA /* DaysModel.swift in Sources */,
 				D007B5D224AA06A300CE27AA /* LocationService.swift in Sources */,
+				D007B64424B4814200CE27AA /* DaysProtocols.swift in Sources */,
 				D007B62B24AF707200CE27AA /* DateFormatter+Day.swift in Sources */,
 				D007B63D24B474DB00CE27AA /* HourCellModel.swift in Sources */,
+				D007B64E24B49B8900CE27AA /* DayCell.swift in Sources */,
 				D007B63F24B4754600CE27AA /* HourCellPresenter.swift in Sources */,
 				D007B5EA24ADD82F00CE27AA /* InfoViewController.swift in Sources */,
 				D007B62924AF5F0600CE27AA /* Configurator.swift in Sources */,
+				D007B65324B49BAE00CE27AA /* DayCellModel.swift in Sources */,
 				D007B5E824ADD75500CE27AA /* TodayViewController.swift in Sources */,
 				D007B5FC24ADFB4F00CE27AA /* WeatherService.swift in Sources */,
 				D007B63224B218DA00CE27AA /* HoursModel.swift in Sources */,
@@ -325,11 +373,15 @@
 				D007B63824B2239400CE27AA /* HourCell.swift in Sources */,
 				D007B63024B218AD00CE27AA /* HoursProtocols.swift in Sources */,
 				D007B5FE24AE0C4B00CE27AA /* Data+Content.swift in Sources */,
+				D007B64824B4815900CE27AA /* DaysPresenter.swift in Sources */,
 				D007B5F424ADE4EE00CE27AA /* ContainerProtocols.swift in Sources */,
+				D007B65524B49BC100CE27AA /* DayCellPresenter.swift in Sources */,
 				D007B62D24AF73C600CE27AA /* Date+DayTime.swift in Sources */,
 				D007B5F624ADE5FE00CE27AA /* Weather.swift in Sources */,
+				D007B65124B49BA000CE27AA /* DayCellProtocols.swift in Sources */,
 				D007B5EC24ADD8F600CE27AA /* BottomViewController.swift in Sources */,
 				D007B5F024ADE37900CE27AA /* ContainerPresenter.swift in Sources */,
+				D007B65724B4A83000CE27AA /* UIImage+Icon.swift in Sources */,
 				D007B63B24B36E1700CE27AA /* Int+Date.swift in Sources */,
 				D007B5BD24A9FFCF00CE27AA /* SceneDelegate.swift in Sources */,
 				D007B5E124AA0A6100CE27AA /* TopViewController.swift in Sources */,
