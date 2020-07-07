@@ -258,18 +258,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mostly Cloudy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1d-ea-OQs">
-                                        <rect key="frame" x="164.5" y="65" width="85" height="20"/>
+                                        <rect key="frame" x="164.5" y="69" width="85" height="16"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="Rdd-Dt-VUE"/>
+                                            <constraint firstAttribute="height" constant="16" id="Rdd-Dt-VUE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saint Petersburg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wva-GB-bU2">
-                                        <rect key="frame" x="108" y="34" width="198.5" height="28"/>
+                                        <rect key="frame" x="108" y="35" width="198.5" height="31"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="mAD-Kv-rFE"/>
+                                            <constraint firstAttribute="height" constant="31" id="mAD-Kv-rFE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
