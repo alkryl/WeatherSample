@@ -16,7 +16,7 @@ class HoursPresenter: HoursPresenterProtocol {
     
     unowned var view: HoursViewProtocol! {
         didSet {
-            configureView(with: model)
+            updateView()
         }
     }
     
@@ -28,8 +28,8 @@ class HoursPresenter: HoursPresenterProtocol {
         
     //MARK: Methods
     
-    func configureView(with model: HoursModel) {
-        view.updateUI()
+    func updateView() {
+        view.updateView()
     }
     
     func numberOfRows() -> Int {
@@ -38,7 +38,7 @@ class HoursPresenter: HoursPresenterProtocol {
     
     func cellPresenter(for row: Int) -> HourCellPresenterProtocol {
         let data = model.hoursWeather[row]
-        return HourCellPresenter(model: HourCellModel(hour: data.time,
+        return HourCellPresenter(model: HourCellModel(hour: data.hour,
                                                       temp: data.temp,
                                                       id: data.id))
     }

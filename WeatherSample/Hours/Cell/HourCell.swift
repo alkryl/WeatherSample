@@ -38,7 +38,7 @@ class HourCell: UICollectionViewCell, HourCellProtocol {
     
     func setParameters(hour: String, temp: String, id: Int) {
         hourLabel.text = hour   //UTC time!
-        iconView.image = self.icon(code: id)
+        iconView.image = UIImage().icon(code: id)
         degreeLabel.text = temp
         view.isHidden = false
     }
@@ -46,25 +46,5 @@ class HourCell: UICollectionViewCell, HourCellProtocol {
     func updateUI() {
         hourLabel.font = UIFont.boldSystemFont(ofSize: 15)
         degreeLabel.font = UIFont.boldSystemFont(ofSize: 17)
-    }
-    
-    //MARK: Private
-    
-    private func icon(code: Int) -> UIImage? {
-        switch code {
-        case 200...232: return UIImage(named: "thunderstorm")
-        case 300...321: return UIImage(named: "rainCloud")
-        case 500, 520: return UIImage(named: "lightRain")
-        case 501, 521: return UIImage(named: "moderateRain")
-        case 502...511, 522...531: return UIImage(named: "heavyRain")
-        case 600...622: return UIImage(named: "snow")
-        case 701...781: return UIImage(named: "haze")
-        case 800: return UIImage(named: "clear")
-        case 801...802: return UIImage(named: "fewClouds")
-        case 803...804: return UIImage(named: "clouds")
-        case 900: return UIImage(named: "sunrise")
-        case 901: return UIImage(named: "sunset")
-        default: return UIImage()
-        }
     }
 }

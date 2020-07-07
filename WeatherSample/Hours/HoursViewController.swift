@@ -33,7 +33,7 @@ class HoursViewController: UIViewController, HoursViewProtocol {
     
     //MARK: Methods
     
-    func updateUI() {
+    func updateView() {
         collectionView.reloadData()
     }
 }

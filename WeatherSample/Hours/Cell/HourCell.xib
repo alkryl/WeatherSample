@@ -44,7 +44,6 @@
                             <constraint firstItem="65y-Ce-PoG" firstAttribute="centerX" secondItem="E4g-Zf-62d" secondAttribute="centerX" id="LIx-dc-FHN"/>
                             <constraint firstItem="mEC-Of-3eW" firstAttribute="top" secondItem="E4g-Zf-62d" secondAttribute="top" constant="7" id="SQq-Vg-uRS"/>
                             <constraint firstItem="65y-Ce-PoG" firstAttribute="top" secondItem="mEC-Of-3eW" secondAttribute="bottom" constant="9.5" id="W6D-5a-yUt"/>
-                            <constraint firstItem="BmB-hg-dLC" firstAttribute="top" secondItem="65y-Ce-PoG" secondAttribute="bottom" constant="9.5" id="X6S-GC-KSM"/>
                             <constraint firstItem="BmB-hg-dLC" firstAttribute="centerX" secondItem="E4g-Zf-62d" secondAttribute="centerX" id="cxA-zG-Kir"/>
                             <constraint firstItem="mEC-Of-3eW" firstAttribute="centerX" secondItem="E4g-Zf-62d" secondAttribute="centerX" id="r3h-OC-hIL"/>
                             <constraint firstAttribute="bottom" secondItem="BmB-hg-dLC" secondAttribute="bottom" constant="10" id="zh1-gb-hob"/>
@@ -65,7 +64,7 @@
                 <outlet property="iconView" destination="65y-Ce-PoG" id="uOf-ez-YUa"/>
                 <outlet property="view" destination="E4g-Zf-62d" id="I4s-Dh-ggr"/>
             </connections>
-            <point key="canvasLocation" x="139" y="127"/>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </collectionViewCell>
     </objects>
 </document>

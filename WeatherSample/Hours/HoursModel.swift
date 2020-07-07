@@ -36,16 +36,16 @@ struct HoursModel {
 
 struct HoursWeather {
     let id: Int
-    let time: String
+    let hour: String
     let temp: String
     
     //MARK: Initialization
     
     init(time: Any, temp: Any, id: Int) {
         if let time = time as? Int {
-            self.time = String(describing: time.date().component(.hour))
+            self.hour = String(describing: time.date().component(.hour))
         } else {
-            self.time = time as! String
+            self.hour = time as! String
         }
         
         if let temp = temp as? Double {
