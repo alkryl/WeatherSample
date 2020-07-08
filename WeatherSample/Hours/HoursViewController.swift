@@ -60,9 +60,7 @@ extension HoursViewController: UICollectionViewDataSource {
                                                       for: indexPath) as! HourCell
         guard let presenter = presenter else { return cell }
         
-        var cellPresenter = presenter.cellPresenter(for: indexPath.row)
-        cell.presenter = cellPresenter
-        cellPresenter.view = cell
+        presenter.setPresenter(for: cell, at: indexPath.row)
         
         return cell
     }

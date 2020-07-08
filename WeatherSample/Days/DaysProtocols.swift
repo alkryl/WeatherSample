@@ -17,6 +17,6 @@ protocol DaysViewProtocol: AnyObject {
 protocol DaysPresenterProtocol {
     var view: DaysViewProtocol! { get set }
     init(model: DaysModel)
-    func cellPresenter(for row: Int) -> DayCellPresenterProtocol
     func updateView()
+    func setPresenter(for cell: DayCellProtocol, at row: Int)
 }

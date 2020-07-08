@@ -8,8 +8,6 @@
 
 import Foundation
 
-private let kNumberOfRows = 7
-
 class DaysPresenter: DaysPresenterProtocol {
     
     private var displayedData: [DaysViewData]!
@@ -33,11 +31,13 @@ class DaysPresenter: DaysPresenterProtocol {
         view.updateView()
     }
     
-    func cellPresenter(for row: Int) -> DayCellPresenterProtocol {
+    func setPresenter(for cell: DayCellProtocol, at row: Int) {
         let data = displayedData[row]
-        return DayCellPresenter(model: DayCellModel(day: data.day,
-                                                    id: data.id,
-                                                    dayDegree: data.dayDegree,
-                                                    nightDegree: data.nightDegree))
+        let presenter = DayCellPresenter(model: DayCellModel(day: data.day,
+                                                             id: data.id,
+                                                             dayDegree: data.dayDegree,
+                                                             nightDegree: data.nightDegree))
+        cell.presenter = presenter
+        presenter.view = cell
     }
 }

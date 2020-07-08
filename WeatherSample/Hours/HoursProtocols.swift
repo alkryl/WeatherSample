@@ -17,6 +17,6 @@ protocol HoursViewProtocol: AnyObject {
 protocol HoursPresenterProtocol {
     var view: HoursViewProtocol! { get set }
     init(model: HoursModel)
-    func cellPresenter(for row: Int) -> HourCellPresenterProtocol
     func updateView()
+    func setPresenter(for cell: HourCellProtocol, at row: Int)
 }

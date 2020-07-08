@@ -57,10 +57,8 @@ extension DaysViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DayCell",
                                                  for: indexPath) as! DayCell
         guard let presenter = presenter else { return cell }
-        
-        var cellPresenter = presenter.cellPresenter(for: indexPath.row)
-        cell.presenter = cellPresenter
-        cellPresenter.view = cell
+
+        presenter.setPresenter(for: cell, at: indexPath.row)
         
         return cell
     }

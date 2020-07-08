@@ -31,10 +31,12 @@ class HoursPresenter: HoursPresenterProtocol {
         view.updateView()
     }
     
-    func cellPresenter(for row: Int) -> HourCellPresenterProtocol {
+    func setPresenter(for cell: HourCellProtocol, at row: Int) {
         let data = displayedData[row]
-        return HourCellPresenter(model: HourCellModel(hour: data.hour,
-                                                      temp: data.temp,
-                                                      id: data.id))
+        let presenter = HourCellPresenter(model: HourCellModel(hour: data.hour,
+                                                               temp: data.temp,
+                                                               id: data.id))
+        cell.presenter = presenter
+        presenter.view = cell
     }
 }
