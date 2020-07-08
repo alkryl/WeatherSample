@@ -24,6 +24,7 @@ class Configurator: ConfiguratorProtocol {
     var hoursPresenter: HoursPresenterProtocol!
     var daysPresenter: DaysPresenterProtocol!
     var todayPresenter: TodayPresenterProtocol!
+    var infoPresenter: InfoPresenterProtocol!
     
     //MARK: Methods
         
@@ -36,6 +37,7 @@ class Configurator: ConfiguratorProtocol {
         hoursPresenter = HoursPresenter(model: HoursModel(weather))
         daysPresenter = DaysPresenter(model: DaysModel(weather))
         todayPresenter = TodayPresenter(model: TodayModel(weather))
+        infoPresenter = InfoPresenter(model: InfoModel(weather))
         
         completion()
     }

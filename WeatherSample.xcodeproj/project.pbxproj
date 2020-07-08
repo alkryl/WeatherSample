@@ -37,7 +37,7 @@
 		D007B63424B2193400CE27AA /* HoursPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63324B2193400CE27AA /* HoursPresenter.swift */; };
 		D007B63824B2239400CE27AA /* HourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63624B2239400CE27AA /* HourCell.swift */; };
 		D007B63924B2239400CE27AA /* HourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D007B63724B2239400CE27AA /* HourCell.xib */; };
-		D007B63B24B36E1700CE27AA /* Int+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63A24B36E1600CE27AA /* Int+Date.swift */; };
+		D007B63B24B36E1700CE27AA /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63A24B36E1600CE27AA /* Int+.swift */; };
 		D007B63D24B474DB00CE27AA /* HourCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63C24B474DB00CE27AA /* HourCellModel.swift */; };
 		D007B63F24B4754600CE27AA /* HourCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63E24B4754600CE27AA /* HourCellPresenter.swift */; };
 		D007B64124B4755900CE27AA /* HourCellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B64024B4755900CE27AA /* HourCellProtocols.swift */; };
@@ -53,6 +53,14 @@
 		D007B65A24B4ACF200CE27AA /* TodayProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B65924B4ACF200CE27AA /* TodayProtocols.swift */; };
 		D007B65C24B4AD3500CE27AA /* TodayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B65B24B4AD3500CE27AA /* TodayModel.swift */; };
 		D007B65E24B4AD4100CE27AA /* TodayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B65D24B4AD4100CE27AA /* TodayPresenter.swift */; };
+		D007B66124B5ED0400CE27AA /* InfoProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66024B5ED0400CE27AA /* InfoProtocols.swift */; };
+		D007B66324B5ED1000CE27AA /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66224B5ED1000CE27AA /* InfoModel.swift */; };
+		D007B66524B5ED1A00CE27AA /* InfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66424B5ED1A00CE27AA /* InfoPresenter.swift */; };
+		D007B66824B5FF9100CE27AA /* InfoCellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66724B5FF9100CE27AA /* InfoCellProtocols.swift */; };
+		D007B66A24B5FF9D00CE27AA /* InfoCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66924B5FF9D00CE27AA /* InfoCellModel.swift */; };
+		D007B66C24B5FFAB00CE27AA /* InfoCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66B24B5FFAB00CE27AA /* InfoCellPresenter.swift */; };
+		D007B66F24B5FFB800CE27AA /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66D24B5FFB800CE27AA /* InfoCell.swift */; };
+		D007B67024B5FFB800CE27AA /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D007B66E24B5FFB800CE27AA /* InfoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,7 +96,7 @@
 		D007B63324B2193400CE27AA /* HoursPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursPresenter.swift; sourceTree = "<group>"; };
 		D007B63624B2239400CE27AA /* HourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCell.swift; sourceTree = "<group>"; };
 		D007B63724B2239400CE27AA /* HourCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourCell.xib; sourceTree = "<group>"; };
-		D007B63A24B36E1600CE27AA /* Int+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Date.swift"; sourceTree = "<group>"; };
+		D007B63A24B36E1600CE27AA /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		D007B63C24B474DB00CE27AA /* HourCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCellModel.swift; sourceTree = "<group>"; };
 		D007B63E24B4754600CE27AA /* HourCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCellPresenter.swift; sourceTree = "<group>"; };
 		D007B64024B4755900CE27AA /* HourCellProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCellProtocols.swift; sourceTree = "<group>"; };
@@ -104,6 +112,14 @@
 		D007B65924B4ACF200CE27AA /* TodayProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayProtocols.swift; sourceTree = "<group>"; };
 		D007B65B24B4AD3500CE27AA /* TodayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayModel.swift; sourceTree = "<group>"; };
 		D007B65D24B4AD4100CE27AA /* TodayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPresenter.swift; sourceTree = "<group>"; };
+		D007B66024B5ED0400CE27AA /* InfoProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoProtocols.swift; sourceTree = "<group>"; };
+		D007B66224B5ED1000CE27AA /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
+		D007B66424B5ED1A00CE27AA /* InfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPresenter.swift; sourceTree = "<group>"; };
+		D007B66724B5FF9100CE27AA /* InfoCellProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellProtocols.swift; sourceTree = "<group>"; };
+		D007B66924B5FF9D00CE27AA /* InfoCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellModel.swift; sourceTree = "<group>"; };
+		D007B66B24B5FFAB00CE27AA /* InfoCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellPresenter.swift; sourceTree = "<group>"; };
+		D007B66D24B5FFB800CE27AA /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		D007B66E24B5FFB800CE27AA /* InfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +185,7 @@
 				D007B5FD24AE0C4B00CE27AA /* Data+Content.swift */,
 				D007B62A24AF707200CE27AA /* DateFormatter+Day.swift */,
 				D007B62C24AF73C600CE27AA /* Date+DayTime.swift */,
-				D007B63A24B36E1600CE27AA /* Int+Date.swift */,
+				D007B63A24B36E1600CE27AA /* Int+.swift */,
 				D007B65624B4A83000CE27AA /* UIImage+Icon.swift */,
 			);
 			path = Extensions;
@@ -295,9 +311,25 @@
 		D007B65F24B5E02800CE27AA /* Info */ = {
 			isa = PBXGroup;
 			children = (
+				D007B66024B5ED0400CE27AA /* InfoProtocols.swift */,
+				D007B66224B5ED1000CE27AA /* InfoModel.swift */,
+				D007B66424B5ED1A00CE27AA /* InfoPresenter.swift */,
 				D007B5E924ADD82F00CE27AA /* InfoViewController.swift */,
+				D007B66624B5FF8100CE27AA /* Cell */,
 			);
 			path = Info;
+			sourceTree = "<group>";
+		};
+		D007B66624B5FF8100CE27AA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D007B66724B5FF9100CE27AA /* InfoCellProtocols.swift */,
+				D007B66924B5FF9D00CE27AA /* InfoCellModel.swift */,
+				D007B66B24B5FFAB00CE27AA /* InfoCellPresenter.swift */,
+				D007B66D24B5FFB800CE27AA /* InfoCell.swift */,
+				D007B66E24B5FFB800CE27AA /* InfoCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D007B5C724A9FFD100CE27AA /* LaunchScreen.storyboard in Resources */,
+				D007B67024B5FFB800CE27AA /* InfoCell.xib in Resources */,
 				D007B5C424A9FFD100CE27AA /* Assets.xcassets in Resources */,
 				D007B5C224A9FFCF00CE27AA /* Main.storyboard in Resources */,
 				D007B64F24B49B8900CE27AA /* DayCell.xib in Resources */,
@@ -384,6 +417,7 @@
 				D007B65E24B4AD4100CE27AA /* TodayPresenter.swift in Sources */,
 				D007B62B24AF707200CE27AA /* DateFormatter+Day.swift in Sources */,
 				D007B63D24B474DB00CE27AA /* HourCellModel.swift in Sources */,
+				D007B66324B5ED1000CE27AA /* InfoModel.swift in Sources */,
 				D007B64E24B49B8900CE27AA /* DayCell.swift in Sources */,
 				D007B63F24B4754600CE27AA /* HourCellPresenter.swift in Sources */,
 				D007B5EA24ADD82F00CE27AA /* InfoViewController.swift in Sources */,
@@ -391,6 +425,7 @@
 				D007B65324B49BAE00CE27AA /* DayCellModel.swift in Sources */,
 				D007B5E824ADD75500CE27AA /* TodayViewController.swift in Sources */,
 				D007B5FC24ADFB4F00CE27AA /* WeatherService.swift in Sources */,
+				D007B66824B5FF9100CE27AA /* InfoCellProtocols.swift in Sources */,
 				D007B63224B218DA00CE27AA /* HoursModel.swift in Sources */,
 				D007B60324AE26D000CE27AA /* TopProtocols.swift in Sources */,
 				D007B64124B4755900CE27AA /* HourCellProtocols.swift in Sources */,
@@ -398,19 +433,24 @@
 				D007B60124AE265800CE27AA /* TopPresenter.swift in Sources */,
 				D007B63824B2239400CE27AA /* HourCell.swift in Sources */,
 				D007B63024B218AD00CE27AA /* HoursProtocols.swift in Sources */,
+				D007B66F24B5FFB800CE27AA /* InfoCell.swift in Sources */,
 				D007B5FE24AE0C4B00CE27AA /* Data+Content.swift in Sources */,
+				D007B66124B5ED0400CE27AA /* InfoProtocols.swift in Sources */,
 				D007B64824B4815900CE27AA /* DaysPresenter.swift in Sources */,
 				D007B5F424ADE4EE00CE27AA /* ContainerProtocols.swift in Sources */,
 				D007B65A24B4ACF200CE27AA /* TodayProtocols.swift in Sources */,
+				D007B66524B5ED1A00CE27AA /* InfoPresenter.swift in Sources */,
 				D007B65524B49BC100CE27AA /* DayCellPresenter.swift in Sources */,
 				D007B62D24AF73C600CE27AA /* Date+DayTime.swift in Sources */,
 				D007B5F624ADE5FE00CE27AA /* Weather.swift in Sources */,
+				D007B66A24B5FF9D00CE27AA /* InfoCellModel.swift in Sources */,
 				D007B65124B49BA000CE27AA /* DayCellProtocols.swift in Sources */,
 				D007B65C24B4AD3500CE27AA /* TodayModel.swift in Sources */,
 				D007B5EC24ADD8F600CE27AA /* BottomViewController.swift in Sources */,
 				D007B5F024ADE37900CE27AA /* ContainerPresenter.swift in Sources */,
 				D007B65724B4A83000CE27AA /* UIImage+Icon.swift in Sources */,
-				D007B63B24B36E1700CE27AA /* Int+Date.swift in Sources */,
+				D007B66C24B5FFAB00CE27AA /* InfoCellPresenter.swift in Sources */,
+				D007B63B24B36E1700CE27AA /* Int+.swift in Sources */,
 				D007B5BD24A9FFCF00CE27AA /* SceneDelegate.swift in Sources */,
 				D007B5E124AA0A6100CE27AA /* TopViewController.swift in Sources */,
 			);

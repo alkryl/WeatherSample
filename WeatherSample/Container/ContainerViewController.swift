@@ -47,6 +47,9 @@ extension ContainerViewController: ContainerViewProtocol {
             } else if let view = $0 as? TodayViewProtocol {
                 view.presenter = configurator.todayPresenter
                 configurator.todayPresenter.view = view
+            } else if let view = $0 as? InfoViewProtocol {
+                view.presenter = configurator.infoPresenter
+                configurator.infoPresenter.view = view
             }
         }
     }
