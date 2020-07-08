@@ -8,9 +8,11 @@
 
 import UIKit
 
-class DaysViewController: UIViewController, DaysViewProtocol {
+class DaysViewController: UIViewController {
     
     var presenter: DaysPresenterProtocol!
+    
+    var displayedData = [DaysViewData]()
     
     //MARK: Outlets
     
@@ -22,8 +24,14 @@ class DaysViewController: UIViewController, DaysViewProtocol {
         super.viewDidLoad()
         tableView.register(DayCell.nib, forCellReuseIdentifier: DayCell.identifier)
     }
-    
-    //MARK: Methods
+}
+
+//MARK: DaysViewProtocol methods
+
+extension DaysViewController: DaysViewProtocol {
+    func updateDisplayedData(_ data: [DaysViewData]) {
+        self.displayedData = data
+    }
     
     func updateView() {
         tableView.reloadData()
@@ -33,7 +41,6 @@ class DaysViewController: UIViewController, DaysViewProtocol {
 //MARK: UITableViewDelegate
 
 extension DaysViewController: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return DayCell.height
     }
@@ -42,15 +49,13 @@ extension DaysViewController: UITableViewDelegate {
 //MARK: UITableViewDataSource
 
 extension DaysViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter == nil ? 0 : presenter.numberOfRows()
+        return displayedData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DayCell",
                                                  for: indexPath) as! DayCell
-        
         guard let presenter = presenter else { return cell }
         
         var cellPresenter = presenter.cellPresenter(for: indexPath.row)

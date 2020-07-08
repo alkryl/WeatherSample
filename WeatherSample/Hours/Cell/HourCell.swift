@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HourCell: UICollectionViewCell, HourCellProtocol {
+class HourCell: UICollectionViewCell {
     
     static var nib: UINib {
         return UINib(nibName: "HourCell", bundle: Bundle.main)
@@ -33,9 +33,11 @@ class HourCell: UICollectionViewCell, HourCellProtocol {
         iconView.image = nil
         degreeLabel.font = UIFont.systemFont(ofSize: 17)
     }
-    
-    //MARK: Methods
-    
+}
+
+//MARK: HourCellProtocol methods
+
+extension HourCell: HourCellProtocol {
     func setParameters(hour: String, temp: String, id: Int) {
         hourLabel.text = hour   //UTC time!
         iconView.image = UIImage().icon(code: id)
@@ -43,7 +45,7 @@ class HourCell: UICollectionViewCell, HourCellProtocol {
         view.isHidden = false
     }
     
-    func updateUI() {
+    func updateView() {
         hourLabel.font = UIFont.boldSystemFont(ofSize: 15)
         degreeLabel.font = UIFont.boldSystemFont(ofSize: 17)
     }

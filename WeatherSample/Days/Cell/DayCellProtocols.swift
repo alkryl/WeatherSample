@@ -16,5 +16,5 @@ protocol DayCellProtocol: AnyObject {
 protocol DayCellPresenterProtocol {
     var view: DayCellProtocol! { get set }
     init(model: DayCellModel)
-    func configureView(with model: DayCellModel)
+    func updateView()
 }

@@ -10,13 +10,13 @@ import UIKit
 
 protocol HoursViewProtocol: AnyObject {
     var presenter: HoursPresenterProtocol! { get set }
+    func updateDisplayedData(_ data: [HoursViewData])
     func updateView()
 }
 
 protocol HoursPresenterProtocol {
     var view: HoursViewProtocol! { get set }
     init(model: HoursModel)
-    func updateView()
-    func numberOfRows() -> Int
     func cellPresenter(for row: Int) -> HourCellPresenterProtocol
+    func updateView()
 }

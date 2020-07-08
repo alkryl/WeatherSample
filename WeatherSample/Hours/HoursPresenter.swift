@@ -8,8 +8,6 @@
 
 import Foundation
 
-private let kNumberOfRows = 26
-
 class HoursPresenter: HoursPresenterProtocol {
     
     private var model: HoursModel!
@@ -29,15 +27,12 @@ class HoursPresenter: HoursPresenterProtocol {
     //MARK: Methods
     
     func updateView() {
+        view.updateDisplayedData(HoursWeather(model).hoursForecast)
         view.updateView()
     }
     
-    func numberOfRows() -> Int {
-        return kNumberOfRows
-    }
-    
     func cellPresenter(for row: Int) -> HourCellPresenterProtocol {
-        let data = model.hoursWeather[row]
+        let data = HoursWeather(model).hoursForecast[row]
         return HourCellPresenter(model: HourCellModel(hour: data.hour,
                                                       temp: data.temp,
                                                       id: data.id))

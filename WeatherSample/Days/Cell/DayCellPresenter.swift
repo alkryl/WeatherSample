@@ -14,15 +14,19 @@ class DayCellPresenter: DayCellPresenterProtocol {
     
     unowned var view: DayCellProtocol! {
         didSet {
-            configureView(with: model)
+            updateView()
         }
     }
+    
+    //MARK: Initialization
     
     required init(model: DayCellModel) {
         self.model = model
     }
     
-    func configureView(with model: DayCellModel) {
+    //MARK: Methods
+    
+    func updateView() {
         view.setParameters(day: model.day,
                            id: model.id,
                            dayDegree: model.dayDegree,

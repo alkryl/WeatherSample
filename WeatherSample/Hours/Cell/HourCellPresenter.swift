@@ -14,7 +14,7 @@ class HourCellPresenter: HourCellPresenterProtocol {
     
     unowned var view: HourCellProtocol! {
         didSet {
-            configureView(with: model)
+            updateView()
         }
     }
     
@@ -26,12 +26,18 @@ class HourCellPresenter: HourCellPresenterProtocol {
     
     //MARK: Methods
     
-    func configureView(with model: HourCellModel) {
+    func updateView() {
         view.setParameters(hour: model.hour, temp: model.temp, id: model.id)
         
-        if model.hour == "Now" {
-            view.updateUI()
+        if needToUpdateView(model) {
+            view.updateView()
         }
+    }
+    
+    //MARK: Private
+    
+    private func needToUpdateView(_ model: HourCellModel) -> Bool {
+        return model.hour == "Now"
     }
 }
 

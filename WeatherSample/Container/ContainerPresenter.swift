@@ -11,9 +11,9 @@ import CoreLocation
 
 class ContainerPresenter: ContainerPresenterProtocol {
     
-    unowned var view: ContainerViewProtocol!
     private var configurator: ConfiguratorProtocol!
     private var service: LocationService!
+    unowned var view: ContainerViewProtocol!
     
     private var currentLocation: CLLocationCoordinate2D! {
         didSet {

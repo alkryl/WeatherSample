@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HoursViewController: UIViewController, HoursViewProtocol {
+class HoursViewController: UIViewController {
     
     var presenter: HoursPresenterProtocol!
     
@@ -18,6 +18,8 @@ class HoursViewController: UIViewController, HoursViewProtocol {
         layout.minimumLineSpacing = 0
         return layout
     }()
+    
+    var displayedData = [HoursViewData]()
     
     //MARK: Outlets
     
@@ -30,31 +32,26 @@ class HoursViewController: UIViewController, HoursViewProtocol {
         collectionView.register(HourCell.nib, forCellWithReuseIdentifier: HourCell.identifier)
         collectionView.collectionViewLayout = layout
     }
-    
-    //MARK: Methods
+}
+
+//MARK: HoursViewProtocol methods
+
+extension HoursViewController: HoursViewProtocol {
+    func updateDisplayedData(_ data: [HoursViewData]) {
+        self.displayedData = data
+    }
     
     func updateView() {
         collectionView.reloadData()
     }
 }
 
-//MARK: UICollectionViewDelegate
-
-extension HoursViewController: UICollectionViewDelegate {
-        
-    func collectionView(_ collectionView: UICollectionView,
-                        shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-}
-
 //MARK: UICollectionViewDataSource
 
 extension HoursViewController: UICollectionViewDataSource {
-
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return presenter == nil ? 0 : presenter.numberOfRows()
+        return displayedData.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -70,6 +67,8 @@ extension HoursViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
+//MARK: UICollectionViewDelegateFlowLayout
 
 extension HoursViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,

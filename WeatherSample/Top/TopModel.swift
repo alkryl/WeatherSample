@@ -8,7 +8,33 @@
 
 import Foundation
 
+//MARK: Model
+
 struct TopModel {
+    let city: String
+    let weather: String
+    let degree: Double
+    let sunrise: Int
+    let sunset: Int
+    let maxDegree: Double
+    let minDegree: Double
+    
+    //MARK: Initialization
+    
+    init(_ weather: WeatherJSON) {
+        self.city = weather.timezone
+        self.weather = weather.current.weather.first!.descr
+        self.degree  = weather.current.temp
+        self.sunrise = weather.current.sunrise
+        self.sunset  = weather.current.sunset
+        self.maxDegree = weather.daily.first!.temp.max
+        self.minDegree = weather.daily.first!.temp.min
+    }
+}
+
+//MARK: Displayed data
+
+struct TopViewData {
     let city: String
     let weather: String
     let degree: Int
@@ -19,14 +45,14 @@ struct TopModel {
     
     //MARK: Initialization
     
-    init(_ weather: WeatherJSON) {
-        self.city = weather.timezone.components(separatedBy: "/").last!
-        self.weather = weather.current.weather.first!.descr.capitalized
-        self.degree = Int(weather.current.temp)
+    init(_ topModel: TopModel) {
+        self.city = topModel.city.components(separatedBy: "/").last!
+        self.weather = topModel.weather.capitalized
+        self.degree = Int(topModel.degree)
         self.dayOfWeek = DateFormatter().day()
-        self.dayTime = Date().dayTime(sunrise: weather.current.sunrise,
-                                      sunset: weather.current.sunset)
-        self.maxDegree = Int(weather.daily.first!.temp.max)
-        self.minDegree = Int(weather.daily.first!.temp.min)
+        self.dayTime = Date().dayTime(sunrise: topModel.sunrise,
+                                      sunset: topModel.sunset)
+        self.maxDegree = Int(topModel.maxDegree)
+        self.minDegree = Int(topModel.minDegree)
     }
 }

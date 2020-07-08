@@ -10,13 +10,13 @@ import Foundation
 
 protocol DaysViewProtocol: AnyObject {
     var presenter: DaysPresenterProtocol! { get set }
+    func updateDisplayedData(_ data: [DaysViewData])
     func updateView()
 }
 
 protocol DaysPresenterProtocol {
     var view: DaysViewProtocol! { get set }
     init(model: DaysModel)
-    func updateView()
-    func numberOfRows() -> Int
     func cellPresenter(for row: Int) -> DayCellPresenterProtocol
+    func updateView()
 }

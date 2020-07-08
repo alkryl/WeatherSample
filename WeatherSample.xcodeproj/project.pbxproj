@@ -50,6 +50,9 @@
 		D007B65324B49BAE00CE27AA /* DayCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B65224B49BAE00CE27AA /* DayCellModel.swift */; };
 		D007B65524B49BC100CE27AA /* DayCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B65424B49BC100CE27AA /* DayCellPresenter.swift */; };
 		D007B65724B4A83000CE27AA /* UIImage+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B65624B4A83000CE27AA /* UIImage+Icon.swift */; };
+		D007B65A24B4ACF200CE27AA /* TodayProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B65924B4ACF200CE27AA /* TodayProtocols.swift */; };
+		D007B65C24B4AD3500CE27AA /* TodayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B65B24B4AD3500CE27AA /* TodayModel.swift */; };
+		D007B65E24B4AD4100CE27AA /* TodayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B65D24B4AD4100CE27AA /* TodayPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +101,9 @@
 		D007B65224B49BAE00CE27AA /* DayCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCellModel.swift; sourceTree = "<group>"; };
 		D007B65424B49BC100CE27AA /* DayCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCellPresenter.swift; sourceTree = "<group>"; };
 		D007B65624B4A83000CE27AA /* UIImage+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Icon.swift"; sourceTree = "<group>"; };
+		D007B65924B4ACF200CE27AA /* TodayProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayProtocols.swift; sourceTree = "<group>"; };
+		D007B65B24B4AD3500CE27AA /* TodayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayModel.swift; sourceTree = "<group>"; };
+		D007B65D24B4AD4100CE27AA /* TodayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,7 @@
 				D007B5FF24AE263D00CE27AA /* Top */,
 				D007B62E24B2187200CE27AA /* Hours */,
 				D007B64224B4812400CE27AA /* Days */,
+				D007B65824B4ACD700CE27AA /* Today */,
 				D007B5D524AA06E600CE27AA /* Views */,
 				D007B5D824AA074B00CE27AA /* Storyboards */,
 				D007B5D724AA071500CE27AA /* Other */,
@@ -170,7 +177,6 @@
 		D007B5D524AA06E600CE27AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D007B5E724ADD75500CE27AA /* TodayViewController.swift */,
 				D007B5E924ADD82F00CE27AA /* InfoViewController.swift */,
 				D007B5EB24ADD8F600CE27AA /* BottomViewController.swift */,
 			);
@@ -275,6 +281,17 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		D007B65824B4ACD700CE27AA /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				D007B65924B4ACF200CE27AA /* TodayProtocols.swift */,
+				D007B65B24B4AD3500CE27AA /* TodayModel.swift */,
+				D007B65D24B4AD4100CE27AA /* TodayPresenter.swift */,
+				D007B5E724ADD75500CE27AA /* TodayViewController.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -356,6 +373,7 @@
 				D007B64624B4814F00CE27AA /* DaysModel.swift in Sources */,
 				D007B5D224AA06A300CE27AA /* LocationService.swift in Sources */,
 				D007B64424B4814200CE27AA /* DaysProtocols.swift in Sources */,
+				D007B65E24B4AD4100CE27AA /* TodayPresenter.swift in Sources */,
 				D007B62B24AF707200CE27AA /* DateFormatter+Day.swift in Sources */,
 				D007B63D24B474DB00CE27AA /* HourCellModel.swift in Sources */,
 				D007B64E24B49B8900CE27AA /* DayCell.swift in Sources */,
@@ -375,10 +393,12 @@
 				D007B5FE24AE0C4B00CE27AA /* Data+Content.swift in Sources */,
 				D007B64824B4815900CE27AA /* DaysPresenter.swift in Sources */,
 				D007B5F424ADE4EE00CE27AA /* ContainerProtocols.swift in Sources */,
+				D007B65A24B4ACF200CE27AA /* TodayProtocols.swift in Sources */,
 				D007B65524B49BC100CE27AA /* DayCellPresenter.swift in Sources */,
 				D007B62D24AF73C600CE27AA /* Date+DayTime.swift in Sources */,
 				D007B5F624ADE5FE00CE27AA /* Weather.swift in Sources */,
 				D007B65124B49BA000CE27AA /* DayCellProtocols.swift in Sources */,
+				D007B65C24B4AD3500CE27AA /* TodayModel.swift in Sources */,
 				D007B5EC24ADD8F600CE27AA /* BottomViewController.swift in Sources */,
 				D007B5F024ADE37900CE27AA /* ContainerPresenter.swift in Sources */,
 				D007B65724B4A83000CE27AA /* UIImage+Icon.swift in Sources */,

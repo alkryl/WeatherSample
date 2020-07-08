@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopViewController: UIViewController, TopViewProtocol {
+class TopViewController: UIViewController {
     
     var presenter: TopPresenterProtocol!
         
@@ -21,9 +21,11 @@ class TopViewController: UIViewController, TopViewProtocol {
     @IBOutlet weak var todayLabel: UILabel!
     @IBOutlet weak var maxDegreeLabel: UILabel!
     @IBOutlet weak var minDegreeLabel: UILabel!
-    
-    //MARK: Methods
-    
+}
+
+//MARK: TopViewProtocol methods
+
+extension TopViewController: TopViewProtocol {
     func setParameters(city: String, weather: String, degree: Int, day: String,
                        dayTime: String, maxDegree: Int, minDegree: Int) {
         cityLabel.text = city
@@ -33,6 +35,9 @@ class TopViewController: UIViewController, TopViewProtocol {
         todayLabel.text = dayTime
         maxDegreeLabel.text = "\(maxDegree)"
         minDegreeLabel.text = "\(minDegree)"
+    }
+    
+    func showView() {
         view.isHidden = false
     }
 }

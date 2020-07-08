@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class ContainerViewController: UITableViewController, ContainerViewProtocol {
+class ContainerViewController: UITableViewController {
     
     private var configurator = Configurator()
     var presenter: ContainerPresenterProtocol!
@@ -21,9 +21,11 @@ class ContainerViewController: UITableViewController, ContainerViewProtocol {
         tableView.backgroundView = UIImageView(image: UIImage(named: "background"))
         presenter = configurator.containerPresenter(self)
     }
-    
-    //MARK: Methods
-    
+}
+
+//MARK: ContainerViewProtocol methods
+
+extension ContainerViewController: ContainerViewProtocol {
     func showError(message: String) {
         let alert = UIAlertController(title: "Error occured", message: message,
                                       preferredStyle: .alert)
@@ -42,8 +44,11 @@ class ContainerViewController: UITableViewController, ContainerViewProtocol {
             } else if let view = $0 as? DaysViewProtocol {
                 view.presenter = configurator.daysPresenter
                 configurator.daysPresenter.view = view
+            } else if let view = $0 as? TodayViewProtocol {
+                view.presenter = configurator.todayPresenter
+                configurator.todayPresenter.view = view
             }
-        }        
+        }
     }
 }
 

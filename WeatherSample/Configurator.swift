@@ -23,17 +23,19 @@ class Configurator: ConfiguratorProtocol {
     var topPresenter: TopPresenterProtocol!
     var hoursPresenter: HoursPresenterProtocol!
     var daysPresenter: DaysPresenterProtocol!
+    var todayPresenter: TodayPresenterProtocol!
     
     //MARK: Methods
         
     func containerPresenter(_ container: ContainerViewProtocol) -> ContainerPresenterProtocol {
-        return ContainerPresenter(view: container, configurator: self) as ContainerPresenterProtocol
+        return ContainerPresenter(view: container, configurator: self)
     }
     
     func configureChildPresenters(with weather: WeatherJSON, completion: () -> ()) {
         topPresenter = TopPresenter(model: TopModel(weather))
         hoursPresenter = HoursPresenter(model: HoursModel(weather))
         daysPresenter = DaysPresenter(model: DaysModel(weather))
+        todayPresenter = TodayPresenter(model: TodayModel(weather))
         
         completion()
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DayCell: UITableViewCell, DayCellProtocol {
+class DayCell: UITableViewCell {
     
     static var nib: UINib {
         return UINib(nibName: "DayCell", bundle: Bundle.main)
@@ -24,9 +24,11 @@ class DayCell: UITableViewCell, DayCellProtocol {
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var dayDegreeLabel: UILabel!
     @IBOutlet weak var nightDegreeLabel: UILabel!
-    
-    //MARK: Methods
-    
+}
+
+//MARK: DayCellProtocol methods
+
+extension DayCell: DayCellProtocol {
     func setParameters(day: String, id: Int, dayDegree: String, nightDegree: String) {
         dayLabel.text = day
         iconView.image = UIImage().icon(code: id)

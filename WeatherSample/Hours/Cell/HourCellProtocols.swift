@@ -11,11 +11,11 @@ import Foundation
 protocol HourCellProtocol: AnyObject {
     var presenter: HourCellPresenterProtocol! { get set }
     func setParameters(hour: String, temp: String, id: Int)
-    func updateUI()
+    func updateView()
 }
 
 protocol HourCellPresenterProtocol {
     var view: HourCellProtocol! { get set }
     init(model: HourCellModel)
-    func configureView(with model: HourCellModel)
+    func updateView()
 }

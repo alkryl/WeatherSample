@@ -55,7 +55,9 @@ struct Daily: Decodable {
     }
 }
 
-extension Current {
+//MARK: Extensions
+
+private extension Current {
     enum CodingKeys: String, CodingKey {
         case sunrise, sunset, temp, pressure, humidity, uvi, visibility, weather
         case windDirection = "wind_deg"

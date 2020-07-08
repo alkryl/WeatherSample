@@ -29,15 +29,12 @@ class DaysPresenter: DaysPresenterProtocol {
     //MARK: Methods
     
     func updateView() {
+        view.updateDisplayedData(DaysWeather(model).daysForecast)
         view.updateView()
     }
     
-    func numberOfRows() -> Int {
-        return kNumberOfRows
-    }
-    
     func cellPresenter(for row: Int) -> DayCellPresenterProtocol {
-        let data = model.daysWeather[row]
+        let data = DaysWeather(model).daysForecast[row]
         return DayCellPresenter(model: DayCellModel(day: data.day,
                                                     id: data.id,
                                                     dayDegree: data.dayDegree,

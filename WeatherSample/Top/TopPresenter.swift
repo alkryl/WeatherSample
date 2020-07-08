@@ -14,7 +14,7 @@ class TopPresenter: TopPresenterProtocol {
     
     unowned var view: TopViewProtocol! {
         didSet {
-            configureView(with: model)
+            updateView()
         }
     }
         
@@ -26,13 +26,15 @@ class TopPresenter: TopPresenterProtocol {
     
     //MARK: Methods
     
-    func configureView(with model: TopModel) {
-        view.setParameters(city: model.city,
-                           weather: model.weather,
-                           degree: model.degree,
-                           day: model.dayOfWeek,
-                           dayTime: model.dayTime,
-                           maxDegree: model.maxDegree,
-                           minDegree: model.minDegree)
+    func updateView() {
+        let topViewData = TopViewData(model)
+        view.setParameters(city: topViewData.city,
+                           weather: topViewData.weather,
+                           degree: topViewData.degree,
+                           day: topViewData.dayOfWeek,
+                           dayTime: topViewData.dayTime,
+                           maxDegree: topViewData.maxDegree,
+                           minDegree: topViewData.minDegree)
+        view.showView()
     }
 }
