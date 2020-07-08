@@ -10,7 +10,7 @@ import Foundation
 
 class TopPresenter: TopPresenterProtocol {
     
-    private var model: TopModel!
+    private var displayedData: TopViewData!
     
     unowned var view: TopViewProtocol! {
         didSet {
@@ -21,20 +21,19 @@ class TopPresenter: TopPresenterProtocol {
     //MARK: Initialization
     
     required init(model: TopModel) {
-        self.model = model
+        displayedData = TopViewData(model)
     }
     
     //MARK: Methods
     
     func updateView() {
-        let topViewData = TopViewData(model)
-        view.setParameters(city: topViewData.city,
-                           weather: topViewData.weather,
-                           degree: topViewData.degree,
-                           day: topViewData.dayOfWeek,
-                           dayTime: topViewData.dayTime,
-                           maxDegree: topViewData.maxDegree,
-                           minDegree: topViewData.minDegree)
+        view.setParameters(city: displayedData.city,
+                           weather: displayedData.weather,
+                           degree: displayedData.degree,
+                           day: displayedData.dayOfWeek,
+                           dayTime: displayedData.dayTime,
+                           maxDegree: displayedData.maxDegree,
+                           minDegree: displayedData.minDegree)
         view.showView()
     }
 }

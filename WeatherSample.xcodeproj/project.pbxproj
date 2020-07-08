@@ -146,7 +146,8 @@
 				D007B62E24B2187200CE27AA /* Hours */,
 				D007B64224B4812400CE27AA /* Days */,
 				D007B65824B4ACD700CE27AA /* Today */,
-				D007B5D524AA06E600CE27AA /* Views */,
+				D007B65F24B5E02800CE27AA /* Info */,
+				D007B5D524AA06E600CE27AA /* Bottom */,
 				D007B5D824AA074B00CE27AA /* Storyboards */,
 				D007B5D724AA071500CE27AA /* Other */,
 			);
@@ -174,13 +175,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		D007B5D524AA06E600CE27AA /* Views */ = {
+		D007B5D524AA06E600CE27AA /* Bottom */ = {
 			isa = PBXGroup;
 			children = (
-				D007B5E924ADD82F00CE27AA /* InfoViewController.swift */,
 				D007B5EB24ADD8F600CE27AA /* BottomViewController.swift */,
 			);
-			path = Views;
+			path = Bottom;
 			sourceTree = "<group>";
 		};
 		D007B5D724AA071500CE27AA /* Other */ = {
@@ -290,6 +290,14 @@
 				D007B5E724ADD75500CE27AA /* TodayViewController.swift */,
 			);
 			path = Today;
+			sourceTree = "<group>";
+		};
+		D007B65F24B5E02800CE27AA /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				D007B5E924ADD82F00CE27AA /* InfoViewController.swift */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

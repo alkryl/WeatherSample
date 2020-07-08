@@ -10,7 +10,7 @@ import Foundation
 
 class TodayPresenter: TodayPresenterProtocol {
     
-    private var model: TodayModel!
+    var displayedData: TodayViewData!
     
     unowned var view: TodayViewProtocol! {
         didSet {
@@ -21,11 +21,11 @@ class TodayPresenter: TodayPresenterProtocol {
     //MARK: Initialization
     
     required init(model: TodayModel) {
-        self.model = model
+        displayedData = TodayViewData(model)
     }
     
     func updateView() {
-        view.setWeatherDescription(TodayViewData(model).weatherDescription)
+        view.setWeatherDescription(displayedData.weatherDescription)
         view.showView()
     }
 }

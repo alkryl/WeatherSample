@@ -10,7 +10,7 @@ import Foundation
 
 class HoursPresenter: HoursPresenterProtocol {
     
-    private var model: HoursModel!
+    private var displayedData: [HoursViewData]!
     
     unowned var view: HoursViewProtocol! {
         didSet {
@@ -21,18 +21,18 @@ class HoursPresenter: HoursPresenterProtocol {
     //MARK: Initialization
     
     required init(model: HoursModel) {
-        self.model = model
+        displayedData = HoursWeather(model).hoursForecast
     }
         
     //MARK: Methods
     
     func updateView() {
-        view.updateDisplayedData(HoursWeather(model).hoursForecast)
+        view.updateDisplayedData(displayedData)
         view.updateView()
     }
     
     func cellPresenter(for row: Int) -> HourCellPresenterProtocol {
-        let data = HoursWeather(model).hoursForecast[row]
+        let data = displayedData[row]
         return HourCellPresenter(model: HourCellModel(hour: data.hour,
                                                       temp: data.temp,
                                                       id: data.id))

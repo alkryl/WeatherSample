@@ -12,7 +12,7 @@ private let kNumberOfRows = 7
 
 class DaysPresenter: DaysPresenterProtocol {
     
-    private var model: DaysModel!
+    private var displayedData: [DaysViewData]!
     
     unowned var view: DaysViewProtocol! {
         didSet {
@@ -23,18 +23,18 @@ class DaysPresenter: DaysPresenterProtocol {
     //MARK: Initialization
     
     required init(model: DaysModel) {
-        self.model = model
+        displayedData = DaysWeather(model).daysForecast
     }
     
     //MARK: Methods
     
     func updateView() {
-        view.updateDisplayedData(DaysWeather(model).daysForecast)
+        view.updateDisplayedData(displayedData)
         view.updateView()
     }
     
     func cellPresenter(for row: Int) -> DayCellPresenterProtocol {
-        let data = DaysWeather(model).daysForecast[row]
+        let data = displayedData[row]
         return DayCellPresenter(model: DayCellModel(day: data.day,
                                                     id: data.id,
                                                     dayDegree: data.dayDegree,
