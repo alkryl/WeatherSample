@@ -10,9 +10,7 @@ import Foundation
 
 extension Date {
     func component(_ component: Calendar.Component) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        let strDate = formatter.string(from: self)
+        let strDate = DateFormatter().stringTime(from: self)
         let params = strDate.components(separatedBy: ":")
         let hour = params.first!
         let minute = params.last!

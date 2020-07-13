@@ -12,4 +12,9 @@ extension DateFormatter {
     func day(from date: Date = Date()) -> String {
         return self.weekdaySymbols[Calendar.current.component(.weekday, from: date) - 1]
     }
+    
+    func stringTime(from date: Date) -> String {
+        dateFormat = "HH:mm"
+        return string(from: date)
+    }
 }
