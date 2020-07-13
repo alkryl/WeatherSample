@@ -10,6 +10,9 @@ import UIKit
 
 class TodayViewController: UIViewController {
     
+    static var nib: TodayViewController {
+        return UIStoryboard().main.instantiateViewController(identifier: "TodayViewController")
+    }
     var presenter: TodayPresenterProtocol!
     
     //MARK: Outlets

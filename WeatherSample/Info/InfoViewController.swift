@@ -10,6 +10,9 @@ import UIKit
 
 class InfoViewController: UIViewController {
     
+    static var nib: InfoViewController {
+        return UIStoryboard().main.instantiateViewController(identifier: "InfoViewController")
+    }
     var presenter: InfoPresenterProtocol!
     
     var displayedData = InfoData()

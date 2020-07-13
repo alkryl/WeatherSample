@@ -10,6 +10,9 @@ import UIKit
 
 class DaysViewController: UIViewController {
     
+    static var nib: DaysViewController {
+        return UIStoryboard().main.instantiateViewController(identifier: "DaysViewController")
+    }
     var presenter: DaysPresenterProtocol!
     
     var displayedData = [DaysViewData]()

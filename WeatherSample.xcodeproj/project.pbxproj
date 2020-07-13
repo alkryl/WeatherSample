@@ -66,6 +66,8 @@
 		D007B67F24B8A95A00CE27AA /* GithubPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B67E24B8A95A00CE27AA /* GithubPresenter.swift */; };
 		D007B68124B8AB4800CE27AA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68024B8AB4800CE27AA /* API.swift */; };
 		D007B68424B8ACE600CE27AA /* GithubProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68324B8ACE600CE27AA /* GithubProtocols.swift */; };
+		D007B68924BC679700CE27AA /* ContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68824BC679700CE27AA /* ContainerCell.swift */; };
+		D007B68B24BC6A9900CE27AA /* UIStoryboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68A24BC6A9900CE27AA /* UIStoryboard+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +132,8 @@
 		D007B67E24B8A95A00CE27AA /* GithubPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubPresenter.swift; sourceTree = "<group>"; };
 		D007B68024B8AB4800CE27AA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D007B68324B8ACE600CE27AA /* GithubProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubProtocols.swift; sourceTree = "<group>"; };
+		D007B68824BC679700CE27AA /* ContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCell.swift; sourceTree = "<group>"; };
+		D007B68A24BC6A9900CE27AA /* UIStoryboard+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +203,7 @@
 				D007B62C24AF73C600CE27AA /* Date+DayTime.swift */,
 				D007B63A24B36E1600CE27AA /* Int+.swift */,
 				D007B65624B4A83000CE27AA /* UIImage+Icon.swift */,
+				D007B68A24BC6A9900CE27AA /* UIStoryboard+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 				D007B5F524ADE5FE00CE27AA /* Weather.swift */,
 				D007B5EF24ADE37900CE27AA /* ContainerPresenter.swift */,
 				D007B5DE24AA094800CE27AA /* ContainerViewController.swift */,
+				D007B68524BC66BF00CE27AA /* Cell */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -348,6 +354,14 @@
 			path = Github;
 			sourceTree = "<group>";
 		};
+		D007B68524BC66BF00CE27AA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D007B68824BC679700CE27AA /* ContainerCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -422,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D007B68B24BC6A9900CE27AA /* UIStoryboard+.swift in Sources */,
 				D007B63424B2193400CE27AA /* HoursPresenter.swift in Sources */,
 				D007B5E324ADD42000CE27AA /* HoursViewController.swift in Sources */,
 				D007B60524AE26E200CE27AA /* TopModel.swift in Sources */,
@@ -444,6 +459,7 @@
 				D007B5FC24ADFB4F00CE27AA /* WeatherService.swift in Sources */,
 				D007B66824B5FF9100CE27AA /* InfoCellProtocols.swift in Sources */,
 				D007B63224B218DA00CE27AA /* HoursModel.swift in Sources */,
+				D007B68924BC679700CE27AA /* ContainerCell.swift in Sources */,
 				D007B67F24B8A95A00CE27AA /* GithubPresenter.swift in Sources */,
 				D007B60324AE26D000CE27AA /* TopProtocols.swift in Sources */,
 				D007B64124B4755900CE27AA /* HourCellProtocols.swift in Sources */,

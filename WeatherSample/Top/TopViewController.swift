@@ -9,7 +9,10 @@
 import UIKit
 
 class TopViewController: UIViewController {
-    
+
+    static var nib: TopViewController {
+        return UIStoryboard().main.instantiateViewController(identifier: "TopViewController")
+    }
     var presenter: TopPresenterProtocol!
         
     //MARK: Outlets

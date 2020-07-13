@@ -12,7 +12,7 @@ import CoreLocation
 class ContainerViewController: UITableViewController {
     
     private var configurator = Configurator()
-    var presenter: ContainerPresenterProtocol!    
+    var presenter: ContainerPresenterProtocol!
         
     //MARK: Lifecycle
 
@@ -35,6 +35,48 @@ class ContainerViewController: UITableViewController {
     }
 }
 
+//MARK: UITableViewDelegate
+
+extension ContainerViewController {
+    override func tableView(_ tableView: UITableView,
+                            heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return ContainerCell.height(for: indexPath.row)
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return ContainerCell.shouldHighlight(indexPath.row)
+    }
+}
+
+//MARK: UITableViewDataSource
+
+extension ContainerViewController {
+    override func tableView(_ tableView: UITableView,
+                            numberOfRowsInSection section: Int) -> Int {
+        return Content.allCases.count
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ContainerCell.identifier, for: indexPath) as! ContainerCell
+        
+        var vc: UIViewController!
+                
+        switch indexPath.row {
+        case Content.top:   vc = TopViewController.nib
+        case Content.hours: vc = HoursViewController.nib
+        case Content.days:  vc = DaysViewController.nib
+        case Content.today: vc = TodayViewController.nib
+        case Content.info:  vc = InfoViewController.nib
+        default: return cell
+        }
+        cell.configureView(child: vc, parent: self, row: indexPath.row)
+        
+        return cell
+    }
+}
+
 //MARK: ContainerViewProtocol methods
 
 extension ContainerViewController: ContainerViewProtocol {
@@ -47,22 +89,7 @@ extension ContainerViewController: ContainerViewProtocol {
     
     func setChildPresenters() {
         children.forEach {
-            if let view = $0 as? TopViewProtocol {
-                view.presenter = configurator.topPresenter
-                configurator.topPresenter.view = view
-            } else if let view = $0 as? HoursViewProtocol {
-                view.presenter = configurator.hoursPresenter
-                configurator.hoursPresenter.view = view
-            } else if let view = $0 as? DaysViewProtocol {
-                view.presenter = configurator.daysPresenter
-                configurator.daysPresenter.view = view
-            } else if let view = $0 as? TodayViewProtocol {
-                view.presenter = configurator.todayPresenter
-                configurator.todayPresenter.view = view
-            } else if let view = $0 as? InfoViewProtocol {
-                view.presenter = configurator.infoPresenter
-                configurator.infoPresenter.view = view
-            }
+            configurator.setChildPresenter(for: $0)
         }
     }
     

@@ -10,6 +10,9 @@ import UIKit
 
 class HoursViewController: UIViewController {
     
+    static var nib: HoursViewController {
+        return UIStoryboard().main.instantiateViewController(identifier: "HoursViewController")
+    }
     var presenter: HoursPresenterProtocol!
     
     private let layout: UICollectionViewFlowLayout = {
