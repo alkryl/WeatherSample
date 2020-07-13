@@ -11,6 +11,9 @@ import Foundation
 protocol ConfiguratorProtocol {
     var topPresenter: TopPresenterProtocol! { get set }
     var hoursPresenter: HoursPresenterProtocol! { get set }
+    var daysPresenter: DaysPresenterProtocol! { get set }
+    var todayPresenter: TodayPresenterProtocol! { get set }
+    var infoPresenter: InfoPresenterProtocol! { get set }
 
     func containerPresenter(_ container: ContainerViewProtocol) -> ContainerPresenterProtocol
     func configureChildPresenters(with weather: WeatherJSON, completion: () -> ())
@@ -38,7 +41,6 @@ class Configurator: ConfiguratorProtocol {
         daysPresenter = DaysPresenter(model: DaysModel(weather))
         todayPresenter = TodayPresenter(model: TodayModel(weather))
         infoPresenter = InfoPresenter(model: InfoModel(weather))
-        
         completion()
     }
 }

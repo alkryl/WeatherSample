@@ -9,8 +9,14 @@
 import Foundation
 
 extension Date {
-    func component(_ component: Calendar.Component) -> Int {
-        return Calendar.current.component(component, from: self)
+    func component(_ component: Calendar.Component) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        let strDate = formatter.string(from: self)
+        let params = strDate.components(separatedBy: ":")
+        let hour = params.first!
+        let minute = params.last!
+        return component == .hour ? hour : minute
     }
     
     func exactTime() -> String {

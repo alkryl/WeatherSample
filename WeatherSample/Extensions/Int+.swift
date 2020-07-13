@@ -17,14 +17,14 @@ extension Int {
 extension Int {
     func windDirection() -> String {
         switch self {
-        case 337...360, 0...22: return "N"
-        case 23...67:  return "NE"
-        case 68...112:  return "E"
-        case 113...157: return "SE"
-        case 158...202: return "S"
-        case 203...247: return "SW"
-        case 248...292: return "W"
-        case 293...336: return "NW"
+        case 337...360, 0...22: return "n"
+        case 23...67:  return "ne"
+        case 68...112:  return "e"
+        case 113...157: return "se"
+        case 158...202: return "s"
+        case 203...247: return "sw"
+        case 248...292: return "w"
+        case 293...336: return "nw"
         default: return ""
         }
     }
