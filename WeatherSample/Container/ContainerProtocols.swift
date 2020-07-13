@@ -13,6 +13,7 @@ protocol ContainerViewProtocol: AnyObject {
     var presenter: ContainerPresenterProtocol! { get set }
     func showError(message: String)
     func setChildPresenters()
+    func showGithubPage(view: GithubViewProtocol)
 }
 
 protocol ContainerPresenterProtocol {
@@ -20,4 +21,5 @@ protocol ContainerPresenterProtocol {
     init(view: ContainerViewProtocol, configurator: ConfiguratorProtocol)
     func didUpdateLocation(_ location: CLLocationCoordinate2D?)
     func didFailToUpdateLocation()
+    func setPresenter(for view: GithubViewProtocol)
 }

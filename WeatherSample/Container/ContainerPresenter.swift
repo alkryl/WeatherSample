@@ -74,4 +74,13 @@ class ContainerPresenter: ContainerPresenterProtocol {
             self.view.setChildPresenters()
         }
     }
+    
+    //MARK: Web
+    
+    func setPresenter(for view: GithubViewProtocol) {
+        let gitPresenter = GithubPresenter(url: API.githubUrl())
+        self.view.showGithubPage(view: view)
+        view.presenter = gitPresenter
+        gitPresenter.view = view
+    }
 }

@@ -19,7 +19,6 @@
 		D007B5E524ADD6CD00CE27AA /* DaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B5E424ADD6CD00CE27AA /* DaysViewController.swift */; };
 		D007B5E824ADD75500CE27AA /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B5E724ADD75500CE27AA /* TodayViewController.swift */; };
 		D007B5EA24ADD82F00CE27AA /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B5E924ADD82F00CE27AA /* InfoViewController.swift */; };
-		D007B5EC24ADD8F600CE27AA /* BottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B5EB24ADD8F600CE27AA /* BottomViewController.swift */; };
 		D007B5F024ADE37900CE27AA /* ContainerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B5EF24ADE37900CE27AA /* ContainerPresenter.swift */; };
 		D007B5F424ADE4EE00CE27AA /* ContainerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B5F324ADE4EE00CE27AA /* ContainerProtocols.swift */; };
 		D007B5F624ADE5FE00CE27AA /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B5F524ADE5FE00CE27AA /* Weather.swift */; };
@@ -61,6 +60,12 @@
 		D007B66C24B5FFAB00CE27AA /* InfoCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66B24B5FFAB00CE27AA /* InfoCellPresenter.swift */; };
 		D007B66F24B5FFB800CE27AA /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66D24B5FFB800CE27AA /* InfoCell.swift */; };
 		D007B67024B5FFB800CE27AA /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D007B66E24B5FFB800CE27AA /* InfoCell.xib */; };
+		D007B67224B73F8A00CE27AA /* CustomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B67124B73F8A00CE27AA /* CustomToolbar.swift */; };
+		D007B67424B88AD500CE27AA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D007B67324B88AD500CE27AA /* WebKit.framework */; };
+		D007B67D24B89C8F00CE27AA /* GithubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B67C24B89C8F00CE27AA /* GithubViewController.swift */; };
+		D007B67F24B8A95A00CE27AA /* GithubPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B67E24B8A95A00CE27AA /* GithubPresenter.swift */; };
+		D007B68124B8AB4800CE27AA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68024B8AB4800CE27AA /* API.swift */; };
+		D007B68424B8ACE600CE27AA /* GithubProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68324B8ACE600CE27AA /* GithubProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +83,6 @@
 		D007B5E424ADD6CD00CE27AA /* DaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysViewController.swift; sourceTree = "<group>"; };
 		D007B5E724ADD75500CE27AA /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		D007B5E924ADD82F00CE27AA /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		D007B5EB24ADD8F600CE27AA /* BottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomViewController.swift; sourceTree = "<group>"; };
 		D007B5EF24ADE37900CE27AA /* ContainerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerPresenter.swift; sourceTree = "<group>"; };
 		D007B5F324ADE4EE00CE27AA /* ContainerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerProtocols.swift; sourceTree = "<group>"; };
 		D007B5F524ADE5FE00CE27AA /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -120,6 +124,12 @@
 		D007B66B24B5FFAB00CE27AA /* InfoCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellPresenter.swift; sourceTree = "<group>"; };
 		D007B66D24B5FFB800CE27AA /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		D007B66E24B5FFB800CE27AA /* InfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCell.xib; sourceTree = "<group>"; };
+		D007B67124B73F8A00CE27AA /* CustomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolbar.swift; sourceTree = "<group>"; };
+		D007B67324B88AD500CE27AA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D007B67C24B89C8F00CE27AA /* GithubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewController.swift; sourceTree = "<group>"; };
+		D007B67E24B8A95A00CE27AA /* GithubPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubPresenter.swift; sourceTree = "<group>"; };
+		D007B68024B8AB4800CE27AA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D007B68324B8ACE600CE27AA /* GithubProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D007B67424B88AD500CE27AA /* WebKit.framework in Frameworks */,
 				D007B5FA24ADE87200CE27AA /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,8 +174,8 @@
 				D007B64224B4812400CE27AA /* Days */,
 				D007B65824B4ACD700CE27AA /* Today */,
 				D007B65F24B5E02800CE27AA /* Info */,
-				D007B5D524AA06E600CE27AA /* Bottom */,
-				D007B5D824AA074B00CE27AA /* Storyboards */,
+				D007B68224B8ABDA00CE27AA /* Github */,
+				D007B5D824AA074B00CE27AA /* Views */,
 				D007B5D724AA071500CE27AA /* Other */,
 			);
 			path = WeatherSample;
@@ -173,6 +184,7 @@
 		D007B5D024AA069100CE27AA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D007B68024B8AB4800CE27AA /* API.swift */,
 				D007B5D124AA06A300CE27AA /* LocationService.swift */,
 				D007B5FB24ADFB4F00CE27AA /* WeatherService.swift */,
 			);
@@ -191,14 +203,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		D007B5D524AA06E600CE27AA /* Bottom */ = {
-			isa = PBXGroup;
-			children = (
-				D007B5EB24ADD8F600CE27AA /* BottomViewController.swift */,
-			);
-			path = Bottom;
-			sourceTree = "<group>";
-		};
 		D007B5D724AA071500CE27AA /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,13 +214,14 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		D007B5D824AA074B00CE27AA /* Storyboards */ = {
+		D007B5D824AA074B00CE27AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				D007B5C024A9FFCF00CE27AA /* Main.storyboard */,
 				D007B5C524A9FFD100CE27AA /* LaunchScreen.storyboard */,
+				D007B67124B73F8A00CE27AA /* CustomToolbar.swift */,
 			);
-			path = Storyboards;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D007B5F724ADE74100CE27AA /* Container */ = {
@@ -233,6 +238,7 @@
 		D007B5F824ADE87200CE27AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D007B67324B88AD500CE27AA /* WebKit.framework */,
 				D007B5F924ADE87200CE27AA /* CoreLocation.framework */,
 			);
 			name = Frameworks;
@@ -332,6 +338,16 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		D007B68224B8ABDA00CE27AA /* Github */ = {
+			isa = PBXGroup;
+			children = (
+				D007B68324B8ACE600CE27AA /* GithubProtocols.swift */,
+				D007B67E24B8A95A00CE27AA /* GithubPresenter.swift */,
+				D007B67C24B89C8F00CE27AA /* GithubViewController.swift */,
+			);
+			path = Github;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -415,6 +431,7 @@
 				D007B5D224AA06A300CE27AA /* LocationService.swift in Sources */,
 				D007B64424B4814200CE27AA /* DaysProtocols.swift in Sources */,
 				D007B65E24B4AD4100CE27AA /* TodayPresenter.swift in Sources */,
+				D007B68424B8ACE600CE27AA /* GithubProtocols.swift in Sources */,
 				D007B62B24AF707200CE27AA /* DateFormatter+Day.swift in Sources */,
 				D007B63D24B474DB00CE27AA /* HourCellModel.swift in Sources */,
 				D007B66324B5ED1000CE27AA /* InfoModel.swift in Sources */,
@@ -427,6 +444,7 @@
 				D007B5FC24ADFB4F00CE27AA /* WeatherService.swift in Sources */,
 				D007B66824B5FF9100CE27AA /* InfoCellProtocols.swift in Sources */,
 				D007B63224B218DA00CE27AA /* HoursModel.swift in Sources */,
+				D007B67F24B8A95A00CE27AA /* GithubPresenter.swift in Sources */,
 				D007B60324AE26D000CE27AA /* TopProtocols.swift in Sources */,
 				D007B64124B4755900CE27AA /* HourCellProtocols.swift in Sources */,
 				D007B5DF24AA094800CE27AA /* ContainerViewController.swift in Sources */,
@@ -434,6 +452,7 @@
 				D007B63824B2239400CE27AA /* HourCell.swift in Sources */,
 				D007B63024B218AD00CE27AA /* HoursProtocols.swift in Sources */,
 				D007B66F24B5FFB800CE27AA /* InfoCell.swift in Sources */,
+				D007B67224B73F8A00CE27AA /* CustomToolbar.swift in Sources */,
 				D007B5FE24AE0C4B00CE27AA /* Data+Content.swift in Sources */,
 				D007B66124B5ED0400CE27AA /* InfoProtocols.swift in Sources */,
 				D007B64824B4815900CE27AA /* DaysPresenter.swift in Sources */,
@@ -444,10 +463,11 @@
 				D007B62D24AF73C600CE27AA /* Date+DayTime.swift in Sources */,
 				D007B5F624ADE5FE00CE27AA /* Weather.swift in Sources */,
 				D007B66A24B5FF9D00CE27AA /* InfoCellModel.swift in Sources */,
+				D007B67D24B89C8F00CE27AA /* GithubViewController.swift in Sources */,
 				D007B65124B49BA000CE27AA /* DayCellProtocols.swift in Sources */,
 				D007B65C24B4AD3500CE27AA /* TodayModel.swift in Sources */,
-				D007B5EC24ADD8F600CE27AA /* BottomViewController.swift in Sources */,
 				D007B5F024ADE37900CE27AA /* ContainerPresenter.swift in Sources */,
+				D007B68124B8AB4800CE27AA /* API.swift in Sources */,
 				D007B65724B4A83000CE27AA /* UIImage+Icon.swift in Sources */,
 				D007B66C24B5FFAB00CE27AA /* InfoCellPresenter.swift in Sources */,
 				D007B63B24B36E1700CE27AA /* Int+.swift in Sources */,

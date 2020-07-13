@@ -12,14 +12,26 @@ import CoreLocation
 class ContainerViewController: UITableViewController {
     
     private var configurator = Configurator()
-    var presenter: ContainerPresenterProtocol!
+    var presenter: ContainerPresenterProtocol!    
         
     //MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundView = UIImageView(image: UIImage(named: "background"))
+        createUI()
         presenter = configurator.containerPresenter(self)
+    }
+    
+    //MARK: Methods
+    
+    private func createUI() {
+        tableView.backgroundView = UIImageView(image: UIImage(named: "background"))
+        let toolbar = navigationController?.toolbar as! CustomToolbar
+        toolbar.githubButton.addTarget(self, action: #selector(githubButtonOnTap), for: .touchUpInside)
+    }
+    
+    @objc private func githubButtonOnTap() {
+        presenter.setPresenter(for: GithubViewController())
     }
 }
 
@@ -52,6 +64,10 @@ extension ContainerViewController: ContainerViewProtocol {
                 configurator.infoPresenter.view = view
             }
         }
+    }
+    
+    func showGithubPage(view: GithubViewProtocol) {
+        present(view as! UIViewController, animated: true, completion: nil)
     }
 }
 
