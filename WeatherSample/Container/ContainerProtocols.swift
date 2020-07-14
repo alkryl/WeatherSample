@@ -22,4 +22,5 @@ protocol ContainerPresenterProtocol {
     func didUpdateLocation(_ location: CLLocationCoordinate2D?)
     func didFailToUpdateLocation()
     func setPresenter(for view: GithubViewProtocol)
+    func setChildPresenter(for view: AnyObject)
 }

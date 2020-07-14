@@ -89,7 +89,7 @@ extension ContainerViewController: ContainerViewProtocol {
     
     func setChildPresenters() {
         children.forEach {
-            configurator.setChildPresenter(for: $0)
+            presenter.setChildPresenter(for: $0)
         }
     }
     

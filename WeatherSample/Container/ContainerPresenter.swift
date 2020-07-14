@@ -75,6 +75,10 @@ class ContainerPresenter: ContainerPresenterProtocol {
         }
     }
     
+    func setChildPresenter(for view: AnyObject) {
+        configurator.setChildPresenter(for: view)
+    }
+    
     //MARK: Web
     
     func setPresenter(for view: GithubViewProtocol) {
