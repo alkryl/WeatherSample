@@ -20,6 +20,7 @@ class ContainerViewController: UITableViewController {
         super.viewDidLoad()
         createUI()
         presenter = configurator.containerPresenter(self)
+        tableView.register(HeaderCell.nib, forHeaderFooterViewReuseIdentifier: HeaderCell.identifier)
     }
     
     //MARK: Methods
@@ -39,22 +40,41 @@ class ContainerViewController: UITableViewController {
 
 extension ContainerViewController {
     override func tableView(_ tableView: UITableView,
-                            heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return ContainerCell.height(for: indexPath.row)
+                            shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return ContainerCell.shouldHighlight
     }
     
     override func tableView(_ tableView: UITableView,
-                            shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        return ContainerCell.shouldHighlight(indexPath.row)
+                            heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return ContainerCell.height(for: indexPath)
+    }
+        
+    override func tableView(_ tableView: UITableView,
+                            heightForHeaderInSection section: Int) -> CGFloat {
+        return HeaderCell.height(for: section)
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderCell") as! HeaderCell
+        
+        [TopViewController.nib, HoursViewController.nib].forEach {
+            header.configureHeader(child: $0, parent: self)
+        }
+        return section == Section.empty ? nil : header
     }
 }
 
 //MARK: UITableViewDataSource
 
 extension ContainerViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return Section.allCases.count
+    }
+    
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        return Content.allCases.count
+        return section == Section.empty ? 0 : Content.allCases.count
     }
     
     override func tableView(_ tableView: UITableView,
@@ -62,16 +82,14 @@ extension ContainerViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: ContainerCell.identifier, for: indexPath) as! ContainerCell
         
         var vc: UIViewController!
-                
+  
         switch indexPath.row {
-        case Content.top:   vc = TopViewController.nib
-        case Content.hours: vc = HoursViewController.nib
         case Content.days:  vc = DaysViewController.nib
         case Content.today: vc = TodayViewController.nib
         case Content.info:  vc = InfoViewController.nib
         default: return cell
         }
-        cell.configureView(child: vc, parent: self, row: indexPath.row)
+        cell.configureView(child: vc, parent: self, path: indexPath)
         
         return cell
     }
@@ -108,4 +126,21 @@ extension ContainerViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         presenter.didFailToUpdateLocation()
     }
+}
+
+//MARK: Enums
+
+enum Content: Int, CaseIterable {
+    case daysValue = 0, todayValue, infoValue
+
+    static var days:  Int { return Content.daysValue.rawValue }
+    static var today: Int { return Content.todayValue.rawValue }
+    static var info:  Int { return Content.infoValue.rawValue }
+}
+
+enum Section: Int, CaseIterable {
+    case emptySection = 0, contentSection
+
+    static var empty: Int   { return Section.emptySection.rawValue }
+    static var content: Int { return Section.contentSection.rawValue }
 }
