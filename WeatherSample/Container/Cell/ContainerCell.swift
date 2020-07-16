@@ -11,43 +11,34 @@ import UIKit
 class ContainerCell: UITableViewCell {
     
     static let identifier = "ContainerCell"
-    static func height(for row: Int) -> CGFloat {
-        switch row {
-        case Content.top:   return 270
-        case Content.hours: return 100
-        case Content.days:  return 231
-        case Content.today: return 70
-        case Content.info:  return 513
-        default: return 44
-        }
+    static var shouldHighlight: Bool {
+        return false
     }
-    static func shouldHighlight(_ row: Int) -> Bool {
-        return row == Content.hours ? true : false
+    static func height(for path: IndexPath) -> CGFloat {
+        if path.section == 0 {
+            return 0
+        }
+        switch path.row {
+        case Content.days:  return 231.0
+        case Content.today: return 70.0
+        case Content.info:  return 513.0
+        default: return 0
+        }
     }
     
     //MARK: Methods
         
-    func configureView(child: UIViewController, parent: UIViewController, row: Int) {
+    func configureView(child: UIViewController, parent: UIViewController, path: IndexPath) {
         if contentView.subviews.count == 1 { return }
         
         parent.addChild(child)
         
         let size = CGSize(width: parent.view.bounds.width,
-                          height: ContainerCell.height(for: row))
+                          height: ContainerCell.height(for: path))
         child.view.frame = CGRect(origin: .zero,
                                   size: size)
         contentView.addSubview(child.view)
         
         child.didMove(toParent: parent)
     }
-}
-
-enum Content: Int, CaseIterable {
-    case topValue = 0, hoursValue, daysValue, todayValue, infoValue
-    
-    static var top:   Int { return Content.topValue.rawValue }
-    static var hours: Int { return Content.hoursValue.rawValue }
-    static var days:  Int { return Content.daysValue.rawValue }
-    static var today: Int { return Content.todayValue.rawValue }
-    static var info:  Int { return Content.infoValue.rawValue }
 }
