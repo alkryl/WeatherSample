@@ -11,9 +11,7 @@ import UIKit
 class ContainerCell: UITableViewCell {
     
     static let identifier = "ContainerCell"
-    static var shouldHighlight: Bool {
-        return false
-    }
+    static let shouldHighlight = false
     static func height(for path: IndexPath) -> CGFloat {
         switch path.row {
         case Content.days:  return 231.0
@@ -32,8 +30,7 @@ class ContainerCell: UITableViewCell {
         
         let size = CGSize(width: parent.view.bounds.width,
                           height: ContainerCell.height(for: path))
-        child.view.frame = CGRect(origin: .zero,
-                                  size: size)
+        child.view.frame = CGRect(origin: .zero, size: size)
         contentView.addSubview(child.view)
         
         child.didMove(toParent: parent)
