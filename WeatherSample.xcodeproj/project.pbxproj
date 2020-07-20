@@ -70,6 +70,7 @@
 		D007B68B24BC6A9900CE27AA /* UIStoryboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68A24BC6A9900CE27AA /* UIStoryboard+.swift */; };
 		D007B6BB24C07A8300CE27AA /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B6B924C07A8300CE27AA /* HeaderCell.swift */; };
 		D007B6BC24C07A8300CE27AA /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D007B6BA24C07A8300CE27AA /* HeaderCell.xib */; };
+		D014435224C5A73C00999F17 /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014435124C5A73C00999F17 /* UINavigationController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +139,7 @@
 		D007B68A24BC6A9900CE27AA /* UIStoryboard+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+.swift"; sourceTree = "<group>"; };
 		D007B6B924C07A8300CE27AA /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		D007B6BA24C07A8300CE27AA /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
+		D014435124C5A73C00999F17 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				D007B63A24B36E1600CE27AA /* Int+.swift */,
 				D007B65624B4A83000CE27AA /* UIImage+Icon.swift */,
 				D007B68A24BC6A9900CE27AA /* UIStoryboard+.swift */,
+				D014435124C5A73C00999F17 /* UINavigationController+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				D007B64424B4814200CE27AA /* DaysProtocols.swift in Sources */,
 				D007B65E24B4AD4100CE27AA /* TodayPresenter.swift in Sources */,
 				D007B68424B8ACE600CE27AA /* GithubProtocols.swift in Sources */,
+				D014435224C5A73C00999F17 /* UINavigationController+.swift in Sources */,
 				D007B62B24AF707200CE27AA /* DateFormatter+Day.swift in Sources */,
 				D007B63D24B474DB00CE27AA /* HourCellModel.swift in Sources */,
 				D007B66324B5ED1000CE27AA /* InfoModel.swift in Sources */,
