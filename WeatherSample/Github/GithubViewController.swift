@@ -11,9 +11,6 @@ import WebKit
 
 class GithubViewController: UIViewController {
     
-    static var nib: GithubViewController {
-        return UIStoryboard().main.instantiateViewController(identifier: "GithubViewController")
-    }
     var presenter: GithubPresenterProtocol!
     
     private var webView: WKWebView!
@@ -27,7 +24,7 @@ class GithubViewController: UIViewController {
     }
 }
 
-//MARK: GithubViewProtocol methods
+//MARK: GithubViewProtocol
 
 extension GithubViewController: GithubViewProtocol {
     func showGithub(with request: URLRequest) {

@@ -24,7 +24,7 @@ class InfoCell: UITableViewCell {
     @IBOutlet weak var valueLabel: UILabel!
 }
 
-//MARK: InfoCellProtocol methods
+//MARK: InfoCellProtocol
 
 extension InfoCell: InfoCellProtocol {
     func setParameters(name: String, parameter: String) {

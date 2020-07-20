@@ -29,7 +29,7 @@ class InfoViewController: UIViewController {
     }
 }
 
-//MARK: InfoViewProtocol methods
+//MARK: InfoViewProtocol
 
 extension InfoViewController: InfoViewProtocol {
     func updateDisplayedData(_ data: InfoData) {
@@ -57,7 +57,7 @@ extension InfoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InfoCell",
+        let cell = tableView.dequeueReusableCell(withIdentifier: InfoCell.identifier,
                                                  for: indexPath) as! InfoCell
         guard let presenter = presenter else { return cell }
 

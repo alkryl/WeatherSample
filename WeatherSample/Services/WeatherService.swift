@@ -15,7 +15,8 @@ struct WeatherService {
     
     //MARK: Methods
     
-    func getWeather(location: CLLocationCoordinate2D, completion: @escaping (Data?, Error?) -> ()) {
+    func getWeather(location: CLLocationCoordinate2D,
+                    completion: @escaping (Data?, Error?) -> ()) {
         
         guard let url = API.weatherUrl(location: location) else { return }
         

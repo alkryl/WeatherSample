@@ -26,7 +26,7 @@ class TopViewController: UIViewController {
     @IBOutlet weak var minDegreeLabel: UILabel!
 }
 
-//MARK: TopViewProtocol methods
+//MARK: TopViewProtocol
 
 extension TopViewController: TopViewProtocol {
     func setParameters(city: String, weather: String, degree: Int, day: String,

@@ -23,18 +23,6 @@ class ContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = Configurator().containerPresenter(self)
-        createUI()
-    }
-    
-    //MARK: Methods
-    
-    private func createUI() {
-        let toolbar = navigationController?.toolbar as! CustomToolbar
-        toolbar.githubButton.addTarget(self, action: #selector(githubButtonOnTap), for: .touchUpInside)
-    }
-    
-    @objc private func githubButtonOnTap() {
-        presenter.setPresenter(for: GithubViewController())
     }
 }
 
@@ -78,7 +66,7 @@ extension ContainerViewController: UITableViewDataSource {
     }
 }
 
-//MARK: ContainerViewProtocol methods
+//MARK: ContainerViewProtocol
 
 extension ContainerViewController: ContainerViewProtocol {
     func updateHeader(with height: Double, blocked: Bool) {
@@ -99,10 +87,6 @@ extension ContainerViewController: ContainerViewProtocol {
         children.forEach {
             presenter.setChildPresenter(for: $0)
         }
-    }
-    
-    func showGithubPage(view: GithubViewProtocol) {
-        present(view as! UIViewController, animated: true, completion: nil)
     }
 }
 

@@ -14,7 +14,6 @@ protocol ContainerViewProtocol: AnyObject {
     func updateHeader(with height: Double, blocked: Bool)
     func showError(message: String)
     func setChildPresenters()
-    func showGithubPage(view: GithubViewProtocol)
 }
 
 protocol ContainerPresenterProtocol {
@@ -22,7 +21,6 @@ protocol ContainerPresenterProtocol {
     init(view: ContainerViewProtocol, configurator: ConfiguratorProtocol)
     func didUpdateLocation(_ location: CLLocationCoordinate2D?)
     func didFailToUpdateLocation()
-    func setPresenter(for view: GithubViewProtocol)
     func setChildPresenter(for view: AnyObject)
     func calculateHeight(_ newHeight: Double, barHeight: Double)
 }

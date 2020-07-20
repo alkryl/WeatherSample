@@ -18,7 +18,7 @@ extension Int {
     func windDirection() -> String {
         switch self {
         case 337...360, 0...22: return "n"
-        case 23...67:  return "ne"
+        case 23...67:   return "ne"
         case 68...112:  return "e"
         case 113...157: return "se"
         case 158...202: return "s"

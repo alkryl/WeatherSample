@@ -60,7 +60,6 @@
 		D007B66C24B5FFAB00CE27AA /* InfoCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66B24B5FFAB00CE27AA /* InfoCellPresenter.swift */; };
 		D007B66F24B5FFB800CE27AA /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66D24B5FFB800CE27AA /* InfoCell.swift */; };
 		D007B67024B5FFB800CE27AA /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D007B66E24B5FFB800CE27AA /* InfoCell.xib */; };
-		D007B67224B73F8A00CE27AA /* CustomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B67124B73F8A00CE27AA /* CustomToolbar.swift */; };
 		D007B67424B88AD500CE27AA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D007B67324B88AD500CE27AA /* WebKit.framework */; };
 		D007B67D24B89C8F00CE27AA /* GithubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B67C24B89C8F00CE27AA /* GithubViewController.swift */; };
 		D007B67F24B8A95A00CE27AA /* GithubPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B67E24B8A95A00CE27AA /* GithubPresenter.swift */; };
@@ -69,6 +68,9 @@
 		D007B68924BC679700CE27AA /* ContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68824BC679700CE27AA /* ContainerCell.swift */; };
 		D007B68B24BC6A9900CE27AA /* UIStoryboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68A24BC6A9900CE27AA /* UIStoryboard+.swift */; };
 		D014435224C5A73C00999F17 /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014435124C5A73C00999F17 /* UINavigationController+.swift */; };
+		D014435524C5CF2C00999F17 /* BottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014435424C5CF2C00999F17 /* BottomViewController.swift */; };
+		D014435724C5CF4300999F17 /* BottomProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014435624C5CF4300999F17 /* BottomProtocols.swift */; };
+		D014435924C5CF4F00999F17 /* BottomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014435824C5CF4F00999F17 /* BottomPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,7 +129,6 @@
 		D007B66B24B5FFAB00CE27AA /* InfoCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellPresenter.swift; sourceTree = "<group>"; };
 		D007B66D24B5FFB800CE27AA /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		D007B66E24B5FFB800CE27AA /* InfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCell.xib; sourceTree = "<group>"; };
-		D007B67124B73F8A00CE27AA /* CustomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolbar.swift; sourceTree = "<group>"; };
 		D007B67324B88AD500CE27AA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		D007B67C24B89C8F00CE27AA /* GithubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewController.swift; sourceTree = "<group>"; };
 		D007B67E24B8A95A00CE27AA /* GithubPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubPresenter.swift; sourceTree = "<group>"; };
@@ -136,6 +137,9 @@
 		D007B68824BC679700CE27AA /* ContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCell.swift; sourceTree = "<group>"; };
 		D007B68A24BC6A9900CE27AA /* UIStoryboard+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+.swift"; sourceTree = "<group>"; };
 		D014435124C5A73C00999F17 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
+		D014435424C5CF2C00999F17 /* BottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomViewController.swift; sourceTree = "<group>"; };
+		D014435624C5CF4300999F17 /* BottomProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomProtocols.swift; sourceTree = "<group>"; };
+		D014435824C5CF4F00999F17 /* BottomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,7 @@
 				D007B64224B4812400CE27AA /* Days */,
 				D007B65824B4ACD700CE27AA /* Today */,
 				D007B65F24B5E02800CE27AA /* Info */,
+				D014435324C5CF1200999F17 /* Bottom */,
 				D007B68224B8ABDA00CE27AA /* Github */,
 				D007B5D824AA074B00CE27AA /* Views */,
 				D007B5D724AA071500CE27AA /* Other */,
@@ -227,7 +232,6 @@
 			children = (
 				D007B5C024A9FFCF00CE27AA /* Main.storyboard */,
 				D007B5C524A9FFD100CE27AA /* LaunchScreen.storyboard */,
-				D007B67124B73F8A00CE27AA /* CustomToolbar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -365,6 +369,16 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		D014435324C5CF1200999F17 /* Bottom */ = {
+			isa = PBXGroup;
+			children = (
+				D014435624C5CF4300999F17 /* BottomProtocols.swift */,
+				D014435824C5CF4F00999F17 /* BottomPresenter.swift */,
+				D014435424C5CF2C00999F17 /* BottomViewController.swift */,
+			);
+			path = Bottom;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -448,7 +462,9 @@
 				D007B64624B4814F00CE27AA /* DaysModel.swift in Sources */,
 				D007B5D224AA06A300CE27AA /* LocationService.swift in Sources */,
 				D007B64424B4814200CE27AA /* DaysProtocols.swift in Sources */,
+				D014435924C5CF4F00999F17 /* BottomPresenter.swift in Sources */,
 				D007B65E24B4AD4100CE27AA /* TodayPresenter.swift in Sources */,
+				D014435724C5CF4300999F17 /* BottomProtocols.swift in Sources */,
 				D007B68424B8ACE600CE27AA /* GithubProtocols.swift in Sources */,
 				D014435224C5A73C00999F17 /* UINavigationController+.swift in Sources */,
 				D007B62B24AF707200CE27AA /* DateFormatter+Day.swift in Sources */,
@@ -466,13 +482,13 @@
 				D007B68924BC679700CE27AA /* ContainerCell.swift in Sources */,
 				D007B67F24B8A95A00CE27AA /* GithubPresenter.swift in Sources */,
 				D007B60324AE26D000CE27AA /* TopProtocols.swift in Sources */,
+				D014435524C5CF2C00999F17 /* BottomViewController.swift in Sources */,
 				D007B64124B4755900CE27AA /* HourCellProtocols.swift in Sources */,
 				D007B5DF24AA094800CE27AA /* ContainerViewController.swift in Sources */,
 				D007B60124AE265800CE27AA /* TopPresenter.swift in Sources */,
 				D007B63824B2239400CE27AA /* HourCell.swift in Sources */,
 				D007B63024B218AD00CE27AA /* HoursProtocols.swift in Sources */,
 				D007B66F24B5FFB800CE27AA /* InfoCell.swift in Sources */,
-				D007B67224B73F8A00CE27AA /* CustomToolbar.swift in Sources */,
 				D007B5FE24AE0C4B00CE27AA /* Data+Content.swift in Sources */,
 				D007B66124B5ED0400CE27AA /* InfoProtocols.swift in Sources */,
 				D007B64824B4815900CE27AA /* DaysPresenter.swift in Sources */,

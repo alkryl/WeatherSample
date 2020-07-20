@@ -37,7 +37,7 @@ class HoursViewController: UIViewController {
     }
 }
 
-//MARK: HoursViewProtocol methods
+//MARK: HoursViewProtocol
 
 extension HoursViewController: HoursViewProtocol {
     func updateDisplayedData(_ data: [HoursViewData]) {

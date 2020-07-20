@@ -29,7 +29,7 @@ class DaysViewController: UIViewController {
     }
 }
 
-//MARK: DaysViewProtocol methods
+//MARK: DaysViewProtocol
 
 extension DaysViewController: DaysViewProtocol {
     func updateDisplayedData(_ data: [DaysViewData]) {
@@ -57,7 +57,7 @@ extension DaysViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DayCell",
+        let cell = tableView.dequeueReusableCell(withIdentifier: DayCell.identifier,
                                                  for: indexPath) as! DayCell
         guard let presenter = presenter else { return cell }
 

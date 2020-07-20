@@ -14,6 +14,7 @@ protocol ConfiguratorProtocol {
     var daysPresenter: DaysPresenterProtocol! { get set }
     var todayPresenter: TodayPresenterProtocol! { get set }
     var infoPresenter: InfoPresenterProtocol! { get set }
+    var bottomPresenter: BottomPresenterProtocol! { get set }
 
     func containerPresenter(_ container: ContainerViewProtocol) -> ContainerPresenterProtocol
     func configureChildPresenters(with weather: WeatherJSON, completion: () -> ())
@@ -29,6 +30,7 @@ class Configurator: ConfiguratorProtocol {
     var daysPresenter: DaysPresenterProtocol!
     var todayPresenter: TodayPresenterProtocol!
     var infoPresenter: InfoPresenterProtocol!
+    var bottomPresenter: BottomPresenterProtocol!
     
     //MARK: Methods
         
@@ -42,6 +44,7 @@ class Configurator: ConfiguratorProtocol {
         daysPresenter = DaysPresenter(model: DaysModel(weather))
         todayPresenter = TodayPresenter(model: TodayModel(weather))
         infoPresenter = InfoPresenter(model: InfoModel(weather))
+        bottomPresenter = BottomPresenter()
         completion()
     }
     
@@ -61,6 +64,9 @@ class Configurator: ConfiguratorProtocol {
         } else if let view = view as? InfoViewProtocol {
             view.presenter = infoPresenter
             infoPresenter.view = view
+        } else if let view = view as? BottomViewProtocol {
+            view.presenter = bottomPresenter
+            bottomPresenter.view = view
         }
     }
 }

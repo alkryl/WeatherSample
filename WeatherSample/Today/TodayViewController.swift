@@ -20,7 +20,7 @@ class TodayViewController: UIViewController {
     @IBOutlet weak var weatherLabel: UILabel!
 }
 
-//MARK: TodayViewProtocol methods
+//MARK: TodayViewProtocol
 
 extension TodayViewController: TodayViewProtocol {
     func setWeatherDescription(_ descr: String) {

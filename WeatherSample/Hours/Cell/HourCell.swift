@@ -35,7 +35,7 @@ class HourCell: UICollectionViewCell {
     }
 }
 
-//MARK: HourCellProtocol methods
+//MARK: HourCellProtocol
 
 extension HourCell: HourCellProtocol {
     func setParameters(hour: String, temp: String, id: Int) {

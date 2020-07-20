@@ -14,7 +14,7 @@ class DayCell: UITableViewCell {
         return UINib(nibName: "DayCell", bundle: Bundle.main)
     }
     static let identifier = "DayCell"
-    static let height:CGFloat = 33
+    static let height: CGFloat = 33.0
     
     var presenter: DayCellPresenterProtocol!
     
@@ -26,7 +26,7 @@ class DayCell: UITableViewCell {
     @IBOutlet weak var nightDegreeLabel: UILabel!
 }
 
-//MARK: DayCellProtocol methods
+//MARK: DayCellProtocol
 
 extension DayCell: DayCellProtocol {
     func setParameters(day: String, id: Int, dayDegree: String, nightDegree: String) {

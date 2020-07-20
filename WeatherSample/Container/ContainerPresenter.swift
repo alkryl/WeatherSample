@@ -79,20 +79,11 @@ class ContainerPresenter: ContainerPresenterProtocol {
         configurator.setChildPresenter(for: view)
     }
     
-    //MARK: Web
-    
-    func setPresenter(for view: GithubViewProtocol) {
-        let gitPresenter = GithubPresenter(url: API.githubUrl())
-        self.view.showGithubPage(view: view)
-        view.presenter = gitPresenter
-        gitPresenter.view = view
-    }
-    
     //MARK: Scrolling
     
     func calculateHeight(_ newHeight: Double, barHeight: Double) {
         let headerMaxHeight = 270.0
-        let headerMinHeight = 44.0 + barHeight
+        let headerMinHeight = 44.0 + barHeight / 2
 
         if newHeight > headerMaxHeight {
             view.updateHeader(with: headerMaxHeight, blocked: false)
