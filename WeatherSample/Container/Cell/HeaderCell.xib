@@ -9,73 +9,55 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="696" id="KGk-i7-Jjw" customClass="HeaderCell" customModule="WeatherSample" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="370"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="-170" id="KGk-i7-Jjw" customClass="HeaderCell" customModule="WeatherSample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="370"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fDb-99-CDF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="370"/>
-                    </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSL-Bv-CM1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="270" id="MOE-4D-9eh"/>
-                        </constraints>
-                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEa-be-JWr">
-                        <rect key="frame" x="0.0" y="270" width="320" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fo-mm-9IH">
                                 <rect key="frame" x="0.0" y="99.5" width="320" height="0.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="0.5" id="ToT-xh-Q8c"/>
+                                    <constraint firstAttribute="height" constant="0.5" id="uQ4-vL-GB2"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ehl-ra-VAk">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="0.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="0.5" id="it0-Mc-SuU"/>
+                                    <constraint firstAttribute="height" constant="0.5" id="dVC-TZ-444"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ehl-ra-VAk" firstAttribute="leading" secondItem="fEa-be-JWr" secondAttribute="leading" id="67k-Xy-C1M"/>
-                            <constraint firstAttribute="trailing" secondItem="8fo-mm-9IH" secondAttribute="trailing" id="BP8-Su-DGs"/>
-                            <constraint firstItem="8fo-mm-9IH" firstAttribute="leading" secondItem="fEa-be-JWr" secondAttribute="leading" id="MYe-bS-BS1"/>
-                            <constraint firstItem="Ehl-ra-VAk" firstAttribute="top" secondItem="fEa-be-JWr" secondAttribute="top" id="PIX-6Z-Vd7"/>
-                            <constraint firstAttribute="bottom" secondItem="8fo-mm-9IH" secondAttribute="bottom" id="kFV-xK-zFJ"/>
-                            <constraint firstAttribute="trailing" secondItem="Ehl-ra-VAk" secondAttribute="trailing" id="yrZ-Mc-BvW"/>
+                            <constraint firstItem="8fo-mm-9IH" firstAttribute="leading" secondItem="fEa-be-JWr" secondAttribute="leading" id="1cI-NW-PGm"/>
+                            <constraint firstAttribute="trailing" secondItem="8fo-mm-9IH" secondAttribute="trailing" id="CDK-CX-GZm"/>
+                            <constraint firstAttribute="trailing" secondItem="Ehl-ra-VAk" secondAttribute="trailing" id="XkJ-sI-ihN"/>
+                            <constraint firstItem="Ehl-ra-VAk" firstAttribute="top" secondItem="fEa-be-JWr" secondAttribute="top" id="Z0f-U9-wHp"/>
+                            <constraint firstAttribute="bottom" secondItem="8fo-mm-9IH" secondAttribute="bottom" id="ZE7-Hr-HOr"/>
+                            <constraint firstItem="Ehl-ra-VAk" firstAttribute="leading" secondItem="fEa-be-JWr" secondAttribute="leading" id="det-FT-zzS"/>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="fDb-99-CDF" secondAttribute="bottom" id="4CK-PQ-wcW"/>
-                    <constraint firstAttribute="trailing" secondItem="fDb-99-CDF" secondAttribute="trailing" id="BsY-cC-9yN"/>
-                    <constraint firstAttribute="bottom" secondItem="fEa-be-JWr" secondAttribute="bottom" id="JSF-XN-9Jw"/>
-                    <constraint firstItem="fDb-99-CDF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Nfb-I0-nNS"/>
-                    <constraint firstItem="pSL-Bv-CM1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Nyd-9d-zT8"/>
-                    <constraint firstItem="fEa-be-JWr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="URf-zh-Fzf"/>
-                    <constraint firstItem="fEa-be-JWr" firstAttribute="top" secondItem="pSL-Bv-CM1" secondAttribute="bottom" id="XS3-U7-0Za"/>
-                    <constraint firstAttribute="trailing" secondItem="pSL-Bv-CM1" secondAttribute="trailing" id="dOn-5m-l9p"/>
-                    <constraint firstItem="pSL-Bv-CM1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ejC-Jg-ofq"/>
-                    <constraint firstAttribute="trailing" secondItem="fEa-be-JWr" secondAttribute="trailing" id="hHj-77-UPe"/>
-                    <constraint firstItem="fDb-99-CDF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vrU-4u-bnM"/>
+                    <constraint firstItem="fEa-be-JWr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="AL2-J0-F67"/>
+                    <constraint firstItem="fEa-be-JWr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="LO9-BH-BLr"/>
+                    <constraint firstAttribute="bottom" secondItem="fEa-be-JWr" secondAttribute="bottom" id="Yks-3m-36x"/>
+                    <constraint firstAttribute="trailing" secondItem="fEa-be-JWr" secondAttribute="trailing" id="ggX-LS-tEa"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="hoursContainer" destination="fEa-be-JWr" id="1Tt-RB-y51"/>
-                <outlet property="topContainer" destination="pSL-Bv-CM1" id="W3o-Ht-Ayo"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="239.73214285714283"/>
+            <point key="canvasLocation" x="137.68115942028987" y="330.13392857142856"/>
         </tableViewCell>
     </objects>
 </document>

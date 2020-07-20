@@ -87,4 +87,19 @@ class ContainerPresenter: ContainerPresenterProtocol {
         view.presenter = gitPresenter
         gitPresenter.view = view
     }
+    
+    //MARK: Scrolling
+    
+    func calculateHeight(_ newHeight: Double, barHeight: Double) {
+        let headerMaxHeight = 270.0
+        let headerMinHeight = 44.0 + barHeight
+
+        if newHeight > headerMaxHeight {
+            view.updateHeader(with: headerMaxHeight, blocked: false)
+        } else if newHeight < headerMinHeight {
+            view.updateHeader(with: headerMinHeight, blocked: false)
+        } else {
+            view.updateHeader(with: newHeight, blocked: true)
+        }
+    }
 }

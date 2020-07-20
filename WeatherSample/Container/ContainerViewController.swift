@@ -9,24 +9,26 @@
 import UIKit
 import CoreLocation
 
-class ContainerViewController: UITableViewController {
+class ContainerViewController: UIViewController {
     
-    private var configurator = Configurator()
     var presenter: ContainerPresenterProtocol!
         
+    //MARK: Outlets
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
+    
     //MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = Configurator().containerPresenter(self)
         createUI()
-        presenter = configurator.containerPresenter(self)
-        tableView.register(HeaderCell.nib, forHeaderFooterViewReuseIdentifier: HeaderCell.identifier)
     }
     
     //MARK: Methods
     
     private func createUI() {
-        tableView.backgroundView = UIImageView(image: UIImage(named: "background"))
         let toolbar = navigationController?.toolbar as! CustomToolbar
         toolbar.githubButton.addTarget(self, action: #selector(githubButtonOnTap), for: .touchUpInside)
     }
@@ -38,47 +40,28 @@ class ContainerViewController: UITableViewController {
 
 //MARK: UITableViewDelegate
 
-extension ContainerViewController {
-    override func tableView(_ tableView: UITableView,
-                            shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+extension ContainerViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView,
+                   shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return ContainerCell.shouldHighlight
     }
     
-    override func tableView(_ tableView: UITableView,
-                            heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
         return ContainerCell.height(for: indexPath)
-    }
-        
-    override func tableView(_ tableView: UITableView,
-                            heightForHeaderInSection section: Int) -> CGFloat {
-        return HeaderCell.height(for: section)
-    }
-    
-    override func tableView(_ tableView: UITableView,
-                            viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderCell") as! HeaderCell
-        
-        [TopViewController.nib, HoursViewController.nib].forEach {
-            header.configureHeader(child: $0, parent: self)
-        }
-        return section == Section.empty ? nil : header
     }
 }
 
 //MARK: UITableViewDataSource
 
-extension ContainerViewController {
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return Section.allCases.count
+extension ContainerViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
+        return Content.allCases.count
     }
     
-    override func tableView(_ tableView: UITableView,
-                            numberOfRowsInSection section: Int) -> Int {
-        return section == Section.empty ? 0 : Content.allCases.count
-    }
-    
-    override func tableView(_ tableView: UITableView,
-                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ContainerCell.identifier, for: indexPath) as! ContainerCell
         
         var vc: UIViewController!
@@ -98,6 +81,13 @@ extension ContainerViewController {
 //MARK: ContainerViewProtocol methods
 
 extension ContainerViewController: ContainerViewProtocol {
+    func updateHeader(with height: Double, blocked: Bool) {
+        headerHeightConstraint.constant = CGFloat(height)
+        if blocked {
+            tableView.contentOffset.y = 0
+        }
+    }
+    
     func showError(message: String) {
         let alert = UIAlertController(title: "Error occured", message: message,
                                       preferredStyle: .alert)
@@ -119,12 +109,25 @@ extension ContainerViewController: ContainerViewProtocol {
 //MARK: CLLocationManagerDelegate
 
 extension ContainerViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager,
+                         didUpdateLocations locations: [CLLocation]) {
         presenter.didUpdateLocation(manager.location?.coordinate)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         presenter.didFailToUpdateLocation()
+    }
+}
+
+//MARK: UIScrollViewDelegate
+
+extension ContainerViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let y = scrollView.contentOffset.y
+        let topViewHeight = Double(headerHeightConstraint.constant - y)
+        let barHeight = Double(44.0 + (navigationController?.statusBarHeight ?? 0))
+                
+        presenter.calculateHeight(topViewHeight, barHeight: barHeight)
     }
 }
 
@@ -136,11 +139,4 @@ enum Content: Int, CaseIterable {
     static var days:  Int { return Content.daysValue.rawValue }
     static var today: Int { return Content.todayValue.rawValue }
     static var info:  Int { return Content.infoValue.rawValue }
-}
-
-enum Section: Int, CaseIterable {
-    case emptySection = 0, contentSection
-
-    static var empty: Int   { return Section.emptySection.rawValue }
-    static var content: Int { return Section.contentSection.rawValue }
 }

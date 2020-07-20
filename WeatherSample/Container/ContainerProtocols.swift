@@ -11,6 +11,7 @@ import CoreLocation
 
 protocol ContainerViewProtocol: AnyObject {
     var presenter: ContainerPresenterProtocol! { get set }
+    func updateHeader(with height: Double, blocked: Bool)
     func showError(message: String)
     func setChildPresenters()
     func showGithubPage(view: GithubViewProtocol)
@@ -23,4 +24,5 @@ protocol ContainerPresenterProtocol {
     func didFailToUpdateLocation()
     func setPresenter(for view: GithubViewProtocol)
     func setChildPresenter(for view: AnyObject)
+    func calculateHeight(_ newHeight: Double, barHeight: Double)
 }

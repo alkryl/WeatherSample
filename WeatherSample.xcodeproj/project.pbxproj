@@ -68,8 +68,6 @@
 		D007B68424B8ACE600CE27AA /* GithubProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68324B8ACE600CE27AA /* GithubProtocols.swift */; };
 		D007B68924BC679700CE27AA /* ContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68824BC679700CE27AA /* ContainerCell.swift */; };
 		D007B68B24BC6A9900CE27AA /* UIStoryboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68A24BC6A9900CE27AA /* UIStoryboard+.swift */; };
-		D007B6BB24C07A8300CE27AA /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B6B924C07A8300CE27AA /* HeaderCell.swift */; };
-		D007B6BC24C07A8300CE27AA /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D007B6BA24C07A8300CE27AA /* HeaderCell.xib */; };
 		D014435224C5A73C00999F17 /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014435124C5A73C00999F17 /* UINavigationController+.swift */; };
 /* End PBXBuildFile section */
 
@@ -137,8 +135,6 @@
 		D007B68324B8ACE600CE27AA /* GithubProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubProtocols.swift; sourceTree = "<group>"; };
 		D007B68824BC679700CE27AA /* ContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCell.swift; sourceTree = "<group>"; };
 		D007B68A24BC6A9900CE27AA /* UIStoryboard+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+.swift"; sourceTree = "<group>"; };
-		D007B6B924C07A8300CE27AA /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
-		D007B6BA24C07A8300CE27AA /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		D014435124C5A73C00999F17 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -365,8 +361,6 @@
 			isa = PBXGroup;
 			children = (
 				D007B68824BC679700CE27AA /* ContainerCell.swift */,
-				D007B6B924C07A8300CE27AA /* HeaderCell.swift */,
-				D007B6BA24C07A8300CE27AA /* HeaderCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -431,7 +425,6 @@
 			files = (
 				D007B5C724A9FFD100CE27AA /* LaunchScreen.storyboard in Resources */,
 				D007B67024B5FFB800CE27AA /* InfoCell.xib in Resources */,
-				D007B6BC24C07A8300CE27AA /* HeaderCell.xib in Resources */,
 				D007B5C424A9FFD100CE27AA /* Assets.xcassets in Resources */,
 				D007B5C224A9FFCF00CE27AA /* Main.storyboard in Resources */,
 				D007B64F24B49B8900CE27AA /* DayCell.xib in Resources */,
@@ -487,7 +480,6 @@
 				D007B65A24B4ACF200CE27AA /* TodayProtocols.swift in Sources */,
 				D007B66524B5ED1A00CE27AA /* InfoPresenter.swift in Sources */,
 				D007B65524B49BC100CE27AA /* DayCellPresenter.swift in Sources */,
-				D007B6BB24C07A8300CE27AA /* HeaderCell.swift in Sources */,
 				D007B62D24AF73C600CE27AA /* Date+DayTime.swift in Sources */,
 				D007B5F624ADE5FE00CE27AA /* Weather.swift in Sources */,
 				D007B66A24B5FF9D00CE27AA /* InfoCellModel.swift in Sources */,

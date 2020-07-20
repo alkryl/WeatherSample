@@ -15,7 +15,7 @@ class HeaderCell: UITableViewHeaderFooterView {
     }
     static let identifier = "HeaderCell"
     static func height(for section: Int) -> CGFloat {
-        return section == Section.empty ? 0 : 370.0
+        return section == Section.empty ? 0 : 100.0
     }
 
     //MARK: Outlets

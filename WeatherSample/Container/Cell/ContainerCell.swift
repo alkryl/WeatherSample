@@ -15,9 +15,6 @@ class ContainerCell: UITableViewCell {
         return false
     }
     static func height(for path: IndexPath) -> CGFloat {
-        if path.section == 0 {
-            return 0
-        }
         switch path.row {
         case Content.days:  return 231.0
         case Content.today: return 70.0
