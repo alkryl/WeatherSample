@@ -36,4 +36,8 @@ class TopPresenter: TopPresenterProtocol {
                            minDegree: displayedData.minDegree)
         view.showView()
     }
+    
+    func updateAlpha(_ alpha: Double) {
+        view.updateAlpha(alpha)
+    }
 }

@@ -83,7 +83,7 @@ class ContainerPresenter: ContainerPresenterProtocol {
     
     func calculateHeight(_ newHeight: Double, barHeight: Double) {
         let headerMaxHeight = 270.0
-        let headerMinHeight = 44.0 + barHeight / 2
+        let headerMinHeight = 44.0 + barHeight / 4
 
         if newHeight > headerMaxHeight {
             view.updateHeader(with: headerMaxHeight, blocked: false)
@@ -92,5 +92,7 @@ class ContainerPresenter: ContainerPresenterProtocol {
         } else {
             view.updateHeader(with: newHeight, blocked: true)
         }
+                                
+        configurator.topPresenter.updateAlpha((newHeight - 210.0) / 50)
     }
 }

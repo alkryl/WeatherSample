@@ -43,4 +43,10 @@ extension TopViewController: TopViewProtocol {
     func showView() {
         view.isHidden = false
     }
+    
+    func updateAlpha(_ alpha: Double) {
+        [degreeLabel, dayLabel, todayLabel, maxDegreeLabel, minDegreeLabel].forEach {
+            $0?.alpha = CGFloat(alpha)
+        }
+    }
 }

@@ -13,10 +13,12 @@ protocol TopViewProtocol: AnyObject {
     func setParameters(city: String, weather: String, degree: Int, day: String,
                        dayTime: String, maxDegree: Int, minDegree: Int)
     func showView()
+    func updateAlpha(_ alpha: Double)
 }
 
 protocol TopPresenterProtocol {
     var view: TopViewProtocol! { get set }
     init(model: TopModel)
     func updateView()
+    func updateAlpha(_ alpha: Double)
 }
