@@ -36,7 +36,7 @@ extension ContainerViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return ContainerCell.height(for: indexPath)
+        return ContainerCell.height
     }
 }
 
@@ -45,22 +45,14 @@ extension ContainerViewController: UITableViewDelegate {
 extension ContainerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        return Content.allCases.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ContainerCell.identifier, for: indexPath) as! ContainerCell
         
-        var vc: UIViewController!
-  
-        switch indexPath.row {
-        case Content.days:  vc = DaysViewController.nib
-        case Content.today: vc = TodayViewController.nib
-        case Content.info:  vc = InfoViewController.nib
-        default: return cell
-        }
-        cell.configureView(child: vc, parent: self, path: indexPath)
+        cell.configureView(with: self)
         
         return cell
     }
@@ -84,8 +76,14 @@ extension ContainerViewController: ContainerViewProtocol {
     }
     
     func setChildPresenters() {
-        children.forEach {
-            presenter.setChildPresenter(for: $0)
+        children.forEach { child in
+            if child.isKind(of: UITableViewController.self) {
+                child.children.forEach {
+                    presenter.setChildPresenter(for: $0)
+                }
+            } else {
+                presenter.setChildPresenter(for: child)
+            }
         }
     }
 }
@@ -113,14 +111,4 @@ extension ContainerViewController: UIScrollViewDelegate {
                 
         presenter.calculateHeight(topViewHeight, barHeight: barHeight)
     }
-}
-
-//MARK: Enums
-
-enum Content: Int, CaseIterable {
-    case daysValue = 0, todayValue, infoValue
-
-    static var days:  Int { return Content.daysValue.rawValue }
-    static var today: Int { return Content.todayValue.rawValue }
-    static var info:  Int { return Content.infoValue.rawValue }
 }

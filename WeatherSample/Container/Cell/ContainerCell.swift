@@ -11,25 +11,19 @@ import UIKit
 class ContainerCell: UITableViewCell {
     
     static let identifier = "ContainerCell"
+    static let height: CGFloat = 814.0
     static let shouldHighlight = false
-    static func height(for path: IndexPath) -> CGFloat {
-        switch path.row {
-        case Content.days:  return 231.0
-        case Content.today: return 70.0
-        case Content.info:  return 513.0
-        default: return 0
-        }
-    }
     
     //MARK: Methods
         
-    func configureView(child: UIViewController, parent: UIViewController, path: IndexPath) {
+    func configureView(with parent: UIViewController) {
         if contentView.subviews.count == 1 { return }
+        
+        guard let child = parent.storyboard?.instantiateViewController(identifier: "TableViewController") else { return }
         
         parent.addChild(child)
         
-        let size = CGSize(width: parent.view.bounds.width,
-                          height: ContainerCell.height(for: path))
+        let size = CGSize(width: parent.view.bounds.width, height: ContainerCell.height)
         child.view.frame = CGRect(origin: .zero, size: size)
         contentView.addSubview(child.view)
         
