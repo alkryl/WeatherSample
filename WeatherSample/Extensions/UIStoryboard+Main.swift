@@ -1,5 +1,5 @@
 //
-//  UIStoryboard+.swift
+//  UIStoryboard+Main.swift
 //  WeatherSample
 //
 //  Created by Alexander Krylov on 13/07/2020.

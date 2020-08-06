@@ -14,7 +14,7 @@ class InfoCell: UITableViewCell {
         return UINib(nibName: "InfoCell", bundle: Bundle.main)
     }
     static let identifier = "InfoCell"
-    static let height:CGFloat = 57
+    static let height: CGFloat = 57
     
     var presenter: InfoCellPresenterProtocol!
     

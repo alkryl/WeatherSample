@@ -1,5 +1,5 @@
 //
-//  UINavigationController+.swift
+//  UINavigationController+StatusBar.swift
 //  WeatherSample
 //
 //  Created by Alexander Krylov on 20/07/2020.

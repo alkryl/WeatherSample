@@ -8,19 +8,6 @@
 
 import Foundation
 
-protocol ConfiguratorProtocol {
-    var topPresenter: TopPresenterProtocol! { get set }
-    var hoursPresenter: HoursPresenterProtocol! { get set }
-    var daysPresenter: DaysPresenterProtocol! { get set }
-    var todayPresenter: TodayPresenterProtocol! { get set }
-    var infoPresenter: InfoPresenterProtocol! { get set }
-    var bottomPresenter: BottomPresenterProtocol! { get set }
-
-    func containerPresenter(_ container: ContainerViewProtocol) -> ContainerPresenterProtocol
-    func configureChildPresenters(with weather: WeatherJSON, completion: () -> ())
-    func setChildPresenter(for view: AnyObject)
-}
-
 class Configurator: ConfiguratorProtocol {
         
     //MARK: Presenters
@@ -69,4 +56,17 @@ class Configurator: ConfiguratorProtocol {
             bottomPresenter.view = view
         }
     }
+}
+
+protocol ConfiguratorProtocol {
+    var topPresenter: TopPresenterProtocol! { get set }
+    var hoursPresenter: HoursPresenterProtocol! { get set }
+    var daysPresenter: DaysPresenterProtocol! { get set }
+    var todayPresenter: TodayPresenterProtocol! { get set }
+    var infoPresenter: InfoPresenterProtocol! { get set }
+    var bottomPresenter: BottomPresenterProtocol! { get set }
+
+    func containerPresenter(_ container: ContainerViewProtocol) -> ContainerPresenterProtocol
+    func configureChildPresenters(with weather: WeatherJSON, completion: () -> ())
+    func setChildPresenter(for view: AnyObject)
 }

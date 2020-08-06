@@ -10,7 +10,7 @@ import Foundation
 
 extension DateFormatter {
     func day(from date: Date = Date()) -> String {
-        return self.weekdaySymbols[Calendar.current.component(.weekday, from: date) - 1]
+        return weekdaySymbols[Calendar.current.component(.weekday, from: date) - 1]
     }
     
     func stringTime(from date: Date) -> String {

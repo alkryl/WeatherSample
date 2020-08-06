@@ -66,11 +66,12 @@
 		D007B68124B8AB4800CE27AA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68024B8AB4800CE27AA /* API.swift */; };
 		D007B68424B8ACE600CE27AA /* GithubProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68324B8ACE600CE27AA /* GithubProtocols.swift */; };
 		D007B68924BC679700CE27AA /* ContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68824BC679700CE27AA /* ContainerCell.swift */; };
-		D007B68B24BC6A9900CE27AA /* UIStoryboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68A24BC6A9900CE27AA /* UIStoryboard+.swift */; };
-		D014435224C5A73C00999F17 /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014435124C5A73C00999F17 /* UINavigationController+.swift */; };
+		D007B68B24BC6A9900CE27AA /* UIStoryboard+Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68A24BC6A9900CE27AA /* UIStoryboard+Main.swift */; };
+		D014435224C5A73C00999F17 /* UINavigationController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014435124C5A73C00999F17 /* UINavigationController+StatusBar.swift */; };
 		D014435524C5CF2C00999F17 /* BottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014435424C5CF2C00999F17 /* BottomViewController.swift */; };
 		D014435724C5CF4300999F17 /* BottomProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014435624C5CF4300999F17 /* BottomProtocols.swift */; };
 		D014435924C5CF4F00999F17 /* BottomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014435824C5CF4F00999F17 /* BottomPresenter.swift */; };
+		D02C9E9224DC49B200A4A0E7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D02C9E9124DC49B200A4A0E7 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,11 +136,12 @@
 		D007B68024B8AB4800CE27AA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D007B68324B8ACE600CE27AA /* GithubProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubProtocols.swift; sourceTree = "<group>"; };
 		D007B68824BC679700CE27AA /* ContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCell.swift; sourceTree = "<group>"; };
-		D007B68A24BC6A9900CE27AA /* UIStoryboard+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+.swift"; sourceTree = "<group>"; };
-		D014435124C5A73C00999F17 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
+		D007B68A24BC6A9900CE27AA /* UIStoryboard+Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Main.swift"; sourceTree = "<group>"; };
+		D014435124C5A73C00999F17 /* UINavigationController+StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+StatusBar.swift"; sourceTree = "<group>"; };
 		D014435424C5CF2C00999F17 /* BottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomViewController.swift; sourceTree = "<group>"; };
 		D014435624C5CF4300999F17 /* BottomProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomProtocols.swift; sourceTree = "<group>"; };
 		D014435824C5CF4F00999F17 /* BottomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPresenter.swift; sourceTree = "<group>"; };
+		D02C9E9124DC49B200A4A0E7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 		D007B5AE24A9FFCF00CE27AA = {
 			isa = PBXGroup;
 			children = (
+				D02C9E9124DC49B200A4A0E7 /* README.md */,
 				D007B5B924A9FFCF00CE27AA /* WeatherSample */,
 				D007B5B824A9FFCF00CE27AA /* Products */,
 				D007B5F824ADE87200CE27AA /* Frameworks */,
@@ -210,8 +213,8 @@
 				D007B62C24AF73C600CE27AA /* Date+DayTime.swift */,
 				D007B63A24B36E1600CE27AA /* Int+.swift */,
 				D007B65624B4A83000CE27AA /* UIImage+Icon.swift */,
-				D007B68A24BC6A9900CE27AA /* UIStoryboard+.swift */,
-				D014435124C5A73C00999F17 /* UINavigationController+.swift */,
+				D007B68A24BC6A9900CE27AA /* UIStoryboard+Main.swift */,
+				D014435124C5A73C00999F17 /* UINavigationController+StatusBar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				D007B5C724A9FFD100CE27AA /* LaunchScreen.storyboard in Resources */,
 				D007B67024B5FFB800CE27AA /* InfoCell.xib in Resources */,
 				D007B5C424A9FFD100CE27AA /* Assets.xcassets in Resources */,
+				D02C9E9224DC49B200A4A0E7 /* README.md in Resources */,
 				D007B5C224A9FFCF00CE27AA /* Main.storyboard in Resources */,
 				D007B64F24B49B8900CE27AA /* DayCell.xib in Resources */,
 				D007B63924B2239400CE27AA /* HourCell.xib in Resources */,
@@ -453,7 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D007B68B24BC6A9900CE27AA /* UIStoryboard+.swift in Sources */,
+				D007B68B24BC6A9900CE27AA /* UIStoryboard+Main.swift in Sources */,
 				D007B63424B2193400CE27AA /* HoursPresenter.swift in Sources */,
 				D007B5E324ADD42000CE27AA /* HoursViewController.swift in Sources */,
 				D007B60524AE26E200CE27AA /* TopModel.swift in Sources */,
@@ -466,7 +470,7 @@
 				D007B65E24B4AD4100CE27AA /* TodayPresenter.swift in Sources */,
 				D014435724C5CF4300999F17 /* BottomProtocols.swift in Sources */,
 				D007B68424B8ACE600CE27AA /* GithubProtocols.swift in Sources */,
-				D014435224C5A73C00999F17 /* UINavigationController+.swift in Sources */,
+				D014435224C5A73C00999F17 /* UINavigationController+StatusBar.swift in Sources */,
 				D007B62B24AF707200CE27AA /* DateFormatter+Day.swift in Sources */,
 				D007B63D24B474DB00CE27AA /* HourCellModel.swift in Sources */,
 				D007B66324B5ED1000CE27AA /* InfoModel.swift in Sources */,
