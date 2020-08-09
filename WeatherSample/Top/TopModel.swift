@@ -46,7 +46,7 @@ struct TopViewData {
     //MARK: Initialization
     
     init(_ topModel: TopModel) {
-        self.city = topModel.city.components(separatedBy: "/").last!
+        self.city = topModel.city.components(separatedBy: "/").last!.replacingOccurrences(of: "_", with: " ")
         self.weather = topModel.weather.capitalized
         self.degree = Int(topModel.degree)
         self.dayOfWeek = DateFormatter().day()
