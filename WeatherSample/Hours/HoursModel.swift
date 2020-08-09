@@ -11,6 +11,7 @@ import Foundation
 //MARK: Model
 
 struct HoursModel {
+    let timezoneOffset: Int
     let sunrise: Int
     let sunset: Int
     let hourly: [Hours]
@@ -18,6 +19,7 @@ struct HoursModel {
     //MARK: Initialization
     
     init(_ weather: WeatherJSON) {
+        self.timezoneOffset = weather.timezoneOffset
         self.sunrise = weather.current.sunrise
         self.sunset  = weather.current.sunset
         self.hourly  = weather.hourly
@@ -34,13 +36,16 @@ struct HoursWeather {
     init(_ model: HoursModel) {
         var hoursWeather = [HoursViewData]()
         
-        let sunriseDate = model.sunrise.date()
-        let sunsetDate = model.sunset.date()
+        let offset = model.timezoneOffset
+        
+        let sunriseDate = (model.sunrise + offset).date()
+        let sunsetDate = (model.sunset + offset).date()
 
         model.hourly.forEach {
-            let itemHour = $0.time.date().component(.hour)
+            let localTime = $0.time + offset
+            let itemHour = localTime.date().component(.hour)
 
-            hoursWeather.append(HoursViewData(time: hoursWeather.isEmpty ? "Now" : $0.time,
+            hoursWeather.append(HoursViewData(time: hoursWeather.isEmpty ? "Now" : localTime,
                                               temp: $0.temp, id: $0.weather.first!.id))
 
             if itemHour == sunriseDate.component(.hour) {

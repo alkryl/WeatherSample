@@ -14,6 +14,7 @@ struct TopModel {
     let city: String
     let weather: String
     let degree: Double
+    let timezoneOffset: Int
     let sunrise: Int
     let sunset: Int
     let maxDegree: Double
@@ -25,6 +26,7 @@ struct TopModel {
         self.city = weather.timezone
         self.weather = weather.current.weather.first!.descr
         self.degree  = weather.current.temp
+        self.timezoneOffset = weather.timezoneOffset
         self.sunrise = weather.current.sunrise
         self.sunset  = weather.current.sunset
         self.maxDegree = weather.daily.first!.temp.max
@@ -50,8 +52,8 @@ struct TopViewData {
         self.weather = topModel.weather.capitalized
         self.degree = Int(topModel.degree)
         self.dayOfWeek = DateFormatter().day()
-        self.dayTime = Date().dayTime(sunrise: topModel.sunrise,
-                                      sunset: topModel.sunset)
+        self.dayTime = Date().dayTime(sunrise: topModel.sunrise + topModel.timezoneOffset,
+                                      sunset: topModel.sunset + topModel.timezoneOffset)
         self.maxDegree = Int(topModel.maxDegree)
         self.minDegree = Int(topModel.minDegree)
     }

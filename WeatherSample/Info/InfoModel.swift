@@ -11,6 +11,7 @@ import Foundation
 //MARK: Model
 
 struct InfoModel {
+    let timezoneOffset: Int
     let sunrise: Int
     let sunset: Int
     let humidity: Int
@@ -25,6 +26,7 @@ struct InfoModel {
     //MARK: Initialization
     
     init(_ weather: WeatherJSON) {
+        self.timezoneOffset = weather.timezoneOffset
         self.sunrise = weather.current.sunrise
         self.sunset = weather.current.sunset
         self.humidity = weather.current.humidity
@@ -40,11 +42,11 @@ struct InfoModel {
 
 //MARK: Displayed data
 
-private typealias Data = [(Keys, String)]
+private typealias CustomData = [(Keys, String)]
 typealias InfoData = [(name: String, parameter: String)]
 
 struct InfoViewData {
-    private var data = Data()
+    private var data = CustomData()
     
     var info: InfoData {
         return data.map { ($0.0.rawValue.uppercased(), $0.1) }
@@ -53,8 +55,8 @@ struct InfoViewData {
     //MARK: Initialization
     
     init(_ model: InfoModel) {
-        data.append((.sunrise, model.sunrise.date().exactTime()))
-        data.append((.sunset, model.sunset.date().exactTime()))
+        data.append((.sunrise, (model.sunrise + model.timezoneOffset).date().exactTime()))
+        data.append((.sunset, (model.sunset + model.timezoneOffset).date().exactTime()))
         data.append((.humidity, "\(model.humidity) %"))
         data.append((.wind, "\(model.windDirection.windDirection()) \(Int(model.windSpeed)) m/s"))
         data.append((.feelsLike, "\(Int(model.feelsLike))°"))

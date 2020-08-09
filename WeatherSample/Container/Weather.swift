@@ -10,6 +10,7 @@ import Foundation
 
 struct WeatherJSON: Decodable {
     let timezone: String
+    let timezoneOffset: Int
     let current: Current
     let hourly: [Hours]
     let daily: [Daily]
@@ -56,6 +57,13 @@ struct Daily: Decodable {
 }
 
 //MARK: Extensions
+
+private extension WeatherJSON {
+    enum CodingKeys: String, CodingKey {
+        case timezone, current, hourly, daily
+        case timezoneOffset = "timezone_offset"
+    }
+}
 
 private extension Current {
     enum CodingKeys: String, CodingKey {

@@ -15,6 +15,7 @@ extension DateFormatter {
     
     func stringTime(from date: Date) -> String {
         dateFormat = "HH:mm"
+        timeZone = TimeZone(abbreviation: "UTC")
         return string(from: date)
     }
 }
