@@ -28,7 +28,6 @@
 		D007B60124AE265800CE27AA /* TopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B60024AE265800CE27AA /* TopPresenter.swift */; };
 		D007B60324AE26D000CE27AA /* TopProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B60224AE26D000CE27AA /* TopProtocols.swift */; };
 		D007B60524AE26E200CE27AA /* TopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B60424AE26E200CE27AA /* TopModel.swift */; };
-		D007B62924AF5F0600CE27AA /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B62824AF5F0600CE27AA /* Configurator.swift */; };
 		D007B62B24AF707200CE27AA /* DateFormatter+Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B62A24AF707200CE27AA /* DateFormatter+Day.swift */; };
 		D007B62D24AF73C600CE27AA /* Date+DayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B62C24AF73C600CE27AA /* Date+DayTime.swift */; };
 		D007B63024B218AD00CE27AA /* HoursProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B62F24B218AD00CE27AA /* HoursProtocols.swift */; };
@@ -98,7 +97,6 @@
 		D007B60024AE265800CE27AA /* TopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPresenter.swift; sourceTree = "<group>"; };
 		D007B60224AE26D000CE27AA /* TopProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopProtocols.swift; sourceTree = "<group>"; };
 		D007B60424AE26E200CE27AA /* TopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopModel.swift; sourceTree = "<group>"; };
-		D007B62824AF5F0600CE27AA /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		D007B62A24AF707200CE27AA /* DateFormatter+Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Day.swift"; sourceTree = "<group>"; };
 		D007B62C24AF73C600CE27AA /* Date+DayTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DayTime.swift"; sourceTree = "<group>"; };
 		D007B62F24B218AD00CE27AA /* HoursProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursProtocols.swift; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 		D007B5B924A9FFCF00CE27AA /* WeatherSample */ = {
 			isa = PBXGroup;
 			children = (
-				D007B62824AF5F0600CE27AA /* Configurator.swift */,
 				D007B5D024AA069100CE27AA /* Services */,
 				D007B5D424AA06CD00CE27AA /* Extensions */,
 				D007B5F724ADE74100CE27AA /* Container */,
@@ -208,13 +205,13 @@
 		D007B5D424AA06CD00CE27AA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D014435124C5A73C00999F17 /* UINavigationController+StatusBar.swift */,
+				D007B68A24BC6A9900CE27AA /* UIStoryboard+Main.swift */,
 				D007B5FD24AE0C4B00CE27AA /* Data+Content.swift */,
 				D007B62A24AF707200CE27AA /* DateFormatter+Day.swift */,
 				D007B62C24AF73C600CE27AA /* Date+DayTime.swift */,
-				D007B63A24B36E1600CE27AA /* Int+.swift */,
 				D007B65624B4A83000CE27AA /* UIImage+Icon.swift */,
-				D007B68A24BC6A9900CE27AA /* UIStoryboard+Main.swift */,
-				D014435124C5A73C00999F17 /* UINavigationController+StatusBar.swift */,
+				D007B63A24B36E1600CE27AA /* Int+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -477,7 +474,6 @@
 				D007B64E24B49B8900CE27AA /* DayCell.swift in Sources */,
 				D007B63F24B4754600CE27AA /* HourCellPresenter.swift in Sources */,
 				D007B5EA24ADD82F00CE27AA /* InfoViewController.swift in Sources */,
-				D007B62924AF5F0600CE27AA /* Configurator.swift in Sources */,
 				D007B65324B49BAE00CE27AA /* DayCellModel.swift in Sources */,
 				D007B5E824ADD75500CE27AA /* TodayViewController.swift in Sources */,
 				D007B5FC24ADFB4F00CE27AA /* WeatherService.swift in Sources */,

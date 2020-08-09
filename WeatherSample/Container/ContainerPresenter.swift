@@ -10,22 +10,25 @@ import Foundation
 import CoreLocation
 
 class ContainerPresenter: ContainerPresenterProtocol {
+        
+    //MARK: Child presenters
+        
+    var topPresenter:    TopPresenterProtocol!
+    var hoursPresenter:  HoursPresenterProtocol!
+    var daysPresenter:   DaysPresenterProtocol!
+    var todayPresenter:  TodayPresenterProtocol!
+    var infoPresenter:   InfoPresenterProtocol!
+    var bottomPresenter: BottomPresenterProtocol!
     
-    private var configurator: ConfiguratorProtocol!
+    //MARK: Instances
+    
     private var service: LocationService!
     unowned var view: ContainerViewProtocol!
     
-    private var currentLocation: CLLocationCoordinate2D! {
-        didSet {
-            getWeather(location: currentLocation)
-        }
-    }
-    
     //MARK: Initialization
     
-    required init(view: ContainerViewProtocol, configurator: ConfiguratorProtocol) {
+    required init(view: ContainerViewProtocol) {
         self.view = view
-        self.configurator = configurator
         getCurrentLocation()
     }
     
@@ -33,7 +36,7 @@ class ContainerPresenter: ContainerPresenterProtocol {
     
     func didUpdateLocation(_ location: CLLocationCoordinate2D?) {
         guard let location = location else { return }
-        currentLocation = location
+        getWeather(location: location)
     }
     
     func didFailToUpdateLocation() {
@@ -52,14 +55,16 @@ class ContainerPresenter: ContainerPresenterProtocol {
     private func getWeather(location: CLLocationCoordinate2D) {
         WeatherService().getWeather(location: location) { (data, error) in
             guard let data = data, error == nil else {
-                self.view.showError(message: error == nil ? "Empty JSON was received." : error!.localizedDescription)
+                self.view.showError(message: error == nil ?
+                    "Empty JSON was received." : error!.localizedDescription)
                 return
             }
             
             let (info, error) = data.deserialize() as (WeatherJSON?, Error?)
                         
             guard let weather = info, error == nil else {
-                self.view.showError(message: error == nil ? "JSON parsing failed." : error!.localizedDescription)
+                self.view.showError(message: error == nil ?
+                    "JSON parsing failed." : error!.localizedDescription)
                 return
             }
 
@@ -67,23 +72,18 @@ class ContainerPresenter: ContainerPresenterProtocol {
         }
     }
     
-    //MARK: Children
-    
-    private func configureChildPresenters(with weather: WeatherJSON) {
-        configurator.configureChildPresenters(with: weather) {
-            self.view.setChildPresenters()
-        }
-    }
-    
-    func setChildPresenter(for view: AnyObject) {
-        configurator.setChildPresenter(for: view)
-    }
-    
     //MARK: Scrolling
-    
-    func calculateHeight(_ newHeight: Double, barHeight: Double) {
+
+    func calculateHeightWithParameters(heightConstant: Double,
+                                       contentOffset: Double,
+                                       barHeight: Double) {
+        let areaHeight = 44.0
+        
+        let newHeight = heightConstant - contentOffset
+        let barHeight = areaHeight + barHeight
+        
         let headerMaxHeight = 270.0
-        let headerMinHeight = 44.0 + barHeight / 4
+        let headerMinHeight = areaHeight + barHeight / 4
 
         if newHeight > headerMaxHeight {
             view.updateHeader(with: headerMaxHeight, blocked: false)
@@ -93,6 +93,49 @@ class ContainerPresenter: ContainerPresenterProtocol {
             view.updateHeader(with: newHeight, blocked: true)
         }
                                 
-        configurator.topPresenter.updateAlpha((newHeight - 210.0) / 50)
+        topPresenter.updateAlpha((newHeight - 210.0) / 50)
+    }
+}
+
+//MARK: Children
+
+extension ContainerPresenter {
+    private func configureChildPresenters(with weather: WeatherJSON) {
+        configureChildPresenters(with: weather) {
+            self.view.setChildPresenters()
+        }
+    }
+    
+    private func configureChildPresenters(with weather: WeatherJSON,
+                                          completion: () -> ()) {
+        topPresenter    = TopPresenter(model: TopModel(weather))
+        hoursPresenter  = HoursPresenter(model: HoursModel(weather))
+        daysPresenter   = DaysPresenter(model: DaysModel(weather))
+        todayPresenter  = TodayPresenter(model: TodayModel(weather))
+        infoPresenter   = InfoPresenter(model: InfoModel(weather))
+        bottomPresenter = BottomPresenter()
+        completion()
+    }
+    
+    func setChildPresenter(for view: AnyObject) {
+        if let view = view as? TopViewProtocol {
+            view.presenter = topPresenter
+            topPresenter.view = view
+        } else if let view = view as? HoursViewProtocol {
+            view.presenter = hoursPresenter
+            hoursPresenter.view = view
+        } else if let view = view as? DaysViewProtocol {
+            view.presenter = daysPresenter
+            daysPresenter.view = view
+        } else if let view = view as? TodayViewProtocol {
+            view.presenter = todayPresenter
+            todayPresenter.view = view
+        } else if let view = view as? InfoViewProtocol {
+            view.presenter = infoPresenter
+            infoPresenter.view = view
+        } else if let view = view as? BottomViewProtocol {
+            view.presenter = bottomPresenter
+            bottomPresenter.view = view
+        }
     }
 }

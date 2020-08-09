@@ -18,9 +18,11 @@ protocol ContainerViewProtocol: AnyObject {
 
 protocol ContainerPresenterProtocol {
     var view: ContainerViewProtocol! { get set }
-    init(view: ContainerViewProtocol, configurator: ConfiguratorProtocol)
+    init(view: ContainerViewProtocol)
     func didUpdateLocation(_ location: CLLocationCoordinate2D?)
     func didFailToUpdateLocation()
     func setChildPresenter(for view: AnyObject)
-    func calculateHeight(_ newHeight: Double, barHeight: Double)
+    func calculateHeightWithParameters(heightConstant: Double,
+                                       contentOffset: Double,
+                                       barHeight: Double)
 }

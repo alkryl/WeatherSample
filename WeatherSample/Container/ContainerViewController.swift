@@ -22,7 +22,7 @@ class ContainerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = Configurator().containerPresenter(self)
+        presenter = ContainerPresenter(view: self)
     }
 }
 
@@ -43,9 +43,13 @@ extension ContainerViewController: UITableViewDelegate {
 //MARK: UITableViewDataSource
 
 extension ContainerViewController: UITableViewDataSource {
+    enum TableCells: CaseIterable {
+        case Content
+    }
+    
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return TableCells.allCases.count
     }
     
     func tableView(_ tableView: UITableView,
@@ -105,10 +109,10 @@ extension ContainerViewController: CLLocationManagerDelegate {
 
 extension ContainerViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let y = scrollView.contentOffset.y
-        let topViewHeight = Double(headerHeightConstraint.constant - y)
-        let barHeight = Double(44.0 + (navigationController?.statusBarHeight ?? 0))
-                
-        presenter.calculateHeight(topViewHeight, barHeight: barHeight)
+        presenter.calculateHeightWithParameters(
+            heightConstant: Double(headerHeightConstraint.constant),
+            contentOffset: Double(scrollView.contentOffset.y),
+            barHeight: Double(navigationController?.statusBarHeight ?? 0)
+        )
     }
 }

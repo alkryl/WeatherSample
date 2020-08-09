@@ -19,7 +19,8 @@ class ContainerCell: UITableViewCell {
     func configureView(with parent: UIViewController) {
         if contentView.subviews.count == 1 { return }
         
-        guard let child = parent.storyboard?.instantiateViewController(identifier: "TableViewController") else { return }
+        guard let child = parent.storyboard?.instantiateViewController(
+            identifier: "TableViewController") else { return }
         
         parent.addChild(child)
         
