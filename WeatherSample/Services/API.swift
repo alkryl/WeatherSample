@@ -17,10 +17,10 @@ struct API {
                            "lat=\(location.latitude)&lon=\(location.longitude)&" +
                            "units=metric&" +
                            "lang=en&" +
-                           "appid=\(self.weatherKey)")
+                           "appid=\(weatherKey)")
     }
     
     static func githubUrl() -> URL? {
-        return URL(string: "https://github.com/alkryl?tab=repositories")
+        return URL(string: "https://github.com/alkryl")
     }
 }
