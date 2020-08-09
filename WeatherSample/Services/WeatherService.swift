@@ -18,7 +18,11 @@ struct WeatherService {
     func getWeather(location: CLLocationCoordinate2D,
                     completion: @escaping (Data?, Error?) -> ()) {
         
-        guard let url = API.weatherUrl(location: location) else { return }
+        guard let url = API.weatherUrl(location: location) else {
+            completion(nil, NSError(domain: "com.invalidUrl.WeatherSample",
+                                    code: -1, userInfo: nil))
+            return
+        }
         
         queue.async(execute: DispatchWorkItem {
             URLSession.shared.dataTask(with: url) { (data, _, error) in
