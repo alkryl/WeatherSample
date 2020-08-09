@@ -11,7 +11,7 @@ import UIKit
 class DayCell: UITableViewCell {
     
     static var nib: UINib {
-        return UINib(nibName: "DayCell", bundle: Bundle.main)
+        return UINib(nibName: DayCell.identifier, bundle: Bundle.main)
     }
     static let identifier = "DayCell"
     static let height: CGFloat = 33.0

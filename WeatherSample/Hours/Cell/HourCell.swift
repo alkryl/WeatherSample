@@ -11,7 +11,7 @@ import UIKit
 class HourCell: UICollectionViewCell {
     
     static var nib: UINib {
-        return UINib(nibName: "HourCell", bundle: Bundle.main)
+        return UINib(nibName: HourCell.identifier, bundle: Bundle.main)
     }
     static let identifier = "HourCell"
     static let size = CGSize(width: 60, height: 100)

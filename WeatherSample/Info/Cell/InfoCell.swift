@@ -11,7 +11,7 @@ import UIKit
 class InfoCell: UITableViewCell {
 
     static var nib: UINib {
-        return UINib(nibName: "InfoCell", bundle: Bundle.main)
+        return UINib(nibName: InfoCell.identifier, bundle: Bundle.main)
     }
     static let identifier = "InfoCell"
     static let height: CGFloat = 57
