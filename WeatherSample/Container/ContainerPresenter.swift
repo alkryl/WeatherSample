@@ -10,18 +10,10 @@ import Foundation
 import CoreLocation
 
 class ContainerPresenter: ContainerPresenterProtocol {
-        
-    //MARK: Child presenters
-        
-    var topPresenter:    TopPresenterProtocol!
-    var hoursPresenter:  HoursPresenterProtocol!
-    var daysPresenter:   DaysPresenterProtocol!
-    var todayPresenter:  TodayPresenterProtocol!
-    var infoPresenter:   InfoPresenterProtocol!
-    var bottomPresenter: BottomPresenterProtocol!
     
     //MARK: Instances
-    
+
+    private let presenterConfigurator = PresenterConfigurator()
     private var service: LocationService!
     unowned var view: ContainerViewProtocol!
     
@@ -71,9 +63,25 @@ class ContainerPresenter: ContainerPresenterProtocol {
             self.configureChildPresenters(with: weather)
         }
     }
-    
-    //MARK: Scrolling
+}
 
+//MARK: Children
+
+extension ContainerPresenter {
+    private func configureChildPresenters(with weather: WeatherJSON) {
+        presenterConfigurator.configureChildPresenters(with: weather) {
+            self.view.setChildPresenters()
+        }
+    }
+    
+    func setChildPresenter(for view: AnyObject) {
+        presenterConfigurator.setChildPresenter(for: view)
+    }
+}
+
+//MARK: Scrolling
+
+extension ContainerPresenter {
     func calculateHeightWithParameters(heightConstant: Double,
                                        contentOffset: Double,
                                        barHeight: Double) {
@@ -93,49 +101,6 @@ class ContainerPresenter: ContainerPresenterProtocol {
             view.updateHeader(with: newHeight, blocked: true)
         }
                                 
-        topPresenter.updateAlpha((newHeight - 210.0) / 50)
-    }
-}
-
-//MARK: Children
-
-extension ContainerPresenter {
-    private func configureChildPresenters(with weather: WeatherJSON) {
-        configureChildPresenters(with: weather) {
-            self.view.setChildPresenters()
-        }
-    }
-    
-    private func configureChildPresenters(with weather: WeatherJSON,
-                                          completion: () -> ()) {
-        topPresenter    = TopPresenter(model: TopModel(weather))
-        hoursPresenter  = HoursPresenter(model: HoursModel(weather))
-        daysPresenter   = DaysPresenter(model: DaysModel(weather))
-        todayPresenter  = TodayPresenter(model: TodayModel(weather))
-        infoPresenter   = InfoPresenter(model: InfoModel(weather))
-        bottomPresenter = BottomPresenter()
-        completion()
-    }
-    
-    func setChildPresenter(for view: AnyObject) {
-        if let view = view as? TopViewProtocol {
-            view.presenter = topPresenter
-            topPresenter.view = view
-        } else if let view = view as? HoursViewProtocol {
-            view.presenter = hoursPresenter
-            hoursPresenter.view = view
-        } else if let view = view as? DaysViewProtocol {
-            view.presenter = daysPresenter
-            daysPresenter.view = view
-        } else if let view = view as? TodayViewProtocol {
-            view.presenter = todayPresenter
-            todayPresenter.view = view
-        } else if let view = view as? InfoViewProtocol {
-            view.presenter = infoPresenter
-            infoPresenter.view = view
-        } else if let view = view as? BottomViewProtocol {
-            view.presenter = bottomPresenter
-            bottomPresenter.view = view
-        }
+        presenterConfigurator.topPresenter.updateAlpha((newHeight - 210.0) / 50)
     }
 }
