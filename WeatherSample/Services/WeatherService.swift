@@ -6,30 +6,30 @@
 //  Copyright © 2020 Alexander Krylov. All rights reserved.
 //
 
-import Foundation
 import CoreLocation
 
-struct WeatherService {
-    
-    private let queue = DispatchQueue.global(qos: .userInteractive)
-    
+protocol WeatherServiceProtocol {
+    func getWeather(for location: Coordinate, completion: @escaping NetworkHandler)
+}
+
+struct WeatherService: WeatherServiceProtocol {
+        
     //MARK: Methods
     
-    func getWeather(location: CLLocationCoordinate2D,
-                    completion: @escaping (Data?, Error?) -> ()) {
-        
-        guard let url = API.weatherUrl(location: location) else {
-            completion(nil, NSError(domain: "com.invalidUrl.WeatherSample",
-                                    code: -1, userInfo: nil))
+    func getWeather(for location: Coordinate, completion: @escaping NetworkHandler) {
+        guard let url = API().weatherUrl(for: location) else {
+            completion(nil, .invalid(reason: Reason.invalidUrl))
             return
         }
         
-        queue.async(execute: DispatchWorkItem {
-            URLSession.shared.dataTask(with: url) { (data, _, error) in
-                DispatchQueue.main.async {
-                    completion(data, error)
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    completion(nil, .obtaining(reason: error.localizedDescription))
+                    return
                 }
-            }.resume()
-        })
+                completion(data, nil)
+            }
+        }.resume()
     }
 }
