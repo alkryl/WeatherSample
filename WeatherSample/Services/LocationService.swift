@@ -9,7 +9,11 @@
 import Foundation
 import CoreLocation
 
-struct LocationService {
+protocol LocationServiceProtocol {
+    func getCurrentLocation()
+}
+
+struct LocationService: LocationServiceProtocol {
     
     private let locationManager = CLLocationManager()
         
