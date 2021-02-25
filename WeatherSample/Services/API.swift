@@ -9,18 +9,51 @@
 import Foundation
 import CoreLocation
 
-struct API {
-    private static let weatherKey = "f05c0e6ed25af2c425ef113e8bb6f705"
-    
-    static func weatherUrl(location: CLLocationCoordinate2D) -> URL? {
-        return URL(string: "https://api.openweathermap.org/data/2.5/onecall?" +
-                           "lat=\(location.latitude)&lon=\(location.longitude)&" +
-                           "units=metric&" +
-                           "lang=en&" +
-                           "appid=\(weatherKey)")
+protocol APIProtocol {
+    func weatherUrl(for location: Coordinate) -> URL?
+    func githubUrl() -> URL?
+}
+
+struct API: APIProtocol {
+    func weatherUrl(for location: Coordinate) -> URL? {
+        return URL(string: APIHelper().weatherAddress(for: location))
     }
     
-    static func githubUrl() -> URL? {
-        return URL(string: "https://github.com/alkryl")
+    func githubUrl() -> URL? {
+        return URL(string: APIEnviroment.Address.github)
+    }
+}
+
+//MARK: Helper
+
+private struct APIHelper {
+    enum Key {
+        case base, latitude, longitude, units, language, appIdentifier
+    }
+    
+    //MARK: Properties
+            
+    static var parameters: [Key : String] {
+        return [.base : APIEnviroment.Address.base,
+                .latitude : "lat=",
+                .longitude : "&lon=",
+                .units : "&units=",
+                .language : "&lang=",
+                .appIdentifier : "&appid="]
+    }
+    
+    let param: (Key) -> (String) = { key in
+        return parameters[key].orEmpty
+    }
+    
+    //MARK: Methods
+    
+    func weatherAddress(for location: Coordinate) -> String {
+        return param(.base) +
+               param(.latitude) + "\(location.latitude)" +
+               param(.longitude) + "\(location.longitude)" +
+               param(.units) + APIEnviroment.Unit.metric +
+               param(.language) + APIEnviroment.Language.english +
+               param(.appIdentifier) + APIEnviroment.weatherKey
     }
 }
