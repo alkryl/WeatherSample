@@ -9,12 +9,12 @@
 import Foundation
 
 extension Data {
-    func deserialize<T: Decodable>() -> (T?, Error?) {
+    func map<T: Decodable>() -> (T?, SampleError?) {
         do {
             let data = try JSONDecoder().decode(T.self, from: self)
             return (data, nil)
         } catch(let error) {
-            return (nil, error)
+            return (nil, .mapping(reason: error.localizedDescription))
         }
     }
 }

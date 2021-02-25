@@ -17,3 +17,14 @@ extension UINavigationController {
         }
     }
 }
+
+extension UIViewController {
+    func presentError(_ description: String) {
+        let controller = UIAlertController(title: .empty, message: description, preferredStyle: .alert)
+        let action = UIAlertAction(title: Text.close, style: .default) { (action) in
+            controller.dismiss(animated: true, completion: nil)
+        }
+        controller.addAction(action)
+        present(controller, animated: true, completion: nil)
+    }
+}
