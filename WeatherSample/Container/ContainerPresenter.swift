@@ -43,4 +43,8 @@ extension ContainerPresenter: ContainerPresenterProtocol {
     func updateHeader(with height: FloatType, blocked: Bool) {
         view.updateHeader(with: height, blocked: blocked)
     }
+    
+    func updateAlpha(_ value: FloatType) {
+        view.updateAlpha(value)
+    }
 }

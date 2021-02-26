@@ -48,7 +48,7 @@ extension ContainerInteractor: ContainerInteractorProtocol {
         } else {
             presenter.updateHeader(with: newHeight, blocked: true)
         }
-                                
-//        presenterConfigurator.topPresenter.updateAlpha((newHeight - 210.0) / 50)
+        
+        presenter.updateAlpha((newHeight - 210.0) / 50)
     }
 }

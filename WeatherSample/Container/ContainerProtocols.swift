@@ -19,10 +19,12 @@ protocol ContainerPresenterProtocol: class {
     func tableView(numberOfRowsInSection section: Int) -> Int
     func calculateHeightWith(_ constraintConstant: FloatType, offset: FloatType, barHeight: FloatType)
     func updateHeader(with height: FloatType, blocked: Bool)
+    func updateAlpha(_ value: FloatType)
 }
 
 protocol ContainerViewProtocol: class {
     func updateHeader(with height: FloatType, blocked: Bool)
+    func updateAlpha(_ value: FloatType)
 }
 
 protocol ContainerInteractorProtocol: class {

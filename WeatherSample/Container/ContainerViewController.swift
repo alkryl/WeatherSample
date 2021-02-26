@@ -70,6 +70,11 @@ extension ContainerViewController: ContainerViewProtocol {
         headerHeight.constant = height
         tableView.disableScrolling(blocked)
     }
+    
+    func updateAlpha(_ value: FloatType) {
+        guard let topChild = children.first as? TopViewProtocol else { return }
+        topChild.updateAlpha(value)
+    }
 }
 
 //MARK: UIScrollViewDelegate
