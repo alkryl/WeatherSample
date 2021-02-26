@@ -7,100 +7,40 @@
 //
 
 import Foundation
-import CoreLocation
 
-class ContainerPresenter: ContainerPresenterProtocol {
+final class ContainerPresenter {
     
-    //MARK: Instances
-
-    private let presenterConfigurator = PresenterConfigurator()
-    private var service: LocationService!
-    unowned var view: ContainerViewProtocol!
+    weak var view: ContainerViewProtocol!
+    var interactor: ContainerInteractorProtocol!
+    var router: ContainerRouterProtocol!
     
     //MARK: Initialization
     
     required init(view: ContainerViewProtocol) {
         self.view = view
-        getCurrentLocation()
-    }
-    
-    //MARK: Location
-    
-    func didUpdateLocation(_ location: CLLocationCoordinate2D?) {
-        guard let location = location else { return }
-        getWeather(location: location)
-    }
-    
-    func didFailToUpdateLocation() {
-        getCurrentLocation()
-    }
-    
-    private func getCurrentLocation() {
-        if service == nil {
-            service = LocationService(delegate: view as! CLLocationManagerDelegate)
-        }
-        service.getCurrentLocation()
-    }
-    
-    //MARK: Weather
-    
-    private func getWeather(location: CLLocationCoordinate2D) {
-        WeatherService().getWeather(location: location) { (data, error) in
-            guard let data = data, error == nil else {
-                self.view.showError(message: error == nil ?
-                    "Empty JSON was received." : error!.localizedDescription)
-                return
-            }
-            
-            let (info, error) = data.deserialize() as (WeatherJSON?, Error?)
-                        
-            guard let weather = info, error == nil else {
-                self.view.showError(message: error == nil ?
-                    "JSON parsing failed." : error!.localizedDescription)
-                return
-            }
-
-            self.configureChildPresenters(with: weather)
-        }
     }
 }
 
-//MARK: Children
+//MARK: ContainerPresenterProtocol
 
-extension ContainerPresenter {
-    private func configureChildPresenters(with weather: WeatherJSON) {
-        presenterConfigurator.configureChildPresenters(with: weather) {
-            self.view.setChildPresenters()
-        }
+extension ContainerPresenter: ContainerPresenterProtocol {
+    func tableView(shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return interactor.shouldHighlightRows
     }
     
-    func setChildPresenter(for view: AnyObject) {
-        presenterConfigurator.setChildPresenter(for: view)
+    func tableView(heightForRowAt indexPath: IndexPath) -> FloatType {
+        return interactor.height
     }
-}
-
-//MARK: Scrolling
-
-extension ContainerPresenter {
-    func calculateHeightWithParameters(heightConstant: Double,
-                                       contentOffset: Double,
-                                       barHeight: Double) {
-        let areaHeight = 44.0
-        
-        let newHeight = heightConstant - contentOffset
-        let barHeight = areaHeight + barHeight
-        
-        let headerMaxHeight = 270.0
-        let headerMinHeight = areaHeight + barHeight / 4
-
-        if newHeight > headerMaxHeight {
-            view.updateHeader(with: headerMaxHeight, blocked: false)
-        } else if newHeight < headerMinHeight {
-            view.updateHeader(with: headerMinHeight, blocked: false)
-        } else {
-            view.updateHeader(with: newHeight, blocked: true)
-        }
-                                
-        presenterConfigurator.topPresenter.updateAlpha((newHeight - 210.0) / 50)
+    
+    func tableView(numberOfRowsInSection section: Int) -> Int {
+        return interactor.numberOfRows
+    }
+    
+    func calculateHeightWith(_ constraintConstant: FloatType, offset: FloatType, barHeight: FloatType) {
+        interactor.calculateHeightWith(constraintConstant, offset: offset, barHeight: barHeight)
+    }
+    
+    func updateHeader(with height: FloatType, blocked: Bool) {
+        view.updateHeader(with: height, blocked: blocked)
     }
 }

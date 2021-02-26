@@ -7,22 +7,29 @@
 //
 
 import Foundation
-import CoreLocation
 
-protocol ContainerViewProtocol: AnyObject {
-    var presenter: ContainerPresenterProtocol! { get set }
-    func updateHeader(with height: Double, blocked: Bool)
-    func showError(message: String)
-    func setChildPresenters()
+protocol ContainerConfiguratorProtocol: class {
+    func configure(with controller: ContainerViewController)
 }
 
-protocol ContainerPresenterProtocol {
-    var view: ContainerViewProtocol! { get set }
-    init(view: ContainerViewProtocol)
-    func didUpdateLocation(_ location: CLLocationCoordinate2D?)
-    func didFailToUpdateLocation()
-    func setChildPresenter(for view: AnyObject)
-    func calculateHeightWithParameters(heightConstant: Double,
-                                       contentOffset: Double,
-                                       barHeight: Double)
+protocol ContainerPresenterProtocol: class {
+    var router: ContainerRouterProtocol! { get set }
+    func tableView(shouldHighlightRowAt indexPath: IndexPath) -> Bool
+    func tableView(heightForRowAt indexPath: IndexPath) -> FloatType
+    func tableView(numberOfRowsInSection section: Int) -> Int
+    func calculateHeightWith(_ constraintConstant: FloatType, offset: FloatType, barHeight: FloatType)
+    func updateHeader(with height: FloatType, blocked: Bool)
 }
+
+protocol ContainerViewProtocol: class {
+    func updateHeader(with height: FloatType, blocked: Bool)
+}
+
+protocol ContainerInteractorProtocol: class {
+    var shouldHighlightRows: Bool { get }
+    var height: FloatType { get }
+    var numberOfRows: Int { get }
+    func calculateHeightWith(_ constraintConstant: FloatType, offset: FloatType, barHeight: FloatType)
+}
+
+protocol ContainerRouterProtocol: class { }

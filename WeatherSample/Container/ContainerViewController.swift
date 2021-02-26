@@ -7,22 +7,22 @@
 //
 
 import UIKit
-import CoreLocation
 
-class ContainerViewController: UIViewController {
+final class ContainerViewController: UIViewController {
     
     var presenter: ContainerPresenterProtocol!
+    let configurator: ContainerConfiguratorProtocol = ContainerConfigurator()
         
     //MARK: Outlets
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableView: ContainerTableView!
+    @IBOutlet weak var headerHeight: NSLayoutConstraint!
     
     //MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = ContainerPresenter(view: self)
+        configurator.configure(with: self)
     }
 }
 
@@ -31,32 +31,33 @@ class ContainerViewController: UIViewController {
 extension ContainerViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        return ContainerCell.shouldHighlight
+        return presenter.tableView(shouldHighlightRowAt: indexPath)
     }
     
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return ContainerCell.height
+        return presenter.tableView(heightForRowAt: indexPath)
     }
 }
 
 //MARK: UITableViewDataSource
 
 extension ContainerViewController: UITableViewDataSource {
-    enum TableCells: CaseIterable {
-        case Content
-    }
-    
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        return TableCells.allCases.count
+        return presenter.tableView(numberOfRowsInSection: section)
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ContainerCell.identifier, for: indexPath) as! ContainerCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContainerCell.identifier,
+                                                       for: indexPath) as? ContainerCell,
+              let child = storyboard?.instantiate(TableViewController.self), !cell.isOneSubview
+        else { return UITableViewCell() }
         
-        cell.configureView(with: self)
+        addChild(child)
+        cell.add(child.view)
+        child.didMove(toParent: self)
         
         return cell
     }
@@ -65,43 +66,9 @@ extension ContainerViewController: UITableViewDataSource {
 //MARK: ContainerViewProtocol
 
 extension ContainerViewController: ContainerViewProtocol {
-    func updateHeader(with height: Double, blocked: Bool) {
-        headerHeightConstraint.constant = CGFloat(height)
-        if blocked {
-            tableView.contentOffset.y = 0
-        }
-    }
-    
-    func showError(message: String) {
-        let alert = UIAlertController(title: "Error occured", message: message,
-                                      preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func setChildPresenters() {
-        children.forEach { child in
-            if child.isKind(of: UITableViewController.self) {
-                child.children.forEach {
-                    presenter.setChildPresenter(for: $0)
-                }
-            } else {
-                presenter.setChildPresenter(for: child)
-            }
-        }
-    }
-}
-
-//MARK: CLLocationManagerDelegate
-
-extension ContainerViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager,
-                         didUpdateLocations locations: [CLLocation]) {
-        presenter.didUpdateLocation(manager.location?.coordinate)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        presenter.didFailToUpdateLocation()
+    func updateHeader(with height: FloatType, blocked: Bool) {
+        headerHeight.constant = height
+        tableView.disableScrolling(blocked)
     }
 }
 
@@ -109,10 +76,8 @@ extension ContainerViewController: CLLocationManagerDelegate {
 
 extension ContainerViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        presenter.calculateHeightWithParameters(
-            heightConstant: Double(headerHeightConstraint.constant),
-            contentOffset: Double(scrollView.contentOffset.y),
-            barHeight: Double(navigationController?.statusBarHeight ?? 0)
-        )
+        presenter.calculateHeightWith(headerHeight.constant,
+                                      offset: scrollView.contentOffset.y,
+                                      barHeight: (navigationController?.statusBarHeight).orEmpty)
     }
 }
