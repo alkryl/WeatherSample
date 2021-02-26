@@ -13,9 +13,9 @@ protocol CacheServiceProviderProtocol {
     func getWeather() -> WeatherJSON?
 }
 
-struct CacheServiceProvider: CacheServiceProviderProtocol {
-    
-    private let cacheService = CacheService<String, WeatherJSON>()
+private let cacheService = CacheService<String, WeatherJSON>()
+
+struct CacheServiceProvider: CacheServiceProviderProtocol {    
     
     //MARK: Methods
     
