@@ -6,9 +6,11 @@
 //  Copyright © 2021 Alexander Krylov. All rights reserved.
 //
 
+import UIKit
 import CoreLocation
 
 typealias Coordinate = CLLocationCoordinate2D
+typealias FloatType  = CGFloat
 
 typealias NetworkHandler = (Data?, SampleError?) -> ()
 
