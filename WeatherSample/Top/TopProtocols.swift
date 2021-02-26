@@ -6,19 +6,27 @@
 //  Copyright © 2020 Alexander Krylov. All rights reserved.
 //
 
-import Foundation
-
-protocol TopViewProtocol: AnyObject {
-    var presenter: TopPresenterProtocol! { get set }
-    func setParameters(city: String, weather: String, degree: Int, day: String,
-                       dayTime: String, maxDegree: Int, minDegree: Int)
-    func showView()
-    func updateAlpha(_ alpha: Double)
+protocol TopConfiguratorProtocol: class {
+    func configure(with controller: TopViewController)
 }
 
-protocol TopPresenterProtocol {
-    var view: TopViewProtocol! { get set }
-    init(model: TopModel)
-    func updateView()
-    func updateAlpha(_ alpha: Double)
+protocol TopPresenterProtocol: class {
+    var router: TopRouterProtocol! { get set }
+    func getWeather()
+    func configureView()
+    func getText(for tag: Int) -> String
+    func shouldChangeAlpha(for tag: Int) -> Bool
 }
+
+protocol TopViewProtocol: class {
+    func configureView()
+    func updateAlpha(_ value: FloatType)
+}
+
+protocol TopInteractorProtocol: class {
+    func getWeather()
+    func getText(for tag: Int) -> String
+    func shouldChangeAlpha(for tag: Int) -> Bool
+}
+
+protocol TopRouterProtocol: class { }

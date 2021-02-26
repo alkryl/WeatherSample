@@ -8,45 +8,38 @@
 
 import UIKit
 
-class TopViewController: UIViewController {
+final class TopViewController: UIViewController {
 
-    static var nib: TopViewController {
-        return UIStoryboard().main.instantiateViewController(identifier: "TopViewController")
-    }
     var presenter: TopPresenterProtocol!
+    let configurator: TopConfiguratorProtocol = TopConfigurator()
         
     //MARK: Outlets
     
-    @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var weatherLabel: UILabel!
-    @IBOutlet weak var degreeLabel: UILabel!
-    @IBOutlet weak var dayLabel: UILabel!
-    @IBOutlet weak var todayLabel: UILabel!
-    @IBOutlet weak var maxDegreeLabel: UILabel!
-    @IBOutlet weak var minDegreeLabel: UILabel!
+    @IBOutlet private var viewsCollection: [UILabel]!
+    
+    //MARK: Lifecycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configurator.configure(with: self)
+        presenter.getWeather()
+    }
 }
 
 //MARK: TopViewProtocol
 
 extension TopViewController: TopViewProtocol {
-    func setParameters(city: String, weather: String, degree: Int, day: String,
-                       dayTime: String, maxDegree: Int, minDegree: Int) {
-        cityLabel.text = city
-        weatherLabel.text = weather
-        degreeLabel.text = "\(degree)°"
-        dayLabel.text = day
-        todayLabel.text = dayTime
-        maxDegreeLabel.text = "\(maxDegree)"
-        minDegreeLabel.text = "\(minDegree)"
+    func configureView() {
+        viewsCollection.forEach { label in
+            label.text = presenter.getText(for: label.tag)
+        }
     }
     
-    func showView() {
-        view.isHidden = false
-    }
-    
-    func updateAlpha(_ alpha: Double) {
-        [degreeLabel, dayLabel, todayLabel, maxDegreeLabel, minDegreeLabel].forEach {
-            $0?.alpha = CGFloat(alpha)
+    func updateAlpha(_ value: FloatType) {
+        viewsCollection.forEach { view in
+            if presenter.shouldChangeAlpha(for: view.tag) == true {
+                view.alpha = value
+            }
         }
     }
 }

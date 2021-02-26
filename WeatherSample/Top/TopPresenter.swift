@@ -6,38 +6,35 @@
 //  Copyright © 2020 Alexander Krylov. All rights reserved.
 //
 
-import Foundation
-
-class TopPresenter: TopPresenterProtocol {
+final class TopPresenter {
     
-    private var displayedData: TopViewData!
+    weak var view: TopViewProtocol!
+    var interactor: TopInteractorProtocol!
+    var router: TopRouterProtocol!
     
-    unowned var view: TopViewProtocol! {
-        didSet {
-            updateView()
-        }
-    }
-        
     //MARK: Initialization
     
-    required init(model: TopModel) {
-        displayedData = TopViewData(model)
+    required init(view: TopViewProtocol) {
+        self.view = view
+    }
+}
+
+//MARK: TopPresenterProtocol
+
+extension TopPresenter: TopPresenterProtocol {
+    func getWeather() {
+        interactor.getWeather()
     }
     
-    //MARK: Methods
-    
-    func updateView() {
-        view.setParameters(city: displayedData.city,
-                           weather: displayedData.weather,
-                           degree: displayedData.degree,
-                           day: displayedData.dayOfWeek,
-                           dayTime: displayedData.dayTime,
-                           maxDegree: displayedData.maxDegree,
-                           minDegree: displayedData.minDegree)
-        view.showView()
+    func configureView() {
+        view.configureView()
     }
     
-    func updateAlpha(_ alpha: Double) {
-        view.updateAlpha(alpha)
+    func getText(for tag: Int) -> String {
+        return interactor.getText(for: tag)
+    }
+    
+    func shouldChangeAlpha(for tag: Int) -> Bool {
+        return interactor.shouldChangeAlpha(for: tag)
     }
 }
