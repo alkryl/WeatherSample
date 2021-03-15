@@ -30,7 +30,7 @@ struct TopModelLayer {
         self.dayTime = Date().dayTime(sunrise: model.sunrise + model.timezoneOffset,
                                       sunset: model.sunset + model.timezoneOffset)
         
-        self.degree = model.degree.toInt().toString() + "°"
+        self.degree = model.degree.toInt().toString().withDegree
         self.maxDegree = model.maxDegree.orEmpty.toInt().toString()
         self.minDegree = model.minDegree.orEmpty.toInt().toString()
     }
