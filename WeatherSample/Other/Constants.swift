@@ -65,4 +65,15 @@ struct K {
             static let degree: FloatType = 17.0
         }
     }
+    
+    struct Cell {
+        struct Height {
+            static let hour: FloatType = 100.0
+            static let day: FloatType = 33.0
+        }
+        
+        struct Width {
+            static let hour: FloatType = 60.0
+        }
+    }
 }

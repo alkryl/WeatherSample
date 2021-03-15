@@ -37,7 +37,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Hj4-md-cCs">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6wa-NS-KtJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6wa-NS-KtJ" customClass="ContainerTableView" customModule="WeatherSample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="414" width="414" height="402"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -130,7 +130,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8u4-Za-4fc"/>
                     <connections>
-                        <outlet property="headerHeightConstraint" destination="Rt8-O2-DZ4" id="CmS-Qw-0ao"/>
+                        <outlet property="headerHeight" destination="Rt8-O2-DZ4" id="CmS-Qw-0ao"/>
                         <outlet property="tableView" destination="6wa-NS-KtJ" id="3Nm-eR-2Ol"/>
                     </connections>
                 </viewController>
@@ -149,7 +149,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFL-Hu-hTA">
                                 <rect key="frame" x="5" y="0.0" width="404" height="100"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AHV-Ie-IGg">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AHV-Ie-IGg" customClass="HoursCollectionView" customModule="WeatherSample" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="404" height="100"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="D2W-iT-sPJ">
@@ -209,7 +209,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="231"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3q0-dx-Ur8">
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3q0-dx-Ur8" customClass="DaysTableView" customModule="WeatherSample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="231"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -326,7 +326,7 @@
         <!--Table View Controller-->
         <scene sceneID="t8T-jj-cfH">
             <objects>
-                <tableViewController storyboardIdentifier="TableViewController" id="M8I-o2-mUC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TableViewController" id="M8I-o2-mUC" customClass="TableViewController" customModule="WeatherSample" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" id="v1a-Xh-Lac">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -468,11 +468,11 @@
         <scene sceneID="GP7-xx-3js">
             <objects>
                 <viewController storyboardIdentifier="TopViewController" id="2gz-qN-rCz" customClass="TopViewController" customModule="WeatherSample" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" hidden="YES" contentMode="scaleToFill" id="OcO-Km-M66">
+                    <view key="view" contentMode="scaleToFill" id="OcO-Km-M66">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="270"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 23°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5r-lC-2c7">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 23°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5r-lC-2c7">
                                 <rect key="frame" x="132.5" y="99" width="149" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="04b-bS-HHH"/>
@@ -491,7 +491,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlR-rq-pgM">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlR-rq-pgM">
                                 <rect key="frame" x="16" y="241" width="61" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Mm5-le-gqS"/>
@@ -500,7 +500,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwa-nx-Wj7">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwa-nx-Wj7">
                                 <rect key="frame" x="378.5" y="242" width="17.5" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="IlI-Bw-8DY"/>
@@ -509,7 +509,7 @@
                                 <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7R-62-MfJ">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7R-62-MfJ">
                                 <rect key="frame" x="324.5" y="242" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="QBF-Ac-swI"/>
@@ -518,7 +518,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkf-61-tnu">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkf-61-tnu">
                                 <rect key="frame" x="85" y="244" width="47" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="frG-sX-2RR"/>
@@ -527,7 +527,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mostly Cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT8-tW-0eh">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mostly Cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT8-tW-0eh">
                                 <rect key="frame" x="16" y="69" width="382" height="16"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -561,13 +561,13 @@
                     </view>
                     <size key="freeformSize" width="414" height="270"/>
                     <connections>
-                        <outlet property="cityLabel" destination="1OR-8Q-xu9" id="ecd-u6-NS1"/>
-                        <outlet property="dayLabel" destination="GlR-rq-pgM" id="oF9-S5-FwA"/>
-                        <outlet property="degreeLabel" destination="o5r-lC-2c7" id="vih-x3-KIk"/>
-                        <outlet property="maxDegreeLabel" destination="S7R-62-MfJ" id="X9l-Qd-Hv2"/>
-                        <outlet property="minDegreeLabel" destination="Bwa-nx-Wj7" id="FdH-hu-4KY"/>
-                        <outlet property="todayLabel" destination="wkf-61-tnu" id="ZPJ-6j-1FG"/>
-                        <outlet property="weatherLabel" destination="aT8-tW-0eh" id="OCu-aC-uha"/>
+                        <outletCollection property="viewsCollection" destination="o5r-lC-2c7" collectionClass="NSMutableArray" id="K6n-Z9-FU2"/>
+                        <outletCollection property="viewsCollection" destination="1OR-8Q-xu9" collectionClass="NSMutableArray" id="9Uf-0W-rTH"/>
+                        <outletCollection property="viewsCollection" destination="GlR-rq-pgM" collectionClass="NSMutableArray" id="QHR-Ig-Eri"/>
+                        <outletCollection property="viewsCollection" destination="Bwa-nx-Wj7" collectionClass="NSMutableArray" id="GLE-tL-Lnn"/>
+                        <outletCollection property="viewsCollection" destination="S7R-62-MfJ" collectionClass="NSMutableArray" id="dEd-bI-KB9"/>
+                        <outletCollection property="viewsCollection" destination="wkf-61-tnu" collectionClass="NSMutableArray" id="3RU-wV-wTI"/>
+                        <outletCollection property="viewsCollection" destination="aT8-tW-0eh" collectionClass="NSMutableArray" id="fv4-Af-dl6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evs-r1-zR7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

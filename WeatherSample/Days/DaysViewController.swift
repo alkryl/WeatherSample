@@ -8,36 +8,21 @@
 
 import UIKit
 
-class DaysViewController: UIViewController {
+final class DaysViewController: UIViewController {
     
-    static var nib: DaysViewController {
-        return UIStoryboard().main.instantiateViewController(identifier: "DaysViewController")
-    }
     var presenter: DaysPresenterProtocol!
-    
-    var displayedData = [DaysViewData]()
+    let configurator: DaysConfiguratorProtocol = DaysConfigurator()
     
     //MARK: Outlets
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: DaysTableView!
     
     //MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(DayCell.nib, forCellReuseIdentifier: DayCell.identifier)
-    }
-}
-
-//MARK: DaysViewProtocol
-
-extension DaysViewController: DaysViewProtocol {
-    func updateDisplayedData(_ data: [DaysViewData]) {
-        self.displayedData = data
-    }
-    
-    func updateView() {
-        tableView.reloadData()
+        configurator.configure(with: self)
+        presenter.getWeather()
     }
 }
 
@@ -45,7 +30,7 @@ extension DaysViewController: DaysViewProtocol {
 
 extension DaysViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return DayCell.height
+        return presenter.tableView(heightForRowAt: indexPath)
     }
 }
 
@@ -53,16 +38,20 @@ extension DaysViewController: UITableViewDelegate {
 
 extension DaysViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return displayedData.count
+        return presenter.tableView(numberOfRowsInSection: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DayCell.identifier,
                                                  for: indexPath) as! DayCell
-        guard let presenter = presenter else { return cell }
 
-        presenter.setPresenter(for: cell, at: indexPath.row)
+        let parameters = presenter.dayParametersForCell(at: indexPath)
+        cell.viewModel = DayCellViewModel(parameters: parameters)
         
         return cell
     }
 }
+
+//MARK: DaysViewProtocol
+
+extension DaysViewController: DaysViewProtocol { }
