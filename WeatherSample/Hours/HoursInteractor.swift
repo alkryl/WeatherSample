@@ -40,7 +40,7 @@ extension HoursInteractor: HoursInteractorProtocol {
     }
     
     func collectionView(sizeForItemAt indexPath: PathType) -> SizeType {
-        return SizeType(width: 60, height: 100)
+        return SizeType(width: K.Cell.Width.hour, height: K.Cell.Height.hour)
     }
     
     func hourParametersForCell(at indexPath: PathType) -> HourParameters {

@@ -6,8 +6,6 @@
 //  Copyright © 2021 Alexander Krylov. All rights reserved.
 //
 
-import Foundation
-
 final class HoursRouter: HoursRouterProtocol {
     
     weak var controller: HoursViewController!
