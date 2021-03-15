@@ -36,8 +36,6 @@
 		D007B63824B2239400CE27AA /* HourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63624B2239400CE27AA /* HourCell.swift */; };
 		D007B63924B2239400CE27AA /* HourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D007B63724B2239400CE27AA /* HourCell.xib */; };
 		D007B63B24B36E1700CE27AA /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63A24B36E1600CE27AA /* Int+.swift */; };
-		D007B63D24B474DB00CE27AA /* HourCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63C24B474DB00CE27AA /* HourCellModel.swift */; };
-		D007B63F24B4754600CE27AA /* HourCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B63E24B4754600CE27AA /* HourCellPresenter.swift */; };
 		D007B64124B4755900CE27AA /* HourCellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B64024B4755900CE27AA /* HourCellProtocols.swift */; };
 		D007B64424B4814200CE27AA /* DaysProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B64324B4814200CE27AA /* DaysProtocols.swift */; };
 		D007B64624B4814F00CE27AA /* DaysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B64524B4814F00CE27AA /* DaysModel.swift */; };
@@ -72,6 +70,38 @@
 		D014435724C5CF4300999F17 /* BottomProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014435624C5CF4300999F17 /* BottomProtocols.swift */; };
 		D014435924C5CF4F00999F17 /* BottomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014435824C5CF4F00999F17 /* BottomPresenter.swift */; };
 		D02C9E9224DC49B200A4A0E7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D02C9E9124DC49B200A4A0E7 /* README.md */; };
+		D076CF0B25FDFE1A000C3F17 /* HourCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D076CF0A25FDFE1A000C3F17 /* HourCellViewModel.swift */; };
+		D0BEA46D25E3A85F008C3BB9 /* TodayConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA46C25E3A85F008C3BB9 /* TodayConfigurator.swift */; };
+		D0BEA47125E3AB8B008C3BB9 /* TodayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA47025E3AB8A008C3BB9 /* TodayInteractor.swift */; };
+		D0BEA47525E3ADCD008C3BB9 /* TodayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA47425E3ADCD008C3BB9 /* TodayRouter.swift */; };
+		D0BEA47925E3F271008C3BB9 /* TodayModelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA47825E3F271008C3BB9 /* TodayModelLayer.swift */; };
+		D0BEA47E25E4F8C3008C3BB9 /* ContainerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA47D25E4F8C3008C3BB9 /* ContainerConfigurator.swift */; };
+		D0BEA48125E4F99E008C3BB9 /* ContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA48025E4F99E008C3BB9 /* ContainerInteractor.swift */; };
+		D0BEA48525E4F9E5008C3BB9 /* ContainerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA48425E4F9E5008C3BB9 /* ContainerRouter.swift */; };
+		D0BEA48925E4FB38008C3BB9 /* PreloadProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA48825E4FB38008C3BB9 /* PreloadProtocols.swift */; };
+		D0BEA48D25E4FB64008C3BB9 /* PreloadConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA48C25E4FB64008C3BB9 /* PreloadConfigurator.swift */; };
+		D0BEA49025E4FBAE008C3BB9 /* PreloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA48F25E4FBAE008C3BB9 /* PreloadViewController.swift */; };
+		D0BEA49325E4FC5C008C3BB9 /* PreloadPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA49225E4FC5C008C3BB9 /* PreloadPresenter.swift */; };
+		D0BEA49625E4FCB0008C3BB9 /* PreloadInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA49525E4FCB0008C3BB9 /* PreloadInteractor.swift */; };
+		D0BEA49925E4FCD9008C3BB9 /* PreloadRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA49825E4FCD9008C3BB9 /* PreloadRouter.swift */; };
+		D0BEA49C25E4FEFD008C3BB9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA49B25E4FEFD008C3BB9 /* Constants.swift */; };
+		D0BEA49F25E5197E008C3BB9 /* LocationServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA49E25E5197E008C3BB9 /* LocationServiceProvider.swift */; };
+		D0BEA4A225E5408C008C3BB9 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA4A125E5408C008C3BB9 /* Error.swift */; };
+		D0CFF7D625F276DE0002C2BC /* HoursInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CFF7D525F276DE0002C2BC /* HoursInteractor.swift */; };
+		D0CFF7D925F276F10002C2BC /* HoursRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CFF7D825F276F10002C2BC /* HoursRouter.swift */; };
+		D0F4C0F825E7990A00DE3574 /* WeatherServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4C0F725E7990900DE3574 /* WeatherServiceProvider.swift */; };
+		D0F4C0FB25E7A2B300DE3574 /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4C0FA25E7A2B300DE3574 /* CacheService.swift */; };
+		D0F4C0FE25E7A98B00DE3574 /* CacheServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4C0FD25E7A98B00DE3574 /* CacheServiceProvider.swift */; };
+		D0F4C10125E7D3A100DE3574 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4C10025E7D3A100DE3574 /* Mapper.swift */; };
+		D0F4C12725E7FADA00DE3574 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4C12625E7FADA00DE3574 /* TableViewController.swift */; };
+		D0F4C13125E8E21100DE3574 /* ContainerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4C13025E8E21100DE3574 /* ContainerTableView.swift */; };
+		D0F4C13425E8E34900DE3574 /* TopConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4C13325E8E34900DE3574 /* TopConfigurator.swift */; };
+		D0F4C13725E8E47500DE3574 /* TopInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4C13625E8E47500DE3574 /* TopInteractor.swift */; };
+		D0F4C13C25E8E4C100DE3574 /* TopRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4C13B25E8E4C100DE3574 /* TopRouter.swift */; };
+		D0F4C14425E8F2DF00DE3574 /* TopModelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4C14325E8F2DF00DE3574 /* TopModelLayer.swift */; };
+		D0F4C15525E9306600DE3574 /* HoursConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4C15425E9306600DE3574 /* HoursConfigurator.swift */; };
+		D0F4C15A25E930E700DE3574 /* HoursModelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4C15925E930E700DE3574 /* HoursModelLayer.swift */; };
+		D0F4C15D25E9329500DE3574 /* HoursCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4C15C25E9329500DE3574 /* HoursCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,8 +136,6 @@
 		D007B63624B2239400CE27AA /* HourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCell.swift; sourceTree = "<group>"; };
 		D007B63724B2239400CE27AA /* HourCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourCell.xib; sourceTree = "<group>"; };
 		D007B63A24B36E1600CE27AA /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
-		D007B63C24B474DB00CE27AA /* HourCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCellModel.swift; sourceTree = "<group>"; };
-		D007B63E24B4754600CE27AA /* HourCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCellPresenter.swift; sourceTree = "<group>"; };
 		D007B64024B4755900CE27AA /* HourCellProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCellProtocols.swift; sourceTree = "<group>"; };
 		D007B64324B4814200CE27AA /* DaysProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysProtocols.swift; sourceTree = "<group>"; };
 		D007B64524B4814F00CE27AA /* DaysModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysModel.swift; sourceTree = "<group>"; };
@@ -142,6 +170,38 @@
 		D014435624C5CF4300999F17 /* BottomProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomProtocols.swift; sourceTree = "<group>"; };
 		D014435824C5CF4F00999F17 /* BottomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPresenter.swift; sourceTree = "<group>"; };
 		D02C9E9124DC49B200A4A0E7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D076CF0A25FDFE1A000C3F17 /* HourCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCellViewModel.swift; sourceTree = "<group>"; };
+		D0BEA46C25E3A85F008C3BB9 /* TodayConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayConfigurator.swift; sourceTree = "<group>"; };
+		D0BEA47025E3AB8A008C3BB9 /* TodayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayInteractor.swift; sourceTree = "<group>"; };
+		D0BEA47425E3ADCD008C3BB9 /* TodayRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRouter.swift; sourceTree = "<group>"; };
+		D0BEA47825E3F271008C3BB9 /* TodayModelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayModelLayer.swift; sourceTree = "<group>"; };
+		D0BEA47D25E4F8C3008C3BB9 /* ContainerConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerConfigurator.swift; sourceTree = "<group>"; };
+		D0BEA48025E4F99E008C3BB9 /* ContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerInteractor.swift; sourceTree = "<group>"; };
+		D0BEA48425E4F9E5008C3BB9 /* ContainerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRouter.swift; sourceTree = "<group>"; };
+		D0BEA48825E4FB38008C3BB9 /* PreloadProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadProtocols.swift; sourceTree = "<group>"; };
+		D0BEA48C25E4FB64008C3BB9 /* PreloadConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadConfigurator.swift; sourceTree = "<group>"; };
+		D0BEA48F25E4FBAE008C3BB9 /* PreloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadViewController.swift; sourceTree = "<group>"; };
+		D0BEA49225E4FC5C008C3BB9 /* PreloadPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadPresenter.swift; sourceTree = "<group>"; };
+		D0BEA49525E4FCB0008C3BB9 /* PreloadInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadInteractor.swift; sourceTree = "<group>"; };
+		D0BEA49825E4FCD9008C3BB9 /* PreloadRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadRouter.swift; sourceTree = "<group>"; };
+		D0BEA49B25E4FEFD008C3BB9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D0BEA49E25E5197E008C3BB9 /* LocationServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceProvider.swift; sourceTree = "<group>"; };
+		D0BEA4A125E5408C008C3BB9 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		D0CFF7D525F276DE0002C2BC /* HoursInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursInteractor.swift; sourceTree = "<group>"; };
+		D0CFF7D825F276F10002C2BC /* HoursRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursRouter.swift; sourceTree = "<group>"; };
+		D0F4C0F725E7990900DE3574 /* WeatherServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceProvider.swift; sourceTree = "<group>"; };
+		D0F4C0FA25E7A2B300DE3574 /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
+		D0F4C0FD25E7A98B00DE3574 /* CacheServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheServiceProvider.swift; sourceTree = "<group>"; };
+		D0F4C10025E7D3A100DE3574 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		D0F4C12625E7FADA00DE3574 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		D0F4C13025E8E21100DE3574 /* ContainerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTableView.swift; sourceTree = "<group>"; };
+		D0F4C13325E8E34900DE3574 /* TopConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopConfigurator.swift; sourceTree = "<group>"; };
+		D0F4C13625E8E47500DE3574 /* TopInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopInteractor.swift; sourceTree = "<group>"; };
+		D0F4C13B25E8E4C100DE3574 /* TopRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRouter.swift; sourceTree = "<group>"; };
+		D0F4C14325E8F2DF00DE3574 /* TopModelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopModelLayer.swift; sourceTree = "<group>"; };
+		D0F4C15425E9306600DE3574 /* HoursConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursConfigurator.swift; sourceTree = "<group>"; };
+		D0F4C15925E930E700DE3574 /* HoursModelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursModelLayer.swift; sourceTree = "<group>"; };
+		D0F4C15C25E9329500DE3574 /* HoursCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +239,9 @@
 			isa = PBXGroup;
 			children = (
 				D007B5D024AA069100CE27AA /* Services */,
+				D0F4C10325E7D4D300DE3574 /* Providers */,
 				D007B5D424AA06CD00CE27AA /* Extensions */,
+				D0BEA48725E4FB1F008C3BB9 /* Preload */,
 				D007B5F724ADE74100CE27AA /* Container */,
 				D007B5FF24AE263D00CE27AA /* Top */,
 				D007B62E24B2187200CE27AA /* Hours */,
@@ -198,8 +260,10 @@
 			isa = PBXGroup;
 			children = (
 				D007B68024B8AB4800CE27AA /* API.swift */,
+				D0F4C10025E7D3A100DE3574 /* Mapper.swift */,
 				D007B5D124AA06A300CE27AA /* LocationService.swift */,
 				D007B5FB24ADFB4F00CE27AA /* WeatherService.swift */,
+				D0F4C0FA25E7A2B300DE3574 /* CacheService.swift */,
 				D01437E424E9822C007D7ACE /* PresenterConfigurator.swift */,
 			);
 			path = Services;
@@ -226,6 +290,9 @@
 				D007B5BC24A9FFCF00CE27AA /* SceneDelegate.swift */,
 				D007B5C324A9FFD100CE27AA /* Assets.xcassets */,
 				D007B5C824A9FFD100CE27AA /* Info.plist */,
+				D0BEA49B25E4FEFD008C3BB9 /* Constants.swift */,
+				D0BEA4A125E5408C008C3BB9 /* Error.swift */,
+				D0F4C12625E7FADA00DE3574 /* TableViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -242,11 +309,13 @@
 		D007B5F724ADE74100CE27AA /* Container */ = {
 			isa = PBXGroup;
 			children = (
+				D007B68524BC66BF00CE27AA /* Views */,
 				D007B5F324ADE4EE00CE27AA /* ContainerProtocols.swift */,
-				D007B5F524ADE5FE00CE27AA /* Weather.swift */,
-				D007B5EF24ADE37900CE27AA /* ContainerPresenter.swift */,
+				D0BEA47D25E4F8C3008C3BB9 /* ContainerConfigurator.swift */,
 				D007B5DE24AA094800CE27AA /* ContainerViewController.swift */,
-				D007B68524BC66BF00CE27AA /* Cell */,
+				D007B5EF24ADE37900CE27AA /* ContainerPresenter.swift */,
+				D0BEA48025E4F99E008C3BB9 /* ContainerInteractor.swift */,
+				D0BEA48425E4F9E5008C3BB9 /* ContainerRouter.swift */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -263,10 +332,13 @@
 		D007B5FF24AE263D00CE27AA /* Top */ = {
 			isa = PBXGroup;
 			children = (
+				D0F4C13A25E8E4AF00DE3574 /* Model */,
 				D007B60224AE26D000CE27AA /* TopProtocols.swift */,
-				D007B60424AE26E200CE27AA /* TopModel.swift */,
-				D007B60024AE265800CE27AA /* TopPresenter.swift */,
+				D0F4C13325E8E34900DE3574 /* TopConfigurator.swift */,
 				D007B5E024AA0A6100CE27AA /* TopViewController.swift */,
+				D007B60024AE265800CE27AA /* TopPresenter.swift */,
+				D0F4C13625E8E47500DE3574 /* TopInteractor.swift */,
+				D0F4C13B25E8E4C100DE3574 /* TopRouter.swift */,
 			);
 			path = Top;
 			sourceTree = "<group>";
@@ -274,25 +346,25 @@
 		D007B62E24B2187200CE27AA /* Hours */ = {
 			isa = PBXGroup;
 			children = (
+				D0F4C15725E930B300DE3574 /* Model */,
+				D007B63524B2236300CE27AA /* Views */,
 				D007B62F24B218AD00CE27AA /* HoursProtocols.swift */,
-				D007B63124B218DA00CE27AA /* HoursModel.swift */,
-				D007B63324B2193400CE27AA /* HoursPresenter.swift */,
+				D0F4C15425E9306600DE3574 /* HoursConfigurator.swift */,
 				D007B5E224ADD42000CE27AA /* HoursViewController.swift */,
-				D007B63524B2236300CE27AA /* Cell */,
+				D007B63324B2193400CE27AA /* HoursPresenter.swift */,
+				D0CFF7D525F276DE0002C2BC /* HoursInteractor.swift */,
+				D0CFF7D825F276F10002C2BC /* HoursRouter.swift */,
 			);
 			path = Hours;
 			sourceTree = "<group>";
 		};
-		D007B63524B2236300CE27AA /* Cell */ = {
+		D007B63524B2236300CE27AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D007B64024B4755900CE27AA /* HourCellProtocols.swift */,
-				D007B63C24B474DB00CE27AA /* HourCellModel.swift */,
-				D007B63E24B4754600CE27AA /* HourCellPresenter.swift */,
-				D007B63624B2239400CE27AA /* HourCell.swift */,
-				D007B63724B2239400CE27AA /* HourCell.xib */,
+				D076CF0E25FEAEAE000C3F17 /* HourCell */,
+				D0F4C15C25E9329500DE3574 /* HoursCollectionView.swift */,
 			);
-			path = Cell;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D007B64224B4812400CE27AA /* Days */ = {
@@ -322,10 +394,13 @@
 		D007B65824B4ACD700CE27AA /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				D0BEA47725E3F25C008C3BB9 /* Model */,
 				D007B65924B4ACF200CE27AA /* TodayProtocols.swift */,
-				D007B65B24B4AD3500CE27AA /* TodayModel.swift */,
-				D007B65D24B4AD4100CE27AA /* TodayPresenter.swift */,
+				D0BEA46C25E3A85F008C3BB9 /* TodayConfigurator.swift */,
 				D007B5E724ADD75500CE27AA /* TodayViewController.swift */,
+				D007B65D24B4AD4100CE27AA /* TodayPresenter.swift */,
+				D0BEA47025E3AB8A008C3BB9 /* TodayInteractor.swift */,
+				D0BEA47425E3ADCD008C3BB9 /* TodayRouter.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -364,12 +439,13 @@
 			path = Github;
 			sourceTree = "<group>";
 		};
-		D007B68524BC66BF00CE27AA /* Cell */ = {
+		D007B68524BC66BF00CE27AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				D007B68824BC679700CE27AA /* ContainerCell.swift */,
+				D0F4C13025E8E21100DE3574 /* ContainerTableView.swift */,
 			);
-			path = Cell;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D014435324C5CF1200999F17 /* Bottom */ = {
@@ -380,6 +456,76 @@
 				D014435424C5CF2C00999F17 /* BottomViewController.swift */,
 			);
 			path = Bottom;
+			sourceTree = "<group>";
+		};
+		D076CF0E25FEAEAE000C3F17 /* HourCell */ = {
+			isa = PBXGroup;
+			children = (
+				D007B64024B4755900CE27AA /* HourCellProtocols.swift */,
+				D076CF0A25FDFE1A000C3F17 /* HourCellViewModel.swift */,
+				D007B63624B2239400CE27AA /* HourCell.swift */,
+				D007B63724B2239400CE27AA /* HourCell.xib */,
+			);
+			path = HourCell;
+			sourceTree = "<group>";
+		};
+		D0BEA47725E3F25C008C3BB9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D007B65B24B4AD3500CE27AA /* TodayModel.swift */,
+				D0BEA47825E3F271008C3BB9 /* TodayModelLayer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0BEA47C25E4F834008C3BB9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D007B5F524ADE5FE00CE27AA /* Weather.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0BEA48725E4FB1F008C3BB9 /* Preload */ = {
+			isa = PBXGroup;
+			children = (
+				D0BEA47C25E4F834008C3BB9 /* Model */,
+				D0BEA48825E4FB38008C3BB9 /* PreloadProtocols.swift */,
+				D0BEA48C25E4FB64008C3BB9 /* PreloadConfigurator.swift */,
+				D0BEA48F25E4FBAE008C3BB9 /* PreloadViewController.swift */,
+				D0BEA49225E4FC5C008C3BB9 /* PreloadPresenter.swift */,
+				D0BEA49525E4FCB0008C3BB9 /* PreloadInteractor.swift */,
+				D0BEA49825E4FCD9008C3BB9 /* PreloadRouter.swift */,
+			);
+			path = Preload;
+			sourceTree = "<group>";
+		};
+		D0F4C10325E7D4D300DE3574 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				D0BEA49E25E5197E008C3BB9 /* LocationServiceProvider.swift */,
+				D0F4C0F725E7990900DE3574 /* WeatherServiceProvider.swift */,
+				D0F4C0FD25E7A98B00DE3574 /* CacheServiceProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		D0F4C13A25E8E4AF00DE3574 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D007B60424AE26E200CE27AA /* TopModel.swift */,
+				D0F4C14325E8F2DF00DE3574 /* TopModelLayer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0F4C15725E930B300DE3574 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D007B63124B218DA00CE27AA /* HoursModel.swift */,
+				D0F4C15925E930E700DE3574 /* HoursModelLayer.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,8 +603,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0BEA48125E4F99E008C3BB9 /* ContainerInteractor.swift in Sources */,
 				D007B68B24BC6A9900CE27AA /* UIStoryboard+Main.swift in Sources */,
 				D007B63424B2193400CE27AA /* HoursPresenter.swift in Sources */,
+				D0F4C13425E8E34900DE3574 /* TopConfigurator.swift in Sources */,
 				D007B5E324ADD42000CE27AA /* HoursViewController.swift in Sources */,
 				D007B60524AE26E200CE27AA /* TopModel.swift in Sources */,
 				D007B5BB24A9FFCF00CE27AA /* AppDelegate.swift in Sources */,
@@ -467,25 +615,33 @@
 				D007B5D224AA06A300CE27AA /* LocationService.swift in Sources */,
 				D007B64424B4814200CE27AA /* DaysProtocols.swift in Sources */,
 				D014435924C5CF4F00999F17 /* BottomPresenter.swift in Sources */,
+				D0F4C13725E8E47500DE3574 /* TopInteractor.swift in Sources */,
 				D007B65E24B4AD4100CE27AA /* TodayPresenter.swift in Sources */,
 				D014435724C5CF4300999F17 /* BottomProtocols.swift in Sources */,
 				D007B68424B8ACE600CE27AA /* GithubProtocols.swift in Sources */,
 				D014435224C5A73C00999F17 /* UINavigationController+StatusBar.swift in Sources */,
 				D007B62B24AF707200CE27AA /* DateFormatter+Day.swift in Sources */,
-				D007B63D24B474DB00CE27AA /* HourCellModel.swift in Sources */,
+				D0BEA4A225E5408C008C3BB9 /* Error.swift in Sources */,
+				D0F4C13125E8E21100DE3574 /* ContainerTableView.swift in Sources */,
+				D0BEA47925E3F271008C3BB9 /* TodayModelLayer.swift in Sources */,
 				D007B66324B5ED1000CE27AA /* InfoModel.swift in Sources */,
 				D007B64E24B49B8900CE27AA /* DayCell.swift in Sources */,
-				D007B63F24B4754600CE27AA /* HourCellPresenter.swift in Sources */,
 				D007B5EA24ADD82F00CE27AA /* InfoViewController.swift in Sources */,
 				D007B65324B49BAE00CE27AA /* DayCellModel.swift in Sources */,
+				D0BEA48525E4F9E5008C3BB9 /* ContainerRouter.swift in Sources */,
 				D007B5E824ADD75500CE27AA /* TodayViewController.swift in Sources */,
+				D0BEA49C25E4FEFD008C3BB9 /* Constants.swift in Sources */,
 				D007B5FC24ADFB4F00CE27AA /* WeatherService.swift in Sources */,
 				D007B66824B5FF9100CE27AA /* InfoCellProtocols.swift in Sources */,
+				D0BEA47525E3ADCD008C3BB9 /* TodayRouter.swift in Sources */,
+				D0BEA47E25E4F8C3008C3BB9 /* ContainerConfigurator.swift in Sources */,
+				D0F4C0F825E7990A00DE3574 /* WeatherServiceProvider.swift in Sources */,
 				D007B63224B218DA00CE27AA /* HoursModel.swift in Sources */,
 				D01437E524E9822C007D7ACE /* PresenterConfigurator.swift in Sources */,
 				D007B68924BC679700CE27AA /* ContainerCell.swift in Sources */,
 				D007B67F24B8A95A00CE27AA /* GithubPresenter.swift in Sources */,
 				D007B60324AE26D000CE27AA /* TopProtocols.swift in Sources */,
+				D0CFF7D625F276DE0002C2BC /* HoursInteractor.swift in Sources */,
 				D014435524C5CF2C00999F17 /* BottomViewController.swift in Sources */,
 				D007B64124B4755900CE27AA /* HourCellProtocols.swift in Sources */,
 				D007B5DF24AA094800CE27AA /* ContainerViewController.swift in Sources */,
@@ -493,24 +649,44 @@
 				D007B63824B2239400CE27AA /* HourCell.swift in Sources */,
 				D007B63024B218AD00CE27AA /* HoursProtocols.swift in Sources */,
 				D007B66F24B5FFB800CE27AA /* InfoCell.swift in Sources */,
+				D0BEA49F25E5197E008C3BB9 /* LocationServiceProvider.swift in Sources */,
 				D007B5FE24AE0C4B00CE27AA /* Data+Content.swift in Sources */,
+				D0BEA49025E4FBAE008C3BB9 /* PreloadViewController.swift in Sources */,
 				D007B66124B5ED0400CE27AA /* InfoProtocols.swift in Sources */,
+				D0BEA47125E3AB8B008C3BB9 /* TodayInteractor.swift in Sources */,
 				D007B64824B4815900CE27AA /* DaysPresenter.swift in Sources */,
+				D0F4C12725E7FADA00DE3574 /* TableViewController.swift in Sources */,
 				D007B5F424ADE4EE00CE27AA /* ContainerProtocols.swift in Sources */,
 				D007B65A24B4ACF200CE27AA /* TodayProtocols.swift in Sources */,
+				D0F4C15D25E9329500DE3574 /* HoursCollectionView.swift in Sources */,
+				D0BEA49625E4FCB0008C3BB9 /* PreloadInteractor.swift in Sources */,
 				D007B66524B5ED1A00CE27AA /* InfoPresenter.swift in Sources */,
+				D0BEA49925E4FCD9008C3BB9 /* PreloadRouter.swift in Sources */,
 				D007B65524B49BC100CE27AA /* DayCellPresenter.swift in Sources */,
+				D0F4C10125E7D3A100DE3574 /* Mapper.swift in Sources */,
 				D007B62D24AF73C600CE27AA /* Date+DayTime.swift in Sources */,
 				D007B5F624ADE5FE00CE27AA /* Weather.swift in Sources */,
+				D0F4C14425E8F2DF00DE3574 /* TopModelLayer.swift in Sources */,
 				D007B66A24B5FF9D00CE27AA /* InfoCellModel.swift in Sources */,
 				D007B67D24B89C8F00CE27AA /* GithubViewController.swift in Sources */,
+				D0BEA49325E4FC5C008C3BB9 /* PreloadPresenter.swift in Sources */,
 				D007B65124B49BA000CE27AA /* DayCellProtocols.swift in Sources */,
 				D007B65C24B4AD3500CE27AA /* TodayModel.swift in Sources */,
 				D007B5F024ADE37900CE27AA /* ContainerPresenter.swift in Sources */,
+				D0F4C13C25E8E4C100DE3574 /* TopRouter.swift in Sources */,
 				D007B68124B8AB4800CE27AA /* API.swift in Sources */,
+				D0CFF7D925F276F10002C2BC /* HoursRouter.swift in Sources */,
 				D007B65724B4A83000CE27AA /* UIImage+Icon.swift in Sources */,
+				D0BEA48D25E4FB64008C3BB9 /* PreloadConfigurator.swift in Sources */,
+				D0F4C15525E9306600DE3574 /* HoursConfigurator.swift in Sources */,
 				D007B66C24B5FFAB00CE27AA /* InfoCellPresenter.swift in Sources */,
+				D0F4C0FB25E7A2B300DE3574 /* CacheService.swift in Sources */,
+				D0F4C0FE25E7A98B00DE3574 /* CacheServiceProvider.swift in Sources */,
 				D007B63B24B36E1700CE27AA /* Int+.swift in Sources */,
+				D0F4C15A25E930E700DE3574 /* HoursModelLayer.swift in Sources */,
+				D0BEA46D25E3A85F008C3BB9 /* TodayConfigurator.swift in Sources */,
+				D076CF0B25FDFE1A000C3F17 /* HourCellViewModel.swift in Sources */,
+				D0BEA48925E4FB38008C3BB9 /* PreloadProtocols.swift in Sources */,
 				D007B5BD24A9FFCF00CE27AA /* SceneDelegate.swift in Sources */,
 				D007B5E124AA0A6100CE27AA /* TopViewController.swift in Sources */,
 			);

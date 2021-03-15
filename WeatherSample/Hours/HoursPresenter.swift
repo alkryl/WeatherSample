@@ -6,37 +6,35 @@
 //  Copyright © 2020 Alexander Krylov. All rights reserved.
 //
 
-import Foundation
-
-class HoursPresenter: HoursPresenterProtocol {
+final class HoursPresenter {
     
-    private var displayedData: [HoursViewData]!
-    
-    unowned var view: HoursViewProtocol! {
-        didSet {
-            updateView()
-        }
-    }
+    weak var view: HoursViewProtocol!
+    var interactor: HoursInteractorProtocol!
+    var router: HoursRouterProtocol!
     
     //MARK: Initialization
     
-    required init(model: HoursModel) {
-        displayedData = HoursWeather(model).hoursForecast
+    required init(view: HoursViewProtocol) {
+        self.view = view
     }
-        
-    //MARK: Methods
-    
-    func updateView() {
-        view.updateDisplayedData(displayedData)
-        view.updateView()
+}
+
+//MARK: HoursPresenterProtocol
+
+extension HoursPresenter: HoursPresenterProtocol {
+    func getWeather() {
+        interactor.getWeather()
     }
     
-    func setPresenter(for cell: HourCellProtocol, at row: Int) {
-        let data = displayedData[row]
-        let presenter = HourCellPresenter(model: HourCellModel(hour: data.hour,
-                                                               temp: data.temp,
-                                                               id: data.id))
-        cell.presenter = presenter
-        presenter.view = cell
+    func collectionView(numberOfItemsInSection section: Int) -> Int {
+        return interactor.collectionView(numberOfItemsInSection: section)
+    }
+    
+    func collectionView(sizeForItemAt indexPath: PathType) -> SizeType {
+        return interactor.collectionView(sizeForItemAt: indexPath)
+    }
+    
+    func hourParametersForCell(at indexPath: PathType) -> HourParameters {
+        return interactor.hourParametersForCell(at: indexPath)
     }
 }

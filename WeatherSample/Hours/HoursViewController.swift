@@ -8,44 +8,21 @@
 
 import UIKit
 
-class HoursViewController: UIViewController {
+final class HoursViewController: UIViewController {
     
-    static var nib: HoursViewController {
-        return UIStoryboard().main.instantiateViewController(identifier: "HoursViewController")
-    }
     var presenter: HoursPresenterProtocol!
-    
-    private let layout: UICollectionViewFlowLayout = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 0
-        return layout
-    }()
-    
-    var displayedData = [HoursViewData]()
+    let configurator: HoursConfiguratorProtocol = HoursConfigurator()
     
     //MARK: Outlets
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: HoursCollectionView!
     
     //MARK: Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(HourCell.nib, forCellWithReuseIdentifier: HourCell.identifier)
-        collectionView.collectionViewLayout = layout
-    }
-}
-
-//MARK: HoursViewProtocol
-
-extension HoursViewController: HoursViewProtocol {
-    func updateDisplayedData(_ data: [HoursViewData]) {
-        self.displayedData = data
-    }
-    
-    func updateView() {
-        collectionView.reloadData()
+        configurator.configure(with: self)
+        presenter.getWeather()
     }
 }
 
@@ -54,16 +31,15 @@ extension HoursViewController: HoursViewProtocol {
 extension HoursViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return displayedData.count
+        return presenter.collectionView(numberOfItemsInSection: section)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourCell.identifier,
-                                                      for: indexPath) as! HourCell
-        guard let presenter = presenter else { return cell }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourCell.identifier, for: indexPath) as? HourCell else { return UICollectionViewCell() }
         
-        presenter.setPresenter(for: cell, at: indexPath.row)
+        let parameters = presenter.hourParametersForCell(at: indexPath)
+        cell.viewModel = HourCellViewModel(parameters: parameters)
         
         return cell
     }
@@ -75,6 +51,10 @@ extension HoursViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return HourCell.size
+        return presenter.collectionView(sizeForItemAt: indexPath)
     }
 }
+
+//MARK: HoursViewProtocol
+
+extension HoursViewController: HoursViewProtocol { }

@@ -6,17 +6,25 @@
 //  Copyright © 2020 Alexander Krylov. All rights reserved.
 //
 
-import UIKit
-
-protocol HoursViewProtocol: AnyObject {
-    var presenter: HoursPresenterProtocol! { get set }
-    func updateDisplayedData(_ data: [HoursViewData])
-    func updateView()
+protocol HoursConfiguratorProtocol: class {
+    func configure(with controller: HoursViewController)
 }
 
-protocol HoursPresenterProtocol {
-    var view: HoursViewProtocol! { get set }
-    init(model: HoursModel)
-    func updateView()
-    func setPresenter(for cell: HourCellProtocol, at row: Int)
+protocol HoursPresenterProtocol: class {
+    var router: HoursRouterProtocol! { get set }
+    func getWeather()
+    func collectionView(numberOfItemsInSection section: Int) -> Int
+    func collectionView(sizeForItemAt indexPath: PathType) -> SizeType
+    func hourParametersForCell(at indexPath: PathType) -> HourParameters
 }
+
+protocol HoursViewProtocol: class { }
+
+protocol HoursInteractorProtocol: class {
+    func getWeather()
+    func collectionView(numberOfItemsInSection section: Int) -> Int
+    func collectionView(sizeForItemAt indexPath: PathType) -> SizeType
+    func hourParametersForCell(at indexPath: PathType) -> HourParameters
+}
+
+protocol HoursRouterProtocol: class { }
