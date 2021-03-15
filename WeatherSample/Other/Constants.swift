@@ -11,6 +11,8 @@ import CoreLocation
 
 typealias Coordinate = CLLocationCoordinate2D
 typealias FloatType  = CGFloat
+typealias SizeType   = CGSize
+typealias PathType   = IndexPath
 
 typealias NetworkHandler = (Data?, SampleError?) -> ()
 
@@ -41,4 +43,26 @@ struct Text {
 
 struct Key {
     static let weather = "weatherKey"
+}
+
+struct K {
+    struct Weather {
+        struct ID {
+            static let sunrise = 900
+            static let sunset  = 901
+        }
+        
+        struct Text {
+            static let now = "Now"
+            static let sunrise = "Sunrise"
+            static let sunset = "Sunset"
+        }
+    }
+    
+    struct Font {
+        struct Size {
+            static let hour: FloatType = 15.0
+            static let degree: FloatType = 17.0
+        }
+    }
 }
