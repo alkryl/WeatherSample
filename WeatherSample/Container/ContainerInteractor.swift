@@ -25,7 +25,7 @@ extension ContainerInteractor: ContainerInteractorProtocol {
     }
     
     var height: FloatType {
-        return 814.0
+        return K.Cell.Height.container
     }
     
     var numberOfRows: Int {

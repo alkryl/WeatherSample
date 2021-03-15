@@ -23,7 +23,7 @@ class HoursCollectionView: UICollectionView {
     private func setLayout() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 0
+        layout.minimumLineSpacing = K.Layout.minimumLineSpacing
         collectionViewLayout = layout
     }
 }

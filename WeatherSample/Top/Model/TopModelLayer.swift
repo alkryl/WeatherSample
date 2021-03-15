@@ -21,8 +21,8 @@ struct TopModelLayer {
     
     init(_ model: TopModel) {
         self.city = (model.city
-                    .components(separatedBy: "/").last?
-                    .replacingOccurrences(of: "_", with: " "))
+                    .components(separatedBy: K.Symbol.slash).last?
+                    .replacingOccurrences(of: K.Symbol.underscore, with: K.Symbol.space))
                     .orEmpty
 
         self.weather = (model.weather?.capitalized).orEmpty

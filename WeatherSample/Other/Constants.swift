@@ -68,6 +68,7 @@ struct K {
     
     struct Cell {
         struct Height {
+            static let container: FloatType = 814.0
             static let hour: FloatType = 100.0
             static let day: FloatType = 33.0
         }
@@ -75,5 +76,15 @@ struct K {
         struct Width {
             static let hour: FloatType = 60.0
         }
+    }
+    
+    struct Layout {
+        static let minimumLineSpacing: FloatType = 0.0
+    }
+    
+    struct Symbol {
+        static let underscore = "_"
+        static let slash = "/"
+        static let space = " "
     }
 }
