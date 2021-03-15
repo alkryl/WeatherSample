@@ -43,8 +43,10 @@ struct DaysModelLayer {
             append(dayInfo(params))
         }
         
-//        daysList.removeFirst()
-        
+        if !daysList.isEmpty {
+            daysList.removeFirst()
+        }
+                
         return daysList
     }
 }
