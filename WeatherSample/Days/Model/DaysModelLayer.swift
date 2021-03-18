@@ -62,7 +62,7 @@ struct DayInfo {
     fileprivate init(_ parameters: DayParameters) {
         day = parameters.day
         id = parameters.id.orEmpty
-        dayDegree = parameters.dayTemperature.withDegree
-        nightDegree = parameters.nightTemperature.withDegree
+        dayDegree = parameters.dayTemperature
+        nightDegree = parameters.nightTemperature
     }
 }

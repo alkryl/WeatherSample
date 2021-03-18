@@ -15,7 +15,7 @@ final class DaysViewController: UIViewController {
     
     //MARK: Outlets
     
-    @IBOutlet weak var tableView: DaysTableView!
+    @IBOutlet private weak var tableView: DaysTableView!
     
     //MARK: Lifecycle
 

@@ -15,7 +15,7 @@ final class HoursViewController: UIViewController {
     
     //MARK: Outlets
     
-    @IBOutlet weak var collectionView: HoursCollectionView!
+    @IBOutlet private weak var collectionView: HoursCollectionView!
     
     //MARK: Lifecycle
 

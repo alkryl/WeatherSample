@@ -15,8 +15,8 @@ final class ContainerViewController: UIViewController {
         
     //MARK: Outlets
     
-    @IBOutlet weak var tableView: ContainerTableView!
-    @IBOutlet weak var headerHeight: NSLayoutConstraint!
+    @IBOutlet private weak var tableView: ContainerTableView!
+    @IBOutlet private weak var headerHeight: NSLayoutConstraint!
     
     //MARK: Lifecycle
 

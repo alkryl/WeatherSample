@@ -8,26 +8,28 @@
 
 import UIKit
 
-class TodayViewController: UIViewController {
+final class TodayViewController: UIViewController {
     
-    static var nib: TodayViewController {
-        return UIStoryboard().main.instantiateViewController(identifier: "TodayViewController")
-    }
     var presenter: TodayPresenterProtocol!
+    let configurator: TodayConfiguratorProtocol = TodayConfigurator()
     
     //MARK: Outlets
     
-    @IBOutlet weak var weatherLabel: UILabel!
+    @IBOutlet private weak var weatherLabel: UILabel!
+    
+    //MARK: Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configurator.configure(with: self)
+        presenter.getWeather()
+    }
 }
 
 //MARK: TodayViewProtocol
 
 extension TodayViewController: TodayViewProtocol {
-    func setWeatherDescription(_ descr: String) {
-        weatherLabel.text = descr
-    }
-    
-    func showView() {
-        view.isHidden = false
+    func setWeatherDescription(_ text: String) {
+        weatherLabel.text = text
     }
 }
