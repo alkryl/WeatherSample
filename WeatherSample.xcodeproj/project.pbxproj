@@ -262,7 +262,7 @@
 				D0F4C10325E7D4D300DE3574 /* Providers */,
 				D007B5D424AA06CD00CE27AA /* Extensions */,
 				D078C1FC26038C9E00C86480 /* Modules */,
-				D007B5D824AA074B00CE27AA /* Views */,
+				D007B5D824AA074B00CE27AA /* Storyboards */,
 				D007B5D724AA071500CE27AA /* Other */,
 			);
 			path = WeatherSample;
@@ -308,13 +308,13 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		D007B5D824AA074B00CE27AA /* Views */ = {
+		D007B5D824AA074B00CE27AA /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				D007B5C024A9FFCF00CE27AA /* Main.storyboard */,
 				D007B5C524A9FFD100CE27AA /* LaunchScreen.storyboard */,
 			);
-			path = Views;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		D007B5F724ADE74100CE27AA /* Container */ = {

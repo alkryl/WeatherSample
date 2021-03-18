@@ -54,6 +54,6 @@ private struct APIHelper {
                param(.longitude) + "\(location.longitude)" +
                param(.units) + APIEnviroment.Unit.metric +
                param(.language) + APIEnviroment.Language.english +
-               param(.appIdentifier) + APIEnviroment.weatherKey
+               param(.appIdentifier) + APIEnviroment.Key.weather
     }
 }

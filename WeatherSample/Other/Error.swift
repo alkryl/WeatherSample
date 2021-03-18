@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Reason {
+struct Reason {
     static let invalidUrl = "Invalid url"
 }
 

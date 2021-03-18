@@ -17,7 +17,9 @@ typealias PathType   = IndexPath
 typealias NetworkHandler = (Data?, SampleError?) -> ()
 
 struct APIEnviroment {
-    static let weatherKey = "f05c0e6ed25af2c425ef113e8bb6f705"
+    struct Key {
+        static let weather = "f05c0e6ed25af2c425ef113e8bb6f705"
+    }
 
     struct Address {
         static let github = "https://github.com/alkryl"
@@ -33,12 +35,10 @@ struct APIEnviroment {
     }
 }
 
-struct Text {
-    static let close = "Close"
-}
-
-struct Key {
-    static let weather = "weatherKey"
+struct CacheEnviroment {
+    struct Key {
+        static let weather = "weatherKey"
+    }
 }
 
 struct K {
@@ -55,18 +55,6 @@ struct K {
         }
     }
     
-    struct Segue {
-        static let showWeather = "showWeather"
-        static let showGithub = "showGithub"
-    }
-    
-    struct Font {
-        struct Size {
-            static let hour: FloatType = 15.0
-            static let degree: FloatType = 17.0
-        }
-    }
-    
     struct Cell {
         struct Height {
             static let container: FloatType = 814.0
@@ -80,6 +68,18 @@ struct K {
         }
     }
     
+    struct Segue {
+        static let showWeather = "showWeather"
+        static let showGithub = "showGithub"
+    }
+    
+    struct Font {
+        struct Size {
+            static let hour: FloatType = 15.0
+            static let degree: FloatType = 17.0
+        }
+    }
+        
     struct Layout {
         static let minimumLineSpacing: FloatType = 0.0
     }
@@ -94,5 +94,9 @@ struct K {
     struct Number {
         static let mmHg = 0.750064
         static let metresInKm = 1000
+    }
+    
+    struct Text {
+        static let close = "Close"
     }
 }

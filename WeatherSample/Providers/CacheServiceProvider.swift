@@ -20,10 +20,10 @@ struct CacheServiceProvider: CacheServiceProviderProtocol {
     //MARK: Methods
     
     func cache(_ json: WeatherJSON) {
-        cacheService[Key.weather] = json
+        cacheService[CacheEnviroment.Key.weather] = json
     }
     
     func getWeather() -> WeatherJSON? {
-        return cacheService[Key.weather]
+        return cacheService[CacheEnviroment.Key.weather]
     }
 }
