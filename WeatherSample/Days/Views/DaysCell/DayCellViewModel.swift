@@ -8,10 +8,10 @@
 
 struct DayCellViewModel {
     
-    private var itemDay: String?
+    private var itemDay: String
     private var itemId: Int?
-    private var itemDayTemperature: String?
-    private var itemNightTemperature: String?
+    private var itemDayTemperature: String
+    private var itemNightTemperature: String
     
     //MARK: Initialization
     
@@ -27,7 +27,7 @@ struct DayCellViewModel {
 
 extension DayCellViewModel: DayCellViewModelProtocol {
     var day: String {
-        return itemDay.orEmpty
+        return itemDay
     }
     
     var id: Int {
@@ -35,10 +35,10 @@ extension DayCellViewModel: DayCellViewModelProtocol {
     }
     
     var dayTemperature: String {
-        return itemDayTemperature.orEmpty
+        return itemDayTemperature
     }
     
     var nightTemperature: String {
-        return itemNightTemperature.orEmpty
+        return itemNightTemperature
     }
 }

@@ -9,8 +9,8 @@
 struct HourCellViewModel {
     
     private var itemId: Int?
-    private var itemTime: String?
-    private var itemTemperature: String?
+    private var itemTime: String
+    private var itemTemperature: String
     
     //MARK: Initialization
     
@@ -29,11 +29,11 @@ extension HourCellViewModel: HourCellViewModelProtocol {
     }
     
     var time: String {
-        return itemTime.orEmpty
+        return itemTime
     }
     
     var temperature: String {
-        return itemTemperature.orEmpty
+        return itemTemperature
     }
     
     var styleEvent: Bool {
