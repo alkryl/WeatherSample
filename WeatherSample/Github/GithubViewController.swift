@@ -11,7 +11,7 @@ import WebKit
 
 final class GithubViewController: UIViewController {
     
-    var presenter: GithubPresenter!
+    var presenter: GithubPresenterProtocol!
     
     //MARK: Outlets
     

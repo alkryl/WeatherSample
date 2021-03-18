@@ -60,7 +60,6 @@
 		D007B68424B8ACE600CE27AA /* GithubProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68324B8ACE600CE27AA /* GithubProtocols.swift */; };
 		D007B68924BC679700CE27AA /* ContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68824BC679700CE27AA /* ContainerCell.swift */; };
 		D007B68B24BC6A9900CE27AA /* UIStoryboard+Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B68A24BC6A9900CE27AA /* UIStoryboard+Main.swift */; };
-		D01437E524E9822C007D7ACE /* PresenterConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01437E424E9822C007D7ACE /* PresenterConfigurator.swift */; };
 		D014435224C5A73C00999F17 /* UINavigationController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014435124C5A73C00999F17 /* UINavigationController+StatusBar.swift */; };
 		D014435524C5CF2C00999F17 /* BottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014435424C5CF2C00999F17 /* BottomViewController.swift */; };
 		D014435724C5CF4300999F17 /* BottomProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014435624C5CF4300999F17 /* BottomProtocols.swift */; };
@@ -171,7 +170,6 @@
 		D007B68324B8ACE600CE27AA /* GithubProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubProtocols.swift; sourceTree = "<group>"; };
 		D007B68824BC679700CE27AA /* ContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCell.swift; sourceTree = "<group>"; };
 		D007B68A24BC6A9900CE27AA /* UIStoryboard+Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Main.swift"; sourceTree = "<group>"; };
-		D01437E424E9822C007D7ACE /* PresenterConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterConfigurator.swift; sourceTree = "<group>"; };
 		D014435124C5A73C00999F17 /* UINavigationController+StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+StatusBar.swift"; sourceTree = "<group>"; };
 		D014435424C5CF2C00999F17 /* BottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomViewController.swift; sourceTree = "<group>"; };
 		D014435624C5CF4300999F17 /* BottomProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomProtocols.swift; sourceTree = "<group>"; };
@@ -286,7 +284,6 @@
 				D007B5D124AA06A300CE27AA /* LocationService.swift */,
 				D007B5FB24ADFB4F00CE27AA /* WeatherService.swift */,
 				D0F4C0FA25E7A2B300DE3574 /* CacheService.swift */,
-				D01437E424E9822C007D7ACE /* PresenterConfigurator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -709,7 +706,6 @@
 				D0BEA47E25E4F8C3008C3BB9 /* ContainerConfigurator.swift in Sources */,
 				D0F4C0F825E7990A00DE3574 /* WeatherServiceProvider.swift in Sources */,
 				D007B63224B218DA00CE27AA /* HoursModel.swift in Sources */,
-				D01437E524E9822C007D7ACE /* PresenterConfigurator.swift in Sources */,
 				D007B68924BC679700CE27AA /* ContainerCell.swift in Sources */,
 				D007B67F24B8A95A00CE27AA /* GithubPresenter.swift in Sources */,
 				D007B60324AE26D000CE27AA /* TopProtocols.swift in Sources */,
