@@ -1,5 +1,5 @@
 //
-//  DateFormatter+Day.swift
+//  DateFormatter+.swift
 //  WeatherSample
 //
 //  Created by Alexander Krylov on 03/07/2020.
@@ -13,7 +13,7 @@ extension DateFormatter {
         return weekdaySymbols[Calendar.current.component(.weekday, from: date) - 1]
     }
     
-    func stringTime(from date: Date) -> String {
+    func time(from date: Date) -> String {
         dateFormat = "HH:mm"
         timeZone = TimeZone(abbreviation: "UTC")
         return string(from: date)

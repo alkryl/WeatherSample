@@ -27,8 +27,8 @@ struct TopModelLayer {
 
         self.weather = (model.weather?.capitalized).orEmpty
         self.dayOfWeek = DateFormatter().day()
-        self.dayTime = Date().dayTime(sunrise: model.sunrise + model.timezoneOffset,
-                                      sunset: model.sunset + model.timezoneOffset)
+        self.dayTime = Date().event(sunrise: model.sunrise + model.timezoneOffset,
+                                    sunset: model.sunset + model.timezoneOffset)
         
         self.degree = model.degree.toInt().toString().withDegree
         self.maxDegree = model.maxDegree.orEmpty.toInt().toString()

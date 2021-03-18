@@ -15,6 +15,16 @@ extension Int {
 }
 
 extension Int {
+    func toString() -> String {
+        return String(self)
+    }
+    
+    func toDouble() -> Double {
+        return Double(self)
+    }
+}
+
+extension Int {
     func windDirection() -> String {
         switch self {
         case 337...360, 0...22: return "n"
@@ -25,7 +35,7 @@ extension Int {
         case 203...247: return "sw"
         case 248...292: return "w"
         case 293...336: return "nw"
-        default: return ""
+        default: return .empty
         }
     }
 }

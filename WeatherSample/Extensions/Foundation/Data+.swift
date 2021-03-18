@@ -1,5 +1,5 @@
 //
-//  Data+Content.swift
+//  Data+.swift
 //  WeatherSample
 //
 //  Created by Alexander Krylov on 02/07/2020.

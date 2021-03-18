@@ -89,6 +89,7 @@ struct K {
         static let slash = "/"
         static let space = " "
         static let dash = "-"
+        static let colon = ":"
     }
     
     struct Number {
@@ -98,5 +99,22 @@ struct K {
     
     struct Text {
         static let close = "Close"
+        static let night = "NIGHT"
+        static let today = "TODAY"
+    }
+    
+    struct Image {
+        static let thunderstorm = "thunderstorm"
+        static let rainCloud = "rainCloud"
+        static let lightRain = "lightRain"
+        static let moderateRain = "moderateRain"
+        static let heavyRain = "heavyRain"
+        static let snow = "snow"
+        static let haze = "haze"
+        static let clear = "clear"
+        static let fewClouds = "fewClouds"
+        static let clouds = "clouds"
+        static let sunrise = "sunrise"
+        static let sunset = "sunset"
     }
 }
