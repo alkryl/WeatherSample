@@ -71,6 +71,7 @@ struct K {
             static let container: FloatType = 814.0
             static let hour: FloatType = 100.0
             static let day: FloatType = 33.0
+            static let info: FloatType = 57.0
         }
         
         struct Width {
@@ -86,5 +87,11 @@ struct K {
         static let underscore = "_"
         static let slash = "/"
         static let space = " "
+        static let dash = "-"
+    }
+    
+    struct Number {
+        static let mmHg = 0.750064
+        static let metresInKm = 1000
     }
 }

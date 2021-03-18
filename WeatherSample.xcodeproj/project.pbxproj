@@ -51,8 +51,6 @@
 		D007B66324B5ED1000CE27AA /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66224B5ED1000CE27AA /* InfoModel.swift */; };
 		D007B66524B5ED1A00CE27AA /* InfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66424B5ED1A00CE27AA /* InfoPresenter.swift */; };
 		D007B66824B5FF9100CE27AA /* InfoCellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66724B5FF9100CE27AA /* InfoCellProtocols.swift */; };
-		D007B66A24B5FF9D00CE27AA /* InfoCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66924B5FF9D00CE27AA /* InfoCellModel.swift */; };
-		D007B66C24B5FFAB00CE27AA /* InfoCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66B24B5FFAB00CE27AA /* InfoCellPresenter.swift */; };
 		D007B66F24B5FFB800CE27AA /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007B66D24B5FFB800CE27AA /* InfoCell.swift */; };
 		D007B67024B5FFB800CE27AA /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D007B66E24B5FFB800CE27AA /* InfoCell.xib */; };
 		D007B67424B88AD500CE27AA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D007B67324B88AD500CE27AA /* WebKit.framework */; };
@@ -75,6 +73,12 @@
 		D076CF1F25FF4B1F000C3F17 /* DaysRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D076CF1E25FF4B1F000C3F17 /* DaysRouter.swift */; };
 		D076CF2325FF53B2000C3F17 /* DaysModelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D076CF2225FF53B2000C3F17 /* DaysModelLayer.swift */; };
 		D076CF2625FF5DF0000C3F17 /* DayCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D076CF2525FF5DF0000C3F17 /* DayCellViewModel.swift */; };
+		D078C1DD260354B300C86480 /* InfoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078C1DC260354B300C86480 /* InfoConfigurator.swift */; };
+		D078C1E0260354EF00C86480 /* InfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078C1DF260354EF00C86480 /* InfoInteractor.swift */; };
+		D078C1E3260354FB00C86480 /* InfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078C1E2260354FB00C86480 /* InfoRouter.swift */; };
+		D078C1E82603553100C86480 /* InfoModelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078C1E72603553100C86480 /* InfoModelLayer.swift */; };
+		D078C1EB2603613B00C86480 /* InfoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078C1EA2603613B00C86480 /* InfoTableView.swift */; };
+		D078C1F02603640700C86480 /* InfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078C1EF2603640700C86480 /* InfoCellViewModel.swift */; };
 		D0BEA46D25E3A85F008C3BB9 /* TodayConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA46C25E3A85F008C3BB9 /* TodayConfigurator.swift */; };
 		D0BEA47125E3AB8B008C3BB9 /* TodayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA47025E3AB8A008C3BB9 /* TodayInteractor.swift */; };
 		D0BEA47525E3ADCD008C3BB9 /* TodayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA47425E3ADCD008C3BB9 /* TodayRouter.swift */; };
@@ -155,8 +159,6 @@
 		D007B66224B5ED1000CE27AA /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
 		D007B66424B5ED1A00CE27AA /* InfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPresenter.swift; sourceTree = "<group>"; };
 		D007B66724B5FF9100CE27AA /* InfoCellProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellProtocols.swift; sourceTree = "<group>"; };
-		D007B66924B5FF9D00CE27AA /* InfoCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellModel.swift; sourceTree = "<group>"; };
-		D007B66B24B5FFAB00CE27AA /* InfoCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellPresenter.swift; sourceTree = "<group>"; };
 		D007B66D24B5FFB800CE27AA /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		D007B66E24B5FFB800CE27AA /* InfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCell.xib; sourceTree = "<group>"; };
 		D007B67324B88AD500CE27AA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -179,6 +181,12 @@
 		D076CF1E25FF4B1F000C3F17 /* DaysRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysRouter.swift; sourceTree = "<group>"; };
 		D076CF2225FF53B2000C3F17 /* DaysModelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysModelLayer.swift; sourceTree = "<group>"; };
 		D076CF2525FF5DF0000C3F17 /* DayCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCellViewModel.swift; sourceTree = "<group>"; };
+		D078C1DC260354B300C86480 /* InfoConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoConfigurator.swift; sourceTree = "<group>"; };
+		D078C1DF260354EF00C86480 /* InfoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoInteractor.swift; sourceTree = "<group>"; };
+		D078C1E2260354FB00C86480 /* InfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRouter.swift; sourceTree = "<group>"; };
+		D078C1E72603553100C86480 /* InfoModelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModelLayer.swift; sourceTree = "<group>"; };
+		D078C1EA2603613B00C86480 /* InfoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableView.swift; sourceTree = "<group>"; };
+		D078C1EF2603640700C86480 /* InfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellViewModel.swift; sourceTree = "<group>"; };
 		D0BEA46C25E3A85F008C3BB9 /* TodayConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayConfigurator.swift; sourceTree = "<group>"; };
 		D0BEA47025E3AB8A008C3BB9 /* TodayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayInteractor.swift; sourceTree = "<group>"; };
 		D0BEA47425E3ADCD008C3BB9 /* TodayRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRouter.swift; sourceTree = "<group>"; };
@@ -418,11 +426,14 @@
 		D007B65F24B5E02800CE27AA /* Info */ = {
 			isa = PBXGroup;
 			children = (
+				D078C1E52603550000C86480 /* Model */,
+				D078C1E62603550800C86480 /* Views */,
 				D007B66024B5ED0400CE27AA /* InfoProtocols.swift */,
-				D007B66224B5ED1000CE27AA /* InfoModel.swift */,
-				D007B66424B5ED1A00CE27AA /* InfoPresenter.swift */,
+				D078C1DC260354B300C86480 /* InfoConfigurator.swift */,
 				D007B5E924ADD82F00CE27AA /* InfoViewController.swift */,
-				D007B66624B5FF8100CE27AA /* Cell */,
+				D007B66424B5ED1A00CE27AA /* InfoPresenter.swift */,
+				D078C1DF260354EF00C86480 /* InfoInteractor.swift */,
+				D078C1E2260354FB00C86480 /* InfoRouter.swift */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -431,8 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				D007B66724B5FF9100CE27AA /* InfoCellProtocols.swift */,
-				D007B66924B5FF9D00CE27AA /* InfoCellModel.swift */,
-				D007B66B24B5FFAB00CE27AA /* InfoCellPresenter.swift */,
+				D078C1EF2603640700C86480 /* InfoCellViewModel.swift */,
 				D007B66D24B5FFB800CE27AA /* InfoCell.swift */,
 				D007B66E24B5FFB800CE27AA /* InfoCell.xib */,
 			);
@@ -495,6 +505,24 @@
 				D076CF2225FF53B2000C3F17 /* DaysModelLayer.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D078C1E52603550000C86480 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D007B66224B5ED1000CE27AA /* InfoModel.swift */,
+				D078C1E72603553100C86480 /* InfoModelLayer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D078C1E62603550800C86480 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D007B66624B5FF8100CE27AA /* Cell */,
+				D078C1EA2603613B00C86480 /* InfoTableView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D0BEA47725E3F25C008C3BB9 /* Model */ = {
@@ -644,7 +672,9 @@
 				D007B5D224AA06A300CE27AA /* LocationService.swift in Sources */,
 				D007B64424B4814200CE27AA /* DaysProtocols.swift in Sources */,
 				D014435924C5CF4F00999F17 /* BottomPresenter.swift in Sources */,
+				D078C1EB2603613B00C86480 /* InfoTableView.swift in Sources */,
 				D0F4C13725E8E47500DE3574 /* TopInteractor.swift in Sources */,
+				D078C1E3260354FB00C86480 /* InfoRouter.swift in Sources */,
 				D007B65E24B4AD4100CE27AA /* TodayPresenter.swift in Sources */,
 				D014435724C5CF4300999F17 /* BottomProtocols.swift in Sources */,
 				D007B68424B8ACE600CE27AA /* GithubProtocols.swift in Sources */,
@@ -657,12 +687,14 @@
 				D007B64E24B49B8900CE27AA /* DayCell.swift in Sources */,
 				D007B5EA24ADD82F00CE27AA /* InfoViewController.swift in Sources */,
 				D076CF1A25FF4AD0000C3F17 /* DaysInteractor.swift in Sources */,
+				D078C1F02603640700C86480 /* InfoCellViewModel.swift in Sources */,
 				D0BEA48525E4F9E5008C3BB9 /* ContainerRouter.swift in Sources */,
 				D007B5E824ADD75500CE27AA /* TodayViewController.swift in Sources */,
 				D076CF1F25FF4B1F000C3F17 /* DaysRouter.swift in Sources */,
 				D076CF1225FF435F000C3F17 /* DaysConfigurator.swift in Sources */,
 				D0BEA49C25E4FEFD008C3BB9 /* Constants.swift in Sources */,
 				D007B5FC24ADFB4F00CE27AA /* WeatherService.swift in Sources */,
+				D078C1DD260354B300C86480 /* InfoConfigurator.swift in Sources */,
 				D007B66824B5FF9100CE27AA /* InfoCellProtocols.swift in Sources */,
 				D0BEA47525E3ADCD008C3BB9 /* TodayRouter.swift in Sources */,
 				D0BEA47E25E4F8C3008C3BB9 /* ContainerConfigurator.swift in Sources */,
@@ -676,6 +708,7 @@
 				D014435524C5CF2C00999F17 /* BottomViewController.swift in Sources */,
 				D007B64124B4755900CE27AA /* HourCellProtocols.swift in Sources */,
 				D007B5DF24AA094800CE27AA /* ContainerViewController.swift in Sources */,
+				D078C1E0260354EF00C86480 /* InfoInteractor.swift in Sources */,
 				D007B60124AE265800CE27AA /* TopPresenter.swift in Sources */,
 				D007B63824B2239400CE27AA /* HourCell.swift in Sources */,
 				D007B63024B218AD00CE27AA /* HoursProtocols.swift in Sources */,
@@ -698,7 +731,6 @@
 				D007B62D24AF73C600CE27AA /* Date+DayTime.swift in Sources */,
 				D007B5F624ADE5FE00CE27AA /* Weather.swift in Sources */,
 				D0F4C14425E8F2DF00DE3574 /* TopModelLayer.swift in Sources */,
-				D007B66A24B5FF9D00CE27AA /* InfoCellModel.swift in Sources */,
 				D007B67D24B89C8F00CE27AA /* GithubViewController.swift in Sources */,
 				D0BEA49325E4FC5C008C3BB9 /* PreloadPresenter.swift in Sources */,
 				D007B65124B49BA000CE27AA /* DayCellProtocols.swift in Sources */,
@@ -710,7 +742,7 @@
 				D007B65724B4A83000CE27AA /* UIImage+Icon.swift in Sources */,
 				D0BEA48D25E4FB64008C3BB9 /* PreloadConfigurator.swift in Sources */,
 				D0F4C15525E9306600DE3574 /* HoursConfigurator.swift in Sources */,
-				D007B66C24B5FFAB00CE27AA /* InfoCellPresenter.swift in Sources */,
+				D078C1E82603553100C86480 /* InfoModelLayer.swift in Sources */,
 				D0F4C0FB25E7A2B300DE3574 /* CacheService.swift in Sources */,
 				D0F4C0FE25E7A98B00DE3574 /* CacheServiceProvider.swift in Sources */,
 				D007B63B24B36E1700CE27AA /* Int+.swift in Sources */,

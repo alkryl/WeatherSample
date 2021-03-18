@@ -8,36 +8,21 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+final class InfoViewController: UIViewController {
     
-    static var nib: InfoViewController {
-        return UIStoryboard().main.instantiateViewController(identifier: "InfoViewController")
-    }
     var presenter: InfoPresenterProtocol!
-    
-    var displayedData = InfoData()
+    let configurator: InfoConfiguratorProtocol = InfoConfigurator()
     
     //MARK: Outlets
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: InfoTableView!
     
     //MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(InfoCell.nib, forCellReuseIdentifier: InfoCell.identifier)
-    }
-}
-
-//MARK: InfoViewProtocol
-
-extension InfoViewController: InfoViewProtocol {
-    func updateDisplayedData(_ data: InfoData) {
-        self.displayedData = data
-    }
-    
-    func updateView() {
-        tableView.reloadData()
+        configurator.configure(with: self)
+        presenter.getWeather()
     }
 }
 
@@ -45,7 +30,7 @@ extension InfoViewController: InfoViewProtocol {
 
 extension InfoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return InfoCell.height
+        return presenter.tableView(heightForRowAt: indexPath)
     }
 }
 
@@ -53,16 +38,20 @@ extension InfoViewController: UITableViewDelegate {
 
 extension InfoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return displayedData.count
+        return presenter.tableView(numberOfRowsInSection: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: InfoCell.identifier,
                                                  for: indexPath) as! InfoCell
-        guard let presenter = presenter else { return cell }
-
-        presenter.setPresenter(for: cell, at: indexPath.row)
+        
+        let parameters = presenter.infoParametersForCell(at: indexPath)
+        cell.viewModel = InfoCellViewModel(parameters: parameters)
         
         return cell
     }
 }
+
+//MARK: InfoViewProtocol
+
+extension InfoViewController: InfoViewProtocol { }

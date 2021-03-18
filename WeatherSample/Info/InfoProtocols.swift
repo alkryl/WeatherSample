@@ -6,17 +6,25 @@
 //  Copyright © 2020 Alexander Krylov. All rights reserved.
 //
 
-import Foundation
-
-protocol InfoViewProtocol: AnyObject {
-    var presenter: InfoPresenterProtocol! { get set }
-    func updateDisplayedData(_ data: InfoData)
-    func updateView()
+protocol InfoConfiguratorProtocol: class {
+    func configure(with controller: InfoViewController)
 }
 
-protocol InfoPresenterProtocol {
-    var view: InfoViewProtocol! { get set }
-    init(model: InfoModel)
-    func updateView()
-    func setPresenter(for cell: InfoCellProtocol, at row: Int)
+protocol InfoPresenterProtocol: class {
+    var router: InfoRouterProtocol! { get set }
+    func getWeather()
+    func tableView(heightForRowAt indexPath: PathType) -> FloatType
+    func tableView(numberOfRowsInSection section: Int) -> Int
+    func infoParametersForCell(at indexPath: PathType) -> InfoParameters
 }
+
+protocol InfoViewProtocol: class { }
+
+protocol InfoInteractorProtocol: class {
+    func getWeather()
+    func tableView(heightForRowAt indexPath: PathType) -> FloatType
+    func tableView(numberOfRowsInSection section: Int) -> Int
+    func infoParametersForCell(at indexPath: PathType) -> InfoParameters
+}
+
+protocol InfoRouterProtocol: class { }

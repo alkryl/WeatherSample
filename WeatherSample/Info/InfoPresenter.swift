@@ -6,36 +6,35 @@
 //  Copyright © 2020 Alexander Krylov. All rights reserved.
 //
 
-import Foundation
-
-class InfoPresenter: InfoPresenterProtocol {
+final class InfoPresenter {
     
-    private var displayedData: InfoData!
-    
-    unowned var view: InfoViewProtocol! {
-        didSet {
-            updateView()
-        }
-    }
+    weak var view: InfoViewProtocol!
+    var interactor: InfoInteractorProtocol!
+    var router: InfoRouterProtocol!
     
     //MARK: Initialization
     
-    required init(model: InfoModel) {
-        displayedData = InfoViewData(model).info
+    required init(view: InfoViewProtocol) {
+        self.view = view
+    }
+}
+
+//MARK: InfoPresenterProtocol
+
+extension InfoPresenter: InfoPresenterProtocol {
+    func getWeather() {
+        interactor.getWeather()
     }
     
-    //MARK: Methods
-    
-    func updateView() {
-        view.updateDisplayedData(displayedData)
-        view.updateView()
+    func tableView(heightForRowAt indexPath: PathType) -> FloatType {
+        return interactor.tableView(heightForRowAt: indexPath)
     }
     
-    func setPresenter(for cell: InfoCellProtocol, at row: Int) {
-        let data = displayedData[row]
-        let presenter = InfoCellPresenter(model: InfoCellModel(name: data.name,
-                                                               parameter: data.parameter))
-        cell.presenter = presenter
-        presenter.view = cell
+    func tableView(numberOfRowsInSection section: Int) -> Int {
+        return interactor.tableView(numberOfRowsInSection: section)
+    }
+    
+    func infoParametersForCell(at indexPath: PathType) -> InfoParameters {
+        return interactor.infoParametersForCell(at: indexPath)
     }
 }
