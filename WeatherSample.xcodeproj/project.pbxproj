@@ -79,6 +79,9 @@
 		D078C1E82603553100C86480 /* InfoModelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078C1E72603553100C86480 /* InfoModelLayer.swift */; };
 		D078C1EB2603613B00C86480 /* InfoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078C1EA2603613B00C86480 /* InfoTableView.swift */; };
 		D078C1F02603640700C86480 /* InfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078C1EF2603640700C86480 /* InfoCellViewModel.swift */; };
+		D078C1F326037DDC00C86480 /* BottomConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078C1F226037DDC00C86480 /* BottomConfigurator.swift */; };
+		D078C1F626037F4300C86480 /* BottomInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078C1F526037F4300C86480 /* BottomInteractor.swift */; };
+		D078C1F926037F8B00C86480 /* BottomRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078C1F826037F8B00C86480 /* BottomRouter.swift */; };
 		D0BEA46D25E3A85F008C3BB9 /* TodayConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA46C25E3A85F008C3BB9 /* TodayConfigurator.swift */; };
 		D0BEA47125E3AB8B008C3BB9 /* TodayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA47025E3AB8A008C3BB9 /* TodayInteractor.swift */; };
 		D0BEA47525E3ADCD008C3BB9 /* TodayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BEA47425E3ADCD008C3BB9 /* TodayRouter.swift */; };
@@ -187,6 +190,9 @@
 		D078C1E72603553100C86480 /* InfoModelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModelLayer.swift; sourceTree = "<group>"; };
 		D078C1EA2603613B00C86480 /* InfoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableView.swift; sourceTree = "<group>"; };
 		D078C1EF2603640700C86480 /* InfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellViewModel.swift; sourceTree = "<group>"; };
+		D078C1F226037DDC00C86480 /* BottomConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomConfigurator.swift; sourceTree = "<group>"; };
+		D078C1F526037F4300C86480 /* BottomInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomInteractor.swift; sourceTree = "<group>"; };
+		D078C1F826037F8B00C86480 /* BottomRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRouter.swift; sourceTree = "<group>"; };
 		D0BEA46C25E3A85F008C3BB9 /* TodayConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayConfigurator.swift; sourceTree = "<group>"; };
 		D0BEA47025E3AB8A008C3BB9 /* TodayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayInteractor.swift; sourceTree = "<group>"; };
 		D0BEA47425E3ADCD008C3BB9 /* TodayRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRouter.swift; sourceTree = "<group>"; };
@@ -472,8 +478,11 @@
 			isa = PBXGroup;
 			children = (
 				D014435624C5CF4300999F17 /* BottomProtocols.swift */,
-				D014435824C5CF4F00999F17 /* BottomPresenter.swift */,
+				D078C1F226037DDC00C86480 /* BottomConfigurator.swift */,
 				D014435424C5CF2C00999F17 /* BottomViewController.swift */,
+				D014435824C5CF4F00999F17 /* BottomPresenter.swift */,
+				D078C1F526037F4300C86480 /* BottomInteractor.swift */,
+				D078C1F826037F8B00C86480 /* BottomRouter.swift */,
 			);
 			path = Bottom;
 			sourceTree = "<group>";
@@ -705,6 +714,7 @@
 				D007B67F24B8A95A00CE27AA /* GithubPresenter.swift in Sources */,
 				D007B60324AE26D000CE27AA /* TopProtocols.swift in Sources */,
 				D0CFF7D625F276DE0002C2BC /* HoursInteractor.swift in Sources */,
+				D078C1F926037F8B00C86480 /* BottomRouter.swift in Sources */,
 				D014435524C5CF2C00999F17 /* BottomViewController.swift in Sources */,
 				D007B64124B4755900CE27AA /* HourCellProtocols.swift in Sources */,
 				D007B5DF24AA094800CE27AA /* ContainerViewController.swift in Sources */,
@@ -724,6 +734,7 @@
 				D007B5F424ADE4EE00CE27AA /* ContainerProtocols.swift in Sources */,
 				D007B65A24B4ACF200CE27AA /* TodayProtocols.swift in Sources */,
 				D0F4C15D25E9329500DE3574 /* HoursCollectionView.swift in Sources */,
+				D078C1F626037F4300C86480 /* BottomInteractor.swift in Sources */,
 				D0BEA49625E4FCB0008C3BB9 /* PreloadInteractor.swift in Sources */,
 				D007B66524B5ED1A00CE27AA /* InfoPresenter.swift in Sources */,
 				D0BEA49925E4FCD9008C3BB9 /* PreloadRouter.swift in Sources */,
@@ -740,6 +751,7 @@
 				D007B68124B8AB4800CE27AA /* API.swift in Sources */,
 				D0CFF7D925F276F10002C2BC /* HoursRouter.swift in Sources */,
 				D007B65724B4A83000CE27AA /* UIImage+Icon.swift in Sources */,
+				D078C1F326037DDC00C86480 /* BottomConfigurator.swift in Sources */,
 				D0BEA48D25E4FB64008C3BB9 /* PreloadConfigurator.swift in Sources */,
 				D0F4C15525E9306600DE3574 /* HoursConfigurator.swift in Sources */,
 				D078C1E82603553100C86480 /* InfoModelLayer.swift in Sources */,

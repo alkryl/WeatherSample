@@ -10,16 +10,16 @@ import Foundation
 import CoreLocation
 
 protocol APIProtocol {
-    func weatherUrl(for location: Coordinate) -> URL?
-    func githubUrl() -> URL?
+    static func weatherUrl(for location: Coordinate) -> URL?
+    static func githubUrl() -> URL?
 }
 
 struct API: APIProtocol {
-    func weatherUrl(for location: Coordinate) -> URL? {
+    static func weatherUrl(for location: Coordinate) -> URL? {
         return URL(string: APIHelper().weatherAddress(for: location))
     }
     
-    func githubUrl() -> URL? {
+    static func githubUrl() -> URL? {
         return URL(string: APIEnviroment.Address.github)
     }
 }

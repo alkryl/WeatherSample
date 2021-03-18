@@ -129,6 +129,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8u4-Za-4fc"/>
+                    <size key="freeformSize" width="414" height="896"/>
                     <connections>
                         <outlet property="headerHeight" destination="Rt8-O2-DZ4" id="CmS-Qw-0ao"/>
                         <outlet property="tableView" destination="6wa-NS-KtJ" id="3Nm-eR-2Ol"/>
@@ -318,10 +319,49 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="80"/>
+                    <connections>
+                        <segue destination="arn-X7-zHd" kind="presentation" identifier="showGithub" id="1PM-zV-Pw1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Se-Qe-6O7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1057.9710144927537" y="982.36607142857133"/>
+        </scene>
+        <!--Github View Controller-->
+        <scene sceneID="Pa4-EO-R8e">
+            <objects>
+                <viewController storyboardIdentifier="GithubViewController" id="arn-X7-zHd" customClass="GithubViewController" customModule="WeatherSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hxJ-8R-BnZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LwW-Dg-QDt">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dTc-8q-4cI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dTc-8q-4cI" firstAttribute="trailing" secondItem="LwW-Dg-QDt" secondAttribute="trailing" id="8MT-L9-Qv0"/>
+                            <constraint firstAttribute="bottom" secondItem="LwW-Dg-QDt" secondAttribute="bottom" id="9ue-OR-7Nv"/>
+                            <constraint firstItem="LwW-Dg-QDt" firstAttribute="leading" secondItem="dTc-8q-4cI" secondAttribute="leading" id="Jkc-TN-fkW"/>
+                            <constraint firstItem="LwW-Dg-QDt" firstAttribute="top" secondItem="hxJ-8R-BnZ" secondAttribute="top" id="UGH-p9-dEc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HrW-Pd-bPB"/>
+                    <size key="freeformSize" width="414" height="896"/>
+                    <connections>
+                        <outlet property="webView" destination="LwW-Dg-QDt" id="Oob-Jk-ZW9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KmW-zf-YPG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2122" y="1255"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="t8T-jj-cfH">

@@ -17,7 +17,7 @@ struct WeatherService: WeatherServiceProtocol {
     //MARK: Methods
     
     func getWeather(for location: Coordinate, completion: @escaping NetworkHandler) {
-        guard let url = API().weatherUrl(for: location) else {
+        guard let url = API.weatherUrl(for: location) else {
             completion(nil, .invalid(reason: Reason.invalidUrl))
             return
         }

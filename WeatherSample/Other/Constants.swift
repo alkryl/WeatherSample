@@ -33,10 +33,6 @@ struct APIEnviroment {
     }
 }
 
-struct Segue {
-    static let showWeather = "showWeather"
-}
-
 struct Text {
     static let close = "Close"
 }
@@ -57,6 +53,11 @@ struct K {
             static let sunrise = "Sunrise"
             static let sunset = "Sunset"
         }
+    }
+    
+    struct Segue {
+        static let showWeather = "showWeather"
+        static let showGithub = "showGithub"
     }
     
     struct Font {

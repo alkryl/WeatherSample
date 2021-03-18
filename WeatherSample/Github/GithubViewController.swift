@@ -9,18 +9,20 @@
 import UIKit
 import WebKit
 
-class GithubViewController: UIViewController {
+final class GithubViewController: UIViewController {
     
-    var presenter: GithubPresenterProtocol!
+    var presenter: GithubPresenter!
     
-    private var webView: WKWebView!
+    //MARK: Outlets
     
+    @IBOutlet private weak var webView: WKWebView!
+        
     //MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        webView = WKWebView(frame: view.bounds)
-        view.addSubview(webView)
+        presenter = GithubPresenter(view: self)
+        presenter.configureView()
     }
 }
 

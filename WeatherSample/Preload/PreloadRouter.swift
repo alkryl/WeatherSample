@@ -6,8 +6,6 @@
 //  Copyright © 2021 Alexander Krylov. All rights reserved.
 //
 
-import UIKit
-
 final class PreloadRouter {
     
     weak var controller: PreloadViewController!
@@ -23,6 +21,6 @@ final class PreloadRouter {
 
 extension PreloadRouter: PreloadRouterProtocol {
     func showWeather() {
-        controller.performSegue(withIdentifier: Segue.showWeather, sender: nil)
+        controller.performSegue(withIdentifier: K.Segue.showWeather, sender: nil)
     }
 }

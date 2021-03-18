@@ -8,25 +8,20 @@
 
 import Foundation
 
-class GithubPresenter: GithubPresenterProtocol {
+final class GithubPresenter: GithubPresenterProtocol {
     
-    unowned var view: GithubViewProtocol! {
-        didSet {
-            updateView()
-        }
-    }
-    private var url: URL?
+    weak var view: GithubViewProtocol!
     
     //MARK: Initialization
     
-    required init(url: URL?) {
-        self.url = url
+    init(view: GithubViewProtocol) {
+        self.view = view
     }
     
     //MARK: Methods
     
-    func updateView() {
-        guard let url = url else { return }
+    func configureView() {
+        guard let url = API.githubUrl() else { return }
         view.showGithub(with: URLRequest(url: url))
     }
 }

@@ -8,21 +8,25 @@
 
 import UIKit
 
-class BottomViewController: UIViewController, BottomViewProtocol {
+final class BottomViewController: UIViewController {
     
     var presenter: BottomPresenterProtocol!
+    let configurator: BottomConfiguratorProtocol = BottomConfigurator()
+    
+    //MARK: Lifecycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configurator.configure(with: self)
+    }
     
     //MARK: Actions
     
     @IBAction func githubOnTap(_ sender: UIButton) {
-        presenter.setPresenter(for: GithubViewController())
+        presenter.githubButtonClicked()
     }
 }
 
 //MARK: BottomViewProtocol
 
-extension BottomViewController {
-    func showGithubPage(view: GithubViewProtocol) {
-        present(view as! UIViewController, animated: true, completion: nil)
-    }
-}
+extension BottomViewController: BottomViewProtocol { }

@@ -10,11 +10,10 @@ import Foundation
 
 protocol GithubViewProtocol: AnyObject {
     var presenter: GithubPresenterProtocol! { get set }
-    func showGithub(with request: URLRequest)
+    func showGithub(with: URLRequest)
 }
 
 protocol GithubPresenterProtocol {
     var view: GithubViewProtocol! { get set }
-    init(url: URL?)
-    func updateView()
+    func configureView()
 }

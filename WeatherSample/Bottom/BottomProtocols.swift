@@ -6,14 +6,19 @@
 //  Copyright © 2020 Alexander Krylov. All rights reserved.
 //
 
-import Foundation
-
-protocol BottomViewProtocol: AnyObject {
-    var presenter: BottomPresenterProtocol! { get set }    
-    func showGithubPage(view: GithubViewProtocol)
+protocol BottomConfiguratorProtocol: class {
+    func configure(with controller: BottomViewController)
 }
 
-protocol BottomPresenterProtocol {
-    var view: BottomViewProtocol! { get set }
-    func setPresenter(for view: GithubViewProtocol)
+protocol BottomPresenterProtocol: class {
+    var router: BottomRouterProtocol! { get set }
+    func githubButtonClicked()
+}
+
+protocol BottomViewProtocol: class { }
+
+protocol BottomInteractorProtocol: class { }
+
+protocol BottomRouterProtocol: class {
+    func showGithub()
 }
