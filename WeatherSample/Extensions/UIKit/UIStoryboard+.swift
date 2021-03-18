@@ -6,7 +6,7 @@
 //  Copyright © 2021 Alexander Krylov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIStoryboard {
     func instantiate(_ type: UIViewController.Type) -> UIViewController? {
