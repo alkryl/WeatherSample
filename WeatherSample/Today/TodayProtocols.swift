@@ -6,16 +6,22 @@
 //  Copyright © 2020 Alexander Krylov. All rights reserved.
 //
 
-import Foundation
-
-protocol TodayViewProtocol: AnyObject {
-    var presenter: TodayPresenterProtocol! { get set }
-    func setWeatherDescription(_ descr: String)
-    func showView()
+protocol TodayConfiguratorProtocol: class {
+    func configure(with controller: TodayViewController)
 }
 
-protocol TodayPresenterProtocol {
-    var view: TodayViewProtocol! { get set }
-    init(model: TodayModel)
-    func updateView()
+protocol TodayPresenterProtocol: class {
+    var router: TodayRouterProtocol! { get set }
+    func getWeather()
+    func configureView(with text: String)
 }
+
+protocol TodayViewProtocol: class {
+    func setWeatherDescription(_ text: String)
+}
+
+protocol TodayInteractorProtocol: class {
+    func getWeather()
+}
+
+protocol TodayRouterProtocol: class { }

@@ -15,7 +15,7 @@ class BottomPresenter: BottomPresenterProtocol {
     //MARK: Methods
     
     func setPresenter(for view: GithubViewProtocol) {
-        let gitPresenter = GithubPresenter(url: API.githubUrl())
+        let gitPresenter = GithubPresenter(url: API().githubUrl())
         self.view.showGithubPage(view: view)
         view.presenter = gitPresenter
         gitPresenter.view = view

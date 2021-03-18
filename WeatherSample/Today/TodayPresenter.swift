@@ -6,26 +6,27 @@
 //  Copyright © 2020 Alexander Krylov. All rights reserved.
 //
 
-import Foundation
-
-class TodayPresenter: TodayPresenterProtocol {
+final class TodayPresenter {
     
-    var displayedData: TodayViewData!
-    
-    unowned var view: TodayViewProtocol! {
-        didSet {
-            updateView()
-        }
-    }
+    weak var view: TodayViewProtocol!
+    var interactor: TodayInteractorProtocol!
+    var router: TodayRouterProtocol!
     
     //MARK: Initialization
     
-    required init(model: TodayModel) {
-        displayedData = TodayViewData(model)
+    required init(view: TodayViewProtocol) {
+        self.view = view
+    }
+}
+
+//MARK: TodayPresenterProtocol
+
+extension TodayPresenter: TodayPresenterProtocol {
+    func getWeather() {
+        interactor.getWeather()
     }
     
-    func updateView() {
-        view.setWeatherDescription(displayedData.weatherDescription)
-        view.showView()
+    func configureView(with text: String) {
+        view.setWeatherDescription(text)
     }
 }
